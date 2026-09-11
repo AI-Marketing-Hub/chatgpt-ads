@@ -1,6 +1,6 @@
 # Operator kit
 
-Run these commands from a complete source checkout or extracted public archive. Use Python 3.11 or newer. The tools read bundled files by relative path, so do not copy one script into a different directory or install it globally. For schema checks, create a local virtual environment and install the declared optional dependency: `python3 -m venv .venv && . .venv/bin/activate && python -m pip install "jsonschema>=4,<5"`.
+Run these commands from a complete source checkout or extracted public archive. Use Python 3.11 or newer. The tools read bundled files by relative path, so do not copy one script into a different directory or install it globally. For schema checks, create a local virtual environment and install the declared optional dependency: `python3 -m venv .venv && . .venv/bin/activate && python -m pip install --require-hashes -r requirements/validation.txt`.
 
 ## Deterministic checks
 

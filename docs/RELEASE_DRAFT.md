@@ -30,7 +30,7 @@ raw browser captures or private evidence.
 
 ## Proposed community post
 
-I prepared a public v0.3.0 source-release candidate for `chatgpt-ads-brain`:
+I prepared a public v0.3.0 source-release candidate for `chatgpt-ads`:
 sourced research and twelve guarded workflow skills for ChatGPT Ads work. It
 includes a synthetic quickstart for Codex and Claude, and it keeps account
 actions separate from local planning and analysis. Linux deterministic checks

@@ -1,4 +1,4 @@
-import copy,hashlib,importlib.util,json,sys,tempfile,unittest
+import copy,hashlib,importlib.util,json,sys,tempfile,unittest,subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('report',ROOT/'scripts/import_report.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
@@ -26,4 +26,11 @@ class ReportTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as d:
    p=Path(d)/'input.csv';p.symlink_to(self.path)
    with self.assertRaisesRegex(ValueError,'regular input'):m.read_report(p,self.context,'synthetic-a')
+ def test_cli_context_symlink_refused(self):
+  with tempfile.TemporaryDirectory() as d:
+   target=Path(d)/'context.json';target.write_text(json.dumps(self.context))
+   link=Path(d)/'linked.json';link.symlink_to(target)
+   result=subprocess.run([sys.executable,str(ROOT/'scripts/import_report.py'),'--csv',str(self.path),'--context',str(link),'--account','synthetic-a'],capture_output=True,text=True)
+   self.assertNotEqual(result.returncode,0)
+   self.assertIn('symlink',result.stderr)
 if __name__=='__main__':unittest.main()

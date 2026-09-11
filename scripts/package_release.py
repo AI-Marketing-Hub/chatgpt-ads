@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import re
 import sys
@@ -11,9 +12,9 @@ import zipfile
 from pathlib import Path, PurePosixPath
 
 try:
-    from safe_io import read_regular, reject_symlinks
+    from safe_io import read_regular, reject_symlinks, write_new
 except ImportError:  # imported as a module from the source root
-    from scripts.safe_io import read_regular, reject_symlinks
+    from scripts.safe_io import read_regular, reject_symlinks, write_new
 
 ROOT = Path(__file__).resolve().parents[1]
 try:
@@ -25,19 +26,52 @@ PREFIX = f"chatgpt-ads-brain-{VERSION}"
 PATTERNS = (
     re.compile(rb"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
     re.compile(rb"(?:sk-ant-|sk-|ghp_|github_pat_)[A-Za-z0-9_-]{20,}"),
+    re.compile(rb"AKIA[0-9A-Z]{16}"),
+    re.compile(rb"AIza[0-9A-Za-z_-]{35}"),
+    re.compile(rb"glpat-[A-Za-z0-9_-]{20,}"),
+    re.compile(rb"xox[baprs]-[A-Za-z0-9-]{20,}"),
+    re.compile(rb"sk_(?:live|test)_[A-Za-z0-9]{16,}"),
     re.compile(rb"(?i:authorization:\s*bearer\s+)[A-Za-z0-9._-]{12,}"),
     re.compile(rb"/var/home/[A-Za-z0-9_-]+/"),
 )
 FORBIDDEN_PARTS = frozenset({".git", ".raw", "__pycache__", "dist", "legacy-v0.1", "private-workspaces", "reviews"})
+PROJECTION_SCOPE = "allowlisted public source projection; canonical evidence and local workspaces are excluded"
+MARKER_KEYS = frozenset({"schema_version", "version", "scope", "files"})
+RESERVED_MANIFEST_PATHS = frozenset({"PUBLIC_PROJECTION.json", "PACKAGE_MANIFEST.json"})
+
+
+def _unique_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("public projection marker has duplicate JSON key")
+        result[key] = value
+    return result
+
+
+def parse_marker(data: bytes) -> object:
+    try:
+        return json.loads(data.decode("utf-8"), object_pairs_hook=_unique_json_object)
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("public projection marker is not valid JSON") from exc
 
 
 def selected(source: Path):
     source = reject_symlinks(source)
-    marker = source / "PUBLIC_PROJECTION.json"
-    if not marker.is_file() or marker.is_symlink():
+    marker = reject_symlinks(source / "PUBLIC_PROJECTION.json")
+    if not marker.is_file():
         raise ValueError("source is not a prepared public projection")
-    manifest = json.loads(read_regular(marker).decode())
-    if manifest.get("schema_version") != 1 or manifest.get("version") != VERSION:
+    marker_data = read_regular(marker)
+    if any(pattern.search(marker_data) for pattern in PATTERNS):
+        raise ValueError("sensitive-pattern match: PUBLIC_PROJECTION.json")
+    manifest = parse_marker(marker_data)
+    if not isinstance(manifest, dict) or set(manifest) != MARKER_KEYS:
+        raise ValueError("public projection marker has unknown or missing fields")
+    if (
+        manifest.get("schema_version") != 1
+        or manifest.get("version") != VERSION
+        or manifest.get("scope") != PROJECTION_SCOPE
+    ):
         raise ValueError("public projection has an unsupported version")
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:
@@ -64,6 +98,8 @@ def selected(source: Path):
             or relative.as_posix() != relative_text
         ):
             raise ValueError(f"unsafe manifest path: {relative_text}")
+        if relative_text in RESERVED_MANIFEST_PATHS:
+            raise ValueError(f"reserved manifest path: {relative_text}")
         if not re.fullmatch(r"[0-9a-f]{64}", expected):
             raise ValueError(f"invalid manifest hash: {relative_text}")
         path = reject_symlinks(source / relative)
@@ -77,45 +113,44 @@ def selected(source: Path):
         yield relative, data
     # Preserve the hash-listed source inventory so an extracted archive is
     # still a prepared projection and can be independently checked or repacked.
-    yield Path("PUBLIC_PROJECTION.json"), read_regular(marker)
+    yield Path("PUBLIC_PROJECTION.json"), marker_data
 
 
 def build(source: Path, out: Path) -> dict:
     entries = list(selected(source))
-    out = Path(out).absolute()
-    reject_symlinks(out.parent)
-    if out.exists():
-        raise ValueError("output exists; choose a new path")
-    out.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        source_hashes = {relative.as_posix(): hashlib.sha256(data).hexdigest() for relative, data in entries}
-        package_manifest = json.dumps(
-            {"version": VERSION, "files": source_hashes, "source": "prepared public projection"},
-            indent=2,
-            sort_keys=True,
-        ).encode() + b"\n"
-        expected = {f"{PREFIX}/{relative.as_posix()}": data for relative, data in entries}
-        expected[f"{PREFIX}/PACKAGE_MANIFEST.json"] = package_manifest
-        with zipfile.ZipFile(out, "x", compression=zipfile.ZIP_DEFLATED) as archive:
-            for relative, data in entries:
-                info = zipfile.ZipInfo(f"{PREFIX}/{relative.as_posix()}", date_time=(2026, 9, 11, 0, 0, 0))
-                info.compress_type = zipfile.ZIP_DEFLATED
-                info.external_attr = 0o100644 << 16
-                archive.writestr(info, data)
-            info = zipfile.ZipInfo(f"{PREFIX}/PACKAGE_MANIFEST.json", date_time=(2026, 9, 11, 0, 0, 0))
+    source_hashes = {relative.as_posix(): hashlib.sha256(data).hexdigest() for relative, data in entries}
+    package_manifest = json.dumps(
+        {"version": VERSION, "files": source_hashes, "source": "prepared public projection"},
+        indent=2,
+        sort_keys=True,
+    ).encode() + b"\n"
+    expected = {f"{PREFIX}/{relative.as_posix()}": data for relative, data in entries}
+    expected[f"{PREFIX}/PACKAGE_MANIFEST.json"] = package_manifest
+    archive_bytes = io.BytesIO()
+    with zipfile.ZipFile(archive_bytes, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for relative, data in entries:
+            info = zipfile.ZipInfo(f"{PREFIX}/{relative.as_posix()}", date_time=(2026, 9, 11, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
-            archive.writestr(info, package_manifest)
-        with zipfile.ZipFile(out) as archive:
-            names = archive.namelist()
-            if len(names) != len(set(names)) or set(names) != set(expected):
-                raise ValueError("archive inventory verification failed")
-            for name, source_data in expected.items():
-                if hashlib.sha256(archive.read(name)).digest() != hashlib.sha256(source_data).digest():
-                    raise ValueError(f"archive byte verification failed: {name}")
-    except Exception:
-        out.unlink(missing_ok=True)
-        raise
-    return {"artifact": str(out), "sha256": hashlib.sha256(out.read_bytes()).hexdigest(), "files": len(entries), "version": VERSION}
+            info.external_attr = 0o100644 << 16
+            archive.writestr(info, data)
+        info = zipfile.ZipInfo(f"{PREFIX}/PACKAGE_MANIFEST.json", date_time=(2026, 9, 11, 0, 0, 0))
+        info.compress_type = zipfile.ZIP_DEFLATED
+        info.external_attr = 0o100644 << 16
+        archive.writestr(info, package_manifest)
+    payload = archive_bytes.getvalue()
+    with zipfile.ZipFile(io.BytesIO(payload)) as archive:
+        names = archive.namelist()
+        if len(names) != len(set(names)) or set(names) != set(expected):
+            raise ValueError("archive inventory verification failed")
+        for name, source_data in expected.items():
+            if hashlib.sha256(archive.read(name)).digest() != hashlib.sha256(source_data).digest():
+                raise ValueError(f"archive byte verification failed: {name}")
+    out = Path(out).absolute()
+    try:
+        write_new(out, payload)
+    except FileExistsError as exc:
+        raise ValueError("output exists; choose a new path") from exc
+    return {"artifact": str(out), "sha256": hashlib.sha256(payload).hexdigest(), "files": len(entries), "version": VERSION}
 
 
 def main(argv: list[str] | None = None) -> int:

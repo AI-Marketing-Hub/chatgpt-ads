@@ -34,13 +34,15 @@ DIRECTORIES = (
     "references/third-party-licenses",
 )
 FILES = (
-    ".gitignore", "AGENTS.md", "BUILD_STATUS.md", "CHANGELOG.md", "CLAUDE.md", "CODEX.md",
+    ".gitignore", ".secrets.baseline", "AGENTS.md", "BUILD_STATUS.md", "CHANGELOG.md", "CLAUDE.md", "CODEX.md",
     "CONTRIBUTING.md", "LICENSE", "README.md", "SECURITY.md", "SKILL.md",
     "SUPPORT.md", "THIRD_PARTY_NOTICES.md", "pyproject.toml",
+    "assets/chatgpt-ads-cover.webp", "assets/chatgpt-ads-workflow.webp",
     "acceptance/README.md", "acceptance/matrix.json",
     "docs/KNOWLEDGE.md", "docs/LIVE_ACCEPTANCE.md", "docs/MIGRATION.md",
     "docs/OPERATOR_KIT.md", "docs/PRODUCT_BOUNDARIES.md", "docs/QUICKSTART.md",
     "docs/RELEASE_DRAFT.md", "docs/WINDOWS.md",
+    "requirements/security.txt", "requirements/validation.txt",
     "research-refresh/2026-09-11/evidence-note.md",
     "references/adapter-manifest.json", "references/capabilities.json",
     "references/claims.json", "references/contradictions.json", "references/coverage.json",
@@ -48,9 +50,15 @@ FILES = (
     "references/readiness.json", "references/reuse.json", "references/source-ledger.json",
 )
 FORBIDDEN_PARTS = frozenset({".git", ".raw", "__pycache__", "dist", "legacy-v0.1", "private-workspaces", "reviews"})
+PROJECTION_SCOPE = "allowlisted public source projection; canonical evidence and local workspaces are excluded"
 SECRET_PATTERNS = (
     re.compile(rb"-----BEGIN [A-Z ]*PRIVATE KEY-----"),
     re.compile(rb"(?:sk-ant-|sk-|ghp_|github_pat_)[A-Za-z0-9_-]{20,}"),
+    re.compile(rb"AKIA[0-9A-Z]{16}"),
+    re.compile(rb"AIza[0-9A-Za-z_-]{35}"),
+    re.compile(rb"glpat-[A-Za-z0-9_-]{20,}"),
+    re.compile(rb"xox[baprs]-[A-Za-z0-9-]{20,}"),
+    re.compile(rb"sk_(?:live|test)_[A-Za-z0-9]{16,}"),
     re.compile(rb"(?i:authorization:\s*bearer\s+)[A-Za-z0-9._-]{12,}"),
     re.compile(rb"/var/home/[A-Za-z0-9_-]+/"),
 )
@@ -99,7 +107,7 @@ def materialize(root: Path, destination: Path) -> dict:
         write_new(target, data)
     hashes = {relative.as_posix(): hashlib.sha256(data).hexdigest() for relative, data in entries}
     manifest = {"schema_version": 1, "version": VERSION,
-                "scope": "allowlisted public source projection; canonical evidence and local workspaces are excluded",
+                "scope": PROJECTION_SCOPE,
                 "files": hashes}
     write_new(destination / "PUBLIC_PROJECTION.json", json.dumps(manifest, indent=2, sort_keys=True).encode() + b"\n")
     return {"destination": str(destination), "files": len(entries), "version": VERSION}
