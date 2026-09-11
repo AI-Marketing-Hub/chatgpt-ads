@@ -164,7 +164,7 @@
     "skills/chatgpt-ads/references/workflow-outputs.md": "8577c5a4b96f402fd97ebeff37c0bb0944a7884060a9a0414c5ea9b7791547f2",
     "skills/chatgpt-ads/scripts/analyze.py": "fb000d674684823de4b099baa76340cecaafd33784e9b6465044a914544b324e",
     "skills/chatgpt-ads/scripts/check_sources.py": "87f205afa059c016dea73ed9c70698dd506fe7291e886c4db42913da44429f7f",
-    "skills/chatgpt-ads/tests/test_analyze.py": "a51d5845573f5185570e78f930df8b8423a140c926ac017e400caff2887541fc",
+    "skills/chatgpt-ads/tests/test_analyze.py": "9e76b45ac9c31a9424bcd58cdfaf72b81d179b91df5cbd3b2b42f344f992f031",
     "skills/chatgpt-ads/tests/test_freshness.py": "9324f43b15e65d35bc20ec2121d391c3ab37ca6baab98c646a0927f9f4f720f2",
     "tests/fixtures/sample-source.md": "609fe9280c43ded205b03a21a169f665f1cd6071e194f38f9f0711ab504ade41",
     "tests/test_boundary_regressions.py": "fbdd9e50de633cc25a437b2b7962c730f2ba6799a48a8050eb7ffec1cd4e77be",

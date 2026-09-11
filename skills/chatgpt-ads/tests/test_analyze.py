@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -155,7 +156,13 @@ class AnalyzeTests(unittest.TestCase):
                 proc = subprocess.run([sys.executable,str(SCRIPT),str(source),*args],capture_output=True,text=True)
                 self.assertEqual(proc.returncode,2)
                 self.assertEqual(source.read_bytes(),original)
-            alias = root / "alias"; alias.symlink_to(source)
+            alias = root / "alias"
+            if os.name == "nt":
+                # NTFS hard links exercise alias preservation without requiring
+                # Developer Mode. This is not a reparse-point safety test.
+                os.link(source, alias)
+            else:
+                alias.symlink_to(source)
             proc = subprocess.run([sys.executable,str(SCRIPT),str(source),"--out",str(alias)],capture_output=True,text=True)
             self.assertEqual(proc.returncode,2);self.assertEqual(source.read_bytes(),original)
             existing = root/"old.json";existing.write_text("keep")
