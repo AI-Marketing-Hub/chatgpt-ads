@@ -34,4 +34,3 @@ class ReportTests(unittest.TestCase):
    self.assertNotEqual(result.returncode,0)
    self.assertIn('symlink',result.stderr)
 if __name__=='__main__':unittest.main()
-

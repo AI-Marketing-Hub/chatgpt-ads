@@ -170,7 +170,7 @@
     "tests/test_boundary_regressions.py": "fbdd9e50de633cc25a437b2b7962c730f2ba6799a48a8050eb7ffec1cd4e77be",
     "tests/test_browser_guard.py": "596b0e093a8ac6dd0e2a12cfafbbec19b3ab6eef90d6718427a7522476e1c419",
     "tests/test_coverage.py": "87ac7fbc85b0040a2e116bf77ce432053d6a9cd267ef10a5b671f06efc016b4e",
-    "tests/test_import_report.py": "f490fa65ea4b5fe7e7e947e96f721e4ae2d8719b05a0ba77ff7ca89573a203cd",
+    "tests/test_import_report.py": "35cda3cae12df3ccc69225151df0880bfe1922a29c034cfe5c2e1989206adb88",
     "tests/test_knowledge_core.py": "8333d693c5ed2b0620862e11af139200f4da393a8a4931c305701191735200c8",
     "tests/test_launch_defaults.py": "71ff87753f81feb2891f1baacf582488a91350e9e24c764d68dfcd01b16db493",
     "tests/test_operating_core.py": "f2eeb6c937c1457a9da9f2c4820b2fee88bac3d22d28d56ac5f20af37f01ebf4",
