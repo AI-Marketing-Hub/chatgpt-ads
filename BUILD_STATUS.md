@@ -6,7 +6,7 @@ Local implementation and independent review are complete for a limited public-so
 
 The current registries contain 68 source records, 60 claims and 5 conflict records across 13 coverage areas. The September 11 refresh added nine scoped claims through a hash-bound transaction, preserving prior registry history. The twelve skill entrypoints retain shared knowledge and runtime-specific instructions.
 
-The update addresses automatic creative controls, explicit spending authority, possibly stateful draft flows, reporting-versus-edit templates, fractional native metrics, timezone identity and attribution-label uncertainty. Source-backed facts and external account observations remain separate. No real export, account API call, tracking transmission or live campaign action was performed.
+The update addresses automatic creative controls, explicit spending authority, possibly stateful draft flows, reporting-versus-edit templates, fractional native metrics, timezone identity and attribution-label uncertainty. Source-backed facts and external account observations remain separate. A community report updated September 11 describes native Chrome-enabled Claude inspection of working Ads Manager controls. This is externally reported read-only evidence, not an independently reproduced acceptance run of this release. No real export, account API call, tracking transmission or campaign publication was reported. See the [evidence scope](docs/LIVE_ACCEPTANCE.md).
 
 ## OS and runtime boundaries
 

@@ -14,7 +14,7 @@
       "simulated": true,
       "native_read_only_verified": false,
       "approved_live_action_verified": false,
-      "scope": "Complete synthetic readiness case with missing account/destination evidence correctly blocked; actual signed-in session reached availability gate, no account identity verified."
+      "scope": "Synthetic readiness checks passed. Earlier maintainer session reached an availability gate. A community report updated 2026-09-11 describes working Ads Manager access and read-only control inspection, with billing/logo pending. This external observation is not independent native acceptance of this release; no approved client profile was matched by the maintainer."
     },
     "plan": {
       "documented": true,

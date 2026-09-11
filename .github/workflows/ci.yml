@@ -32,10 +32,11 @@ jobs:
           python scripts/knowledge_core.py validate
           python scripts/knowledge_core.py sync-projection --check
           python scripts/validate_pack.py
-          python -m unittest discover -s skills/chatgpt-ads/tests -p "test_*.py"
           python acceptance/workflows/verify.py
           python acceptance/measurement/run_offline_cases.py
           python scripts/doctor.py
+      - name: Run portable analyzer and freshness checks
+        run: python -m unittest discover -s skills/chatgpt-ads/tests -p "test_*.py"
       - name: Check the documented Windows capability boundary
         if: runner.os == 'Windows'
         run: |
