@@ -33,7 +33,7 @@ python3 scripts/knowledge_core.py validate
 python3 scripts/validate_pack.py
 ```
 
-The package deliberately does not advertise a global command: its helpers load the bundled source registries, skills and fixtures by relative path. The install above adds only the optional local schema-validation dependency. Run tools from the complete source folder.
+The package deliberately does not advertise a global command: its helpers load the bundled source registries, skills and fixtures by relative path. The install above adds local schema validation and the timezone database required by the analyzer on Windows. Run tools from the complete source folder.
 
 ## Supported environments
 

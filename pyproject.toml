@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [{name = "Daniel Agrici"}]
-dependencies = []
+dependencies = ["tzdata==2026.3"]
 
 [project.urls]
 Homepage = "https://github.com/agricidaniel/chatgpt-ads"
