@@ -22,11 +22,11 @@ def scan(root: Path):
 def inspect_marker(path: Path):
     # Manifests are omitted from entropy exceptions to avoid a manifest/baseline
     # hash cycle. Their complete bytes still pass the package's pattern gate.
-    from package_release import PATTERNS, PROJECTION_SCOPE
+    from package_release import PATTERNS, PROJECTION_SCOPE, parse_marker
     raw = path.read_bytes()
     if any(pattern.search(raw) for pattern in PATTERNS):
         raise ValueError('sensitive marker content')
-    data = json.loads(raw)
+    data = parse_marker(raw)
     allowed = {'schema_version', 'version', 'scope', 'files'} if path.name == 'PUBLIC_PROJECTION.json' else {'version', 'source', 'files'}
     if not isinstance(data, dict) or set(data) - allowed or not isinstance(data.get('files'), dict):
         raise ValueError('unexpected marker metadata')
@@ -42,10 +42,10 @@ def inspect_marker(path: Path):
 
 
 def inspect_baseline(raw):
-    from package_release import PATTERNS
+    from package_release import PATTERNS, parse_marker
     if any(pattern.search(raw) for pattern in PATTERNS):
         raise ValueError('sensitive baseline content')
-    data = json.loads(raw)
+    data = parse_marker(raw)
     if set(data) != {'schema_version', 'results'} or data['schema_version'] != 1 or not isinstance(data['results'], dict):
         raise ValueError('unexpected baseline metadata')
     for name, rows in data['results'].items():

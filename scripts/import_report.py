@@ -30,7 +30,7 @@ def read_report(path,context,expected_account):
  return {'profile':'manual-normalized-v1','account_id':expected_account,'provenance':context,'analysis':result,'native_mapping_verified':False}
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--csv',type=Path,required=True);p.add_argument('--context',type=Path,required=True);p.add_argument('--account',required=True);a=p.parse_args()
- try:result=read_report(a.csv,json.loads(a.context.read_text()),a.account)
+ try:result=read_report(a.csv,json.loads(read_regular(a.context, max_bytes=1024 * 1024)),a.account)
  except (ValueError,OSError,KeyError,TypeError) as e:print('report refused: '+str(e),file=sys.stderr);return 1
  print(json.dumps(result,indent=2,allow_nan=False));return 0
 if __name__=='__main__':sys.exit(main())

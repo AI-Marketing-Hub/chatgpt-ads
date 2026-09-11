@@ -40,6 +40,22 @@ MARKER_KEYS = frozenset({"schema_version", "version", "scope", "files"})
 RESERVED_MANIFEST_PATHS = frozenset({"PUBLIC_PROJECTION.json", "PACKAGE_MANIFEST.json"})
 
 
+def _unique_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result: dict[str, object] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("public projection marker has duplicate JSON key")
+        result[key] = value
+    return result
+
+
+def parse_marker(data: bytes) -> object:
+    try:
+        return json.loads(data.decode("utf-8"), object_pairs_hook=_unique_json_object)
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("public projection marker is not valid JSON") from exc
+
+
 def selected(source: Path):
     source = reject_symlinks(source)
     marker = reject_symlinks(source / "PUBLIC_PROJECTION.json")
@@ -48,7 +64,7 @@ def selected(source: Path):
     marker_data = read_regular(marker)
     if any(pattern.search(marker_data) for pattern in PATTERNS):
         raise ValueError("sensitive-pattern match: PUBLIC_PROJECTION.json")
-    manifest = json.loads(marker_data.decode())
+    manifest = parse_marker(marker_data)
     if not isinstance(manifest, dict) or set(manifest) != MARKER_KEYS:
         raise ValueError("public projection marker has unknown or missing fields")
     if (

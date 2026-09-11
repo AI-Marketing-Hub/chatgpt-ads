@@ -16,7 +16,7 @@ Earlier v0.2.1 Codex and Claude keyboard localhost browser simulations remain hi
 
 ## Release acceptance
 
-Linux Python 3.11 and 3.14 each pass 63 core tests, 12 analyzer tests, five workflow cases, ten offline measurement cases, doctor, source-folder retrieval and package validation. Twelve skill entrypoints pass static validation. The independent review passes for the limited local scope with no unresolved blocking findings. The final archive is verified after this report is frozen; its checksum and extraction results accompany the ZIP outside the source tree. Do not interpret the MIT license or this prepared repository target as evidence of publication or live account readiness.
+The preserved v0.3.0 record shows Linux Python 3.11 and 3.14 each passing 63 core tests, 12 analyzer tests, five workflow cases, ten offline measurement cases, doctor, source-folder retrieval and package validation. Twelve skill entrypoints pass static validation. The independent review passes for the limited local scope with no unresolved blocking findings. The final archive is verified after this report is frozen; its checksum and extraction results accompany the ZIP outside the source tree. Do not interpret the MIT license or this prepared repository target as evidence of publication or live account readiness.
 
 The public source projection and ZIP exclude raw account evidence, private workspace data, rollback copies and legacy scaffolding. Source manifests use hashes for integrity, not authentication or signatures. File guards and agent instructions are not isolation against another process with equal access.
 

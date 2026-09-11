@@ -139,6 +139,32 @@ class PackageTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "reserved manifest path"):
                 list(package.selected(public))
 
+    def test_marker_rejects_duplicate_json_keys_including_nested_objects(self):
+        with tempfile.TemporaryDirectory() as directory:
+            directory = Path(directory)
+            public = directory / "public"
+            prepare.materialize(ROOT, public)
+            marker = public / "PUBLIC_PROJECTION.json"
+            manifest = json.loads(marker.read_text())
+            digest = manifest["files"]["README.md"]
+            nested_duplicate = (
+                '{"schema_version":1,"version":' + json.dumps(package.VERSION)
+                + ',"scope":' + json.dumps(package.PROJECTION_SCOPE)
+                + ',"files":{"README.md":' + json.dumps(digest)
+                + ',"README.md":' + json.dumps(digest) + "}}"
+            )
+            marker.write_text(nested_duplicate)
+            with self.assertRaisesRegex(ValueError, "duplicate JSON key"):
+                list(package.selected(public))
+            top_level_duplicate = (
+                '{"schema_version":1,"schema_version":1,"version":' + json.dumps(package.VERSION)
+                + ',"scope":' + json.dumps(package.PROJECTION_SCOPE)
+                + ',"files":' + json.dumps(manifest["files"], sort_keys=True) + "}"
+            )
+            marker.write_text(top_level_duplicate)
+            with self.assertRaisesRegex(ValueError, "duplicate JSON key"):
+                list(package.selected(public))
+
     def test_expanded_patterns_cover_synthetic_access_key_shape(self):
         synthetic = b"AKIA" + b"A" * 16
         self.assertTrue(any(pattern.search(synthetic) for pattern in prepare.SECRET_PATTERNS))
