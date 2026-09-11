@@ -25,6 +25,7 @@ class PackageTests(unittest.TestCase):
             [(p.pattern, p.flags) for p in prepare.SECRET_PATTERNS],
             [(p.pattern, p.flags) for p in package.PATTERNS],
         )
+        self.assertEqual(prepare.PROJECTION_SCOPE, package.PROJECTION_SCOPE)
 
     # Kept for the adjacent boundary-regression test, which needs a minimal
     # hash-listed prepared projection before it replaces the top-level brain directory.
@@ -34,7 +35,8 @@ class PackageTests(unittest.TestCase):
         target.write_text("synthetic\n")
         digest = __import__("hashlib").sha256(target.read_bytes()).hexdigest()
         (root / "PUBLIC_PROJECTION.json").write_text(json.dumps({
-            "schema_version": 1, "version": "0.3.0", "files": {"brain/index.md": digest}
+            "schema_version": 1, "version": package.VERSION, "scope": package.PROJECTION_SCOPE,
+            "files": {"brain/index.md": digest},
         }))
 
     def test_projection_is_complete_and_excludes_private_boundaries(self):
@@ -43,12 +45,17 @@ class PackageTests(unittest.TestCase):
             result = prepare.materialize(ROOT, public)
             manifest = json.loads((public / "PUBLIC_PROJECTION.json").read_text())
             names = set(manifest["files"])
-            self.assertEqual(result["version"], "0.3.0")
+            self.assertEqual(result["version"], package.VERSION)
             self.assertIn("pyproject.toml", names)
             self.assertIn("chatgpt_ads_brain/cli.py", names)
             self.assertIn("tests/test_packaging.py", names)
             self.assertIn("scripts/prepare_public.py", names)
             self.assertIn("acceptance/v030/fixture.json", names)
+            self.assertIn("assets/chatgpt-ads-cover.webp", prepare.FILES)
+            self.assertIn("assets/chatgpt-ads-workflow.webp", prepare.FILES)
+            self.assertIn("requirements/validation.txt", prepare.FILES)
+            self.assertIn("requirements/security.txt", prepare.FILES)
+            self.assertIn(".secrets.baseline", prepare.FILES)
             self.assertNotIn("references/reviews/pack-validation.json", names)
             self.assertFalse(any(part in {".raw", "private-workspaces", "reviews", "legacy-v0.1"} for name in names for part in Path(name).parts))
 
@@ -107,6 +114,34 @@ class PackageTests(unittest.TestCase):
             marker.write_text(json.dumps(altered))
             with self.assertRaisesRegex(ValueError, "invalid manifest hash"):
                 list(package.selected(public))
+
+    def test_marker_is_scanned_strict_and_cannot_list_reserved_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            directory = Path(directory)
+            public = directory / "public"
+            prepare.materialize(ROOT, public)
+            marker = public / "PUBLIC_PROJECTION.json"
+            manifest = json.loads(marker.read_text())
+            with_extra = dict(manifest)
+            with_extra["unexpected"] = "synthetic"
+            marker.write_text(json.dumps(with_extra))
+            with self.assertRaisesRegex(ValueError, "unknown or missing fields"):
+                list(package.selected(public))
+            marker.write_text(json.dumps(manifest))
+            sensitive_extra = dict(manifest)
+            sensitive_extra["note"] = "AKIA" + "A" * 16
+            marker.write_text(json.dumps(sensitive_extra))
+            with self.assertRaisesRegex(ValueError, "sensitive-pattern match: PUBLIC_PROJECTION.json"):
+                list(package.selected(public))
+            reserved = dict(manifest)
+            reserved["files"] = {"PUBLIC_PROJECTION.json": "0" * 64}
+            marker.write_text(json.dumps(reserved))
+            with self.assertRaisesRegex(ValueError, "reserved manifest path"):
+                list(package.selected(public))
+
+    def test_expanded_patterns_cover_synthetic_access_key_shape(self):
+        synthetic = b"AKIA" + b"A" * 16
+        self.assertTrue(any(pattern.search(synthetic) for pattern in prepare.SECRET_PATTERNS))
 
 
 if __name__ == "__main__":

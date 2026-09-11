@@ -1,10 +1,16 @@
 # ChatGPT Ads
 
+![ChatGPT Ads: Research. Plan. Create. Measure.](assets/chatgpt-ads-cover.webp)
+
 An independent, MIT-licensed knowledge and operating-skill pack for research, planning, creative, measurement, analysis and guarded ChatGPT Ads workflows. It is not an OpenAI product, integration, endorsement, account connector or production certification. Account access, billing, approval, ad review and delivery must be established separately for each advertiser.
 
-Version 0.3.0 is a public-release candidate. It includes documented source knowledge, synthetic fixtures and deterministic helpers. It does not include private workspaces, browser captures, credentials, raw research, customer data or an account capable of running ads.
+Version 0.3.1 is the audit-hardening update to the published v0.3.0 release. It includes documented source knowledge, synthetic fixtures and deterministic helpers. It does not include private workspaces, browser captures, credentials, raw research, customer data or an account capable of running ads.
 
 [![CI](https://github.com/agricidaniel/chatgpt-ads/actions/workflows/ci.yml/badge.svg)](https://github.com/agricidaniel/chatgpt-ads/actions/workflows/ci.yml)
+
+![Illustration of campaign planning, creative review and performance analysis](assets/chatgpt-ads-workflow.webp)
+
+*Conceptual workflow illustration, not a product dashboard or evidence of live campaign results.*
 
 ## Start here
 
@@ -21,7 +27,7 @@ Use Python 3.11 or later. No account credentials or global installation is neede
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
-python -m pip install "jsonschema>=4,<5"
+python -m pip install --require-hashes -r requirements/validation.txt
 python3 -m chatgpt_ads_brain query "conversion attribution"
 python3 scripts/knowledge_core.py validate
 python3 scripts/validate_pack.py
@@ -33,8 +39,8 @@ The package deliberately does not advertise a global command: its helpers load t
 
 | Environment | Status | Scope |
 | --- | --- | --- |
-| Linux, Python 3.11 and 3.14 | CI configured, not yet run remotely; local deterministic checks recorded | Retrieval, validation, synthetic workflows and packaging |
-| Windows, Python 3.11 and 3.14 | CI configured, not yet run remotely; guarded operations unavailable | Read [Windows boundary](docs/WINDOWS.md) and use `python scripts/doctor.py`; guarded filesystem and browser workflows fail closed because no native backend is implemented |
+| Linux, Python 3.11 and 3.14 | Hosted CI passed on v0.3.0; the live badge tracks the current revision | Retrieval, validation, synthetic workflows and packaging |
+| Windows, Python 3.11 and 3.14 | Hosted restriction checks passed on v0.3.0; guarded operations unavailable | Read [Windows boundary](docs/WINDOWS.md) and use `python scripts/doctor.py`; guarded filesystem and browser workflows fail closed because no native backend is implemented |
 | macOS | Not yet verified | Do not treat it as a supported runtime |
 
 The tools never authenticate an advertiser, perform browser actions on their own, or establish campaign performance. Read the selected skill and runtime guide before account work. Private account records belong outside this tree.

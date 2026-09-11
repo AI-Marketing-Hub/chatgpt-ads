@@ -10,3 +10,13 @@ Release preparation scans for common API keys, private keys, bearer tokens,
 local home paths and forbidden archive entries. Pattern scanning is a guard,
 not proof that a tree is safe to publish. Manual review of the exact public
 projection is required.
+
+## Maintainer checks
+
+CI runs an offline detect-secrets scan over the current tree and all reachable Git history. `.secrets.baseline` contains reviewed detector hashes, not secret values. New candidates fail CI and require human inspection; never regenerate the baseline simply to make a failure pass. Manifests are checked separately to avoid circular baseline hashes. Package checks and scanners are complementary, and neither guarantees the absence of all private information.
+
+Validation and scanner dependencies are version-pinned with release hashes under `requirements/`. Update them deliberately and rerun all supported environments. No credential-validity probe is made by the local scanner.
+
+Repository protections require signed commits and passing checks even for administrators. Review routing is configured, but a second person's approval is not enforced while there is one maintainer. Version tags cannot be updated or deleted through the ruleset. Release immutability applies to new releases; v0.3.0 remains a historical mutable release.
+
+CodeQL covers Python and Actions, and Dependabot security updates are enabled. GitHub currently leaves generic-pattern scanning and validity checks unavailable on this personal repository; enabled provider scanning and push protection are complemented by the offline scanner.

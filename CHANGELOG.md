@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 - 2026-09-11
+
+Adds the supplied repository cover; closes the manifest metadata scanning gap and guarded ZIP output race; adds broader secret checks, hash-locked validation dependencies and CI scanning. Corrects current runtime status while preserving dated acceptance evidence. Repository and release protections are verified separately through GitHub.
+
 ## 0.3.0 - 2026-09-11
 
 Public-source release preparation. The distributable tree is now created from
