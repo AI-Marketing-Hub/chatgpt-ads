@@ -57,7 +57,8 @@ class AnalyzeTests(unittest.TestCase):
             row("b", impressions="300", clicks="30", spend="90", conversions="3", revenue="180"),
         ]
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
+            root = Path(tmp) / "analysis space Ω"
+            root.mkdir()
             source, output, page = root / "input.csv", root / "output.json", root / "output.html"
             write_csv(source, rows)
             process = subprocess.run(

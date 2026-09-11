@@ -1,6 +1,10 @@
 # Native account acceptance handoff
 
-Current observed result: the signed-in Ads Manager session reached an availability gate. It exposed no campaign or reporting controls. No account identity has been matched to an approved client profile. This does not establish the legal entity's country, feature eligibility in another account, or the state of a different session.
+Two distinct observations must be kept separate. The maintainer's earlier session reached an availability gate. A community first-pass report, updated September 11, 2026, subsequently describes native Chrome-enabled Claude access to a working Ads Manager, with campaign, reporting and tracking controls inspected read-only. The later report supersedes any blanket claim that no usable account has been observed. It does not establish current access in another session or native acceptance of this release's helpers.
+
+The community report says billing setup and an account logo were still pending, with no campaigns, exports, API keys or conversion resources. No campaign was published and no tracking data was transmitted. Account identity and raw evidence remain outside this public package. These are attributed external observations, not independently reproduced maintainer results.
+
+Reported controls include campaign objectives and budgets, location inclusion and exclusion, platforms, bidding, automatic text personalization, report segmentation and attribution columns, and distinct reporting versus bulk-edit export modes. Control visibility does not prove saved-state behavior. In particular, the report's statement that an automatically generated draft does not persist before publication remains unverified; reconcile possible drafts before any create/retry action.
 
 ## Inputs required in the private workspace
 
