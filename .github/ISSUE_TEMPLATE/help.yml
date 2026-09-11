@@ -1,0 +1,22 @@
+name: Usage question
+description: Ask about the documented local workflows.
+title: "question: "
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: "Keep this public question free of credentials, client data, account IDs and raw captures. Report security issues privately through the Security tab."
+  - type: input
+    id: version
+    attributes:
+      label: Version and environment
+      placeholder: "0.3.0, Linux, Python 3.11"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: "What are you trying to do, and which documentation have you followed?"
+    validations:
+      required: true

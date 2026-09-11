@@ -1,0 +1,155 @@
+{
+  "scope": "offline fixture, not platform behavior",
+  "cases": [
+    {
+      "case": "valid",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [
+          "synthetic-order-1"
+        ],
+        "suppressed_ids": [],
+        "rejected_ids": [],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "browser_server_duplicate",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [
+          "synthetic-order-1"
+        ],
+        "suppressed_ids": [],
+        "rejected_ids": [],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "conflicting_duplicate",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [],
+        "rejected_ids": [],
+        "excluded_ids": [],
+        "held_ids": [
+          "synthetic-order-1"
+        ],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "unknown_consent",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [
+          "synthetic-order-1"
+        ],
+        "rejected_ids": [],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "denied_consent",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [
+          "synthetic-order-1"
+        ],
+        "rejected_ids": [],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "missing_id",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [],
+        "rejected_ids": [
+          null
+        ],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "nonfinite_value",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [],
+        "rejected_ids": [
+          "synthetic-order-1"
+        ],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "bool_value",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [],
+        "rejected_ids": [
+          "synthetic-order-1"
+        ],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "wrong_currency",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [],
+        "rejected_ids": [
+          "synthetic-order-1"
+        ],
+        "excluded_ids": [],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    },
+    {
+      "case": "refund",
+      "status": "pass",
+      "result": {
+        "eligible_ids": [],
+        "suppressed_ids": [],
+        "rejected_ids": [],
+        "excluded_ids": [
+          "synthetic-order-1"
+        ],
+        "held_ids": [],
+        "native_events_sent": 0,
+        "scope": "offline_business_contract_only"
+      }
+    }
+  ]
+}

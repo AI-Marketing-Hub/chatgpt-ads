@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chatgpt-ads-brain.local/interfaces/client-profile.schema.json",
+  "title": "v0.2 client profile",
+  "type": "object",
+  "required": ["schema_version", "record_type", "id", "created_at", "client_id", "account_id", "owner", "owner_decision_policy"],
+  "properties": {
+    "schema_version": {"const": "v0.2"}, "record_type": {"const": "client_profile"},
+    "id": {"$ref": "#/$defs/id"}, "created_at": {"$ref": "#/$defs/utc"},
+    "client_id": {"$ref": "#/$defs/id"}, "account_id": {"$ref": "#/$defs/id"}, "owner": {"type": "string", "minLength": 1},
+    "owner_decision_policy": {"type": "object", "required": ["owner_required", "allow_policy_change", "change_process"], "properties": {"owner_required": {"const": true}, "allow_policy_change": {"const": false}, "change_process": {"type": "string", "minLength": 1}}, "additionalProperties": false}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"}, "utc": {"type": "string", "pattern": "Z$"}}
+}

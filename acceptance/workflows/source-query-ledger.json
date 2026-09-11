@@ -1,0 +1,52 @@
+{
+  "as_of": "2026-09-10",
+  "retrieval_contract": "bounded_lexical_not_semantic",
+  "live_verification": false,
+  "queries": [
+    {
+      "workflow": "readiness",
+      "query": "market category eligibility account availability billing role",
+      "limit": 8,
+      "expected_claim_ids": ["platform-finding-003", "policy-beta-availability", "policy-eligibility", "policy-billing-safety"],
+      "expected_withheld_claim_ids": ["platform-finding-004"],
+      "used_claim_ids": ["platform-finding-003", "policy-beta-availability", "policy-eligibility", "policy-billing-safety"],
+      "used_source_ids": ["platform-new-buying-routes", "platform-availability", "platform-advertiser-api-overview", "policy-src-ads-faq", "policy-src-user-faq", "policy-src-ads-policy", "policy-src-billing"]
+    },
+    {
+      "workflow": "plan",
+      "query": "daily budget campaign total budget payment threshold spend ceiling",
+      "limit": 8,
+      "expected_claim_ids": ["policy-billing-safety", "measurement-benchmarks-evidence-quality"],
+      "expected_withheld_claim_ids": ["platform-finding-009", "platform-finding-021"],
+      "used_claim_ids": ["policy-billing-safety", "measurement-benchmarks-evidence-quality"],
+      "used_source_ids": ["policy-src-billing", "measurement-openai-platform-claim-20260910", "measurement-flowboost-case-20260910"]
+    },
+    {
+      "workflow": "creative",
+      "query": "ad creative destination URL image copy landing page crawlability",
+      "limit": 8,
+      "expected_claim_ids": ["policy-creative-landing-page", "platform-finding-015", "platform-finding-016", "policy-landing-crawlability"],
+      "expected_withheld_claim_ids": [],
+      "used_claim_ids": ["policy-creative-landing-page", "platform-finding-015", "platform-finding-016", "policy-landing-crawlability"],
+      "used_source_ids": ["policy-src-ads-policy", "policy-src-create-ads", "platform-ads-basics", "platform-product-feeds", "platform-api-ads", "platform-launch", "platform-create-ads", "policy-src-crawlers"]
+    },
+    {
+      "workflow": "experiment",
+      "query": "controlled causal experiment baseline randomization incrementality benchmark",
+      "limit": 8,
+      "expected_claim_ids": ["measurement-benchmarks-evidence-quality"],
+      "expected_withheld_claim_ids": [],
+      "used_claim_ids": ["measurement-benchmarks-evidence-quality"],
+      "used_source_ids": ["measurement-openai-platform-claim-20260910", "measurement-flowboost-case-20260910"]
+    },
+    {
+      "workflow": "monitor",
+      "query": "reporting lag timezone missing zero spend pacing pending charges",
+      "limit": 8,
+      "expected_claim_ids": ["platform-finding-020", "measurement-reporting-metrics"],
+      "expected_withheld_claim_ids": ["platform-finding-008"],
+      "used_claim_ids": ["platform-finding-020", "measurement-reporting-metrics"],
+      "used_source_ids": ["platform-results", "platform-api-insights", "measurement-openai-measure-results-20260910"]
+    }
+  ]
+}

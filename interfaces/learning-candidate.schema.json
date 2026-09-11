@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chatgpt-ads-brain.local/interfaces/learning-candidate.schema.json",
+  "title": "v0.2 learning candidate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "created_at",
+    "client_id",
+    "hypothesis",
+    "scope",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "v0.2"
+    },
+    "record_type": {
+      "const": "learning_candidate"
+    },
+    "id": {
+      "$ref": "#/$defs/id"
+    },
+    "created_at": {
+      "$ref": "#/$defs/utc"
+    },
+    "client_id": {
+      "$ref": "#/$defs/id"
+    },
+    "hypothesis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "enum": [
+        "pending_review",
+        "reviewed"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "required": [
+        "name",
+        "decision",
+        "review_binding_sha256"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "enum": [
+            "accept",
+            "reject",
+            "needs_more_evidence"
+          ]
+        },
+        "review_binding_sha256": {
+          "$ref": "#/$defs/sha"
+        }
+      },
+      "additionalProperties": false
+    },
+    "anonymized": {
+      "const": true
+    },
+    "generalization": {
+      "enum": [
+        "client_specific",
+        "reviewed_general"
+      ]
+    },
+    "promotion": {
+      "type": "object",
+      "required": [
+        "reviewed_general_text"
+      ],
+      "properties": {
+        "reviewed_general_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supersedes_reviewed_text_sha256": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sha"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "stage"
+        ],
+        "properties": {
+          "stage": {
+            "const": "reviewed"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "reviewer",
+          "anonymized",
+          "generalization"
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "generalization"
+        ],
+        "properties": {
+          "generalization": {
+            "const": "reviewed_general"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "stage",
+          "reviewer",
+          "anonymized",
+          "promotion"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "utc": {
+      "type": "string",
+      "pattern": "Z$"
+    },
+    "sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

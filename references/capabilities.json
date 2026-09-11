@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "operation_guards": "local_helper_only_not_authentication_or_sandbox",
+  "scheduling_enabled": false,
+  "native_api_enabled": false,
+  "native_csv_enabled": false,
+  "browser_execution": "agent_through_available_host_tools_with_applicable_approval",
+  "account_verified": false,
+  "live_action_verified": false,
+  "limitations": [
+    "oCPM public API support unresolved",
+    "daily versus total budget switching unresolved",
+    "feed connections and catalog upload not provided by public API",
+    "custom audience geography and first-party restrictions must be checked",
+    "VTA reporting must remain separate from optimized conversion totals"
+  ],
+  "deterministic_execution": "create_campaign_simulation_only",
+  "generic_action_records": "schema_and_read_only_browser_consistency_guard",
+  "browser_guard": "scripts/check_browser_action.py"
+}

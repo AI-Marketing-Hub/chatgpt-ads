@@ -1,0 +1,62 @@
+[
+  {
+    "skill": "chatgpt-ads",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-analyze",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-creative",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-experiment",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-launch",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-measurement",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-monitor",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-operate",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-plan",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-policy",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-readiness",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "chatgpt-ads-research",
+    "returncode": 0,
+    "output": "Skill is valid!"
+  }
+]

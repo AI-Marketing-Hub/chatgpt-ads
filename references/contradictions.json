@@ -1,0 +1,73 @@
+{
+  "contradictions": [
+    {
+      "id": "platform-contradiction-001",
+      "topic": "conversion-optimized objective coverage",
+      "evidence_refs": [
+        "platform-conversion-optimized",
+        "platform-campaigns",
+        "platform-api-campaigns"
+      ],
+      "details": "The September 10 Help article documents oCPC and oCPM, with oCPM in beta and expanding. The campaign overview still lists only CPM, CPC, and oCPC. The public API documents impressions, clicks, and conversions, where conversions maps to oCPC, and gives no oCPM representation.",
+      "resolution": "Treat oCPM as account-dependent Ads Manager beta. Treat oCPM via API as unsupported until the API contract is updated.",
+      "lane": "platform",
+      "claim_ids": [
+        "platform-finding-006"
+      ]
+    },
+    {
+      "id": "platform-contradiction-002",
+      "topic": "budget-type editability",
+      "evidence_refs": [
+        "platform-campaigns",
+        "platform-billing"
+      ],
+      "details": "Create Campaigns says campaign-total can be changed to daily but not changed back. Billing & Payment says budget type cannot be changed after creation.",
+      "resolution": "Do not automate a budget-type change. Create a new campaign unless the current account UI and support-confirmed behavior establish otherwise.",
+      "lane": "platform",
+      "claim_ids": [
+        "platform-finding-008"
+      ]
+    },
+    {
+      "id": "platform-contradiction-003",
+      "topic": "portal hostname",
+      "evidence_refs": [
+        "platform-account-setup",
+        "platform-manager-overview"
+      ],
+      "details": "The task seed named ads.chatgpt.com, but all current official operating docs use ads.openai.com. ads.chatgpt.com was not retrievable in this environment.",
+      "resolution": "Use ads.openai.com as the documented route and retain ads.chatgpt.com as unverified.",
+      "lane": "platform",
+      "claim_ids": [
+        "platform-finding-002"
+      ]
+    },
+    {
+      "id": "measurement-contradiction-vta-optimization",
+      "status": "resolved",
+      "claim_a": "Measure Results and Measurement Pixel say VTA is supplemental and does not affect bidding or conversion optimization.",
+      "claim_b": "Conversion-optimized Campaigns says oCPM can optimize using a broader eligible set including actions after ad views, and instructs advertisers to review VTA reporting.",
+      "evidence_refs": [
+        "measurement-openai-measure-results-20260910",
+        "measurement-openai-pixel-20260910",
+        "measurement-openai-ocpm-20260910"
+      ],
+      "resolution": "Resolved as distinct concepts in the 2026-09-10 refresh: displayed VTA is supplemental only; broader oCPM eligible signals do not establish displayed VTA as an optimization input. Native/account behavior remains untested.",
+      "lane": "measurement",
+      "claim_ids": [
+        "measurement-vta-definition",
+        "refresh-vta-scope-20260910"
+      ]
+    },
+    {
+      "id": "policy-contradiction-regulated-contexts",
+      "status": "unresolved_documentation_scope_conflict",
+      "observation": "The Help Center FAQ says ads are not eligible near sensitive or regulated topics, including personal health, mental health, or politics. The Ad Policies changelog says medical, legal, and financial advice contexts are no longer categorically blocked by default as of April 2026, while sensitive conversations remain ineligible. The primary policy is more specific and later amended, so use its precise placement list; do not promise delivery in regulated advice contexts.",
+      "lane": "policy",
+      "claim_ids": [
+        "policy-placement"
+      ]
+    }
+  ]
+}

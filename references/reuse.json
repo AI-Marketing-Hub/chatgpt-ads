@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "dependency_on_aimh": false,
+  "dependency_on_brainstein": false,
+  "selections": [
+    {
+      "source": "AIMH AGENTS.md and GL-006 Retrieval Tiers",
+      "disposition": "adapt",
+      "use": "bounded retrieval and clear knowledge/procedure/private-state ownership"
+    },
+    {
+      "source": "AIMH SOP-004 Handle an Approval and GL-008 Write Protocol",
+      "disposition": "adapt",
+      "use": "exact-action binding, one writer and concurrent-change checks; no inherited executor"
+    },
+    {
+      "source": "AIMH Learnings README",
+      "disposition": "adapt",
+      "use": "candidate evidence review and supersession; private data remains private"
+    },
+    {
+      "source": "Brainstein v1.2.0 scaffold",
+      "disposition": "reference_only",
+      "use": "source lineage retained; scoring, note length and duplicate scaffold removed from active acceptance"
+    }
+  ],
+  "rights": "Patterns adapted in original task-specific prose; no AIMH runtime or bulk source copy.",
+  "source_files": [
+    {
+      "source_relative_path": "AGENTS.md",
+      "sha256": "450eae812803f9c8416c1c3e9841e420247403022c12598f3c482d27ef1188e5",
+      "retrieved": "2026-09-10",
+      "disposition": "adapt_concept_only"
+    },
+    {
+      "source_relative_path": "06 AI Team/03 Knowledge/01 Guidelines/GL-006 Retrieval Tiers.md",
+      "sha256": "759a4f948e414e12a9826d16f93ba170a86554c36a7cbb71242d0df497f28060",
+      "retrieved": "2026-09-10",
+      "disposition": "adapt_concept_only"
+    },
+    {
+      "source_relative_path": "06 AI Team/03 Knowledge/01 Guidelines/GL-008 Write Protocol.md",
+      "sha256": "c650a0097f7b0ae834a1bc153c71962d655b2f276305cdf0ceb941faaf9ef744",
+      "retrieved": "2026-09-10",
+      "disposition": "adapt_concept_only"
+    },
+    {
+      "source_relative_path": "06 AI Team/03 Knowledge/02 SOPs/SOP-004 Handle an Approval.md",
+      "sha256": "1f35b7c8d12bd1987a72f208da3915f165314637f7f0baad662ab8eedfc26b52",
+      "retrieved": "2026-09-10",
+      "disposition": "adapt_concept_only"
+    },
+    {
+      "source_relative_path": "06 AI Team/03 Knowledge/05 Learnings/README.md",
+      "sha256": "384ad4d248faa1ab633802bebfad6b5c6a4cdb5c3d3cd8f63a9a5e9df6618bcf",
+      "retrieved": "2026-09-10",
+      "disposition": "adapt_concept_only"
+    }
+  ]
+}

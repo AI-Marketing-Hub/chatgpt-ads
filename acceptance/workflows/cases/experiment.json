@@ -1,0 +1,117 @@
+{
+  "case_id": "wf-experiment-mossline-001",
+  "workflow": "experiment",
+  "evidence_class": "synthetic_advisory",
+  "brief_inputs": {
+    "fixture_ref": "fixture.json",
+    "plan_case_ref": "cases/plan.json",
+    "creative_case_ref": "cases/creative.json",
+    "primary_decision": "Whether measurement and assignment fidelity justify designing a later powered, single-factor creative experiment",
+    "minimum_effect_worth_acting_on": "0.50 absolute percentage points in completed-purchase rate, an owner-selected fixture choice",
+    "baseline_purchase_rate": null,
+    "variance": null,
+    "verified_assignment_method": null,
+    "maximum_feasibility_spend": "840.00"
+  },
+  "produced_output": {
+    "experiment_id": "mossline-feasibility-pilot-v1",
+    "design_type": "pre_registered_feasibility_pilot_not_powered_efficacy_test",
+    "hypothesis": "The account and measurement setup can preserve one creative label, exposure records, and completed-purchase records well enough to estimate a baseline for a later test.",
+    "primary_decision": "Proceed to a powered single-factor creative efficacy design only if assignment and measurement fidelity are demonstrated and a baseline estimate is usable.",
+    "minimum_effect_worth_acting_on": {
+      "value": "0.50",
+      "unit": "absolute_percentage_points_completed_purchase_rate",
+      "provenance": "fixture_owner_choice",
+      "use": "future power planning only, not a current benchmark"
+    },
+    "assignment": {
+      "unit": null,
+      "method": null,
+      "intended_allocation": "single approved creative during this feasibility pilot; a later 1:1 allocation requires a valid observed assignment method",
+      "platform_native_randomization_available": null,
+      "fallback": "If no valid assignment method is observed, run a single-creative measurement feasibility pilot and make no comparative causal claim. Alternating dates or before-after performance is observational."
+    },
+    "treatment_and_control": {
+      "feasibility_creative": "one later-approved concept revision",
+      "treatment": null,
+      "control": null,
+      "future_pair_requirement": "Derive a pair that differs in one declared factor while holding audience, offer, destination, body, call to action, asset, timing, and measurement constant wherever the platform permits.",
+      "current_concepts": ["creative-functional-v1", "creative-material-v1"],
+      "comparison_activation": "blocked; the two current concepts change multiple elements and are not an isolated test pair"
+    },
+    "sample_and_power": {
+      "power_analysis_performed": false,
+      "required_sample": null,
+      "required_duration_for_power": null,
+      "reason": "Baseline purchase rate, variance, eligible traffic, and assignment capability are absent. A numeric sample requirement would be spurious.",
+      "evidence_refs": ["fixture:measurement_evidence", "claim:measurement-benchmarks-evidence-quality"]
+    },
+    "fixed_feasibility_window": {
+      "maximum_days": 14,
+      "maximum_spend": "840.00",
+      "early_stop_conditions": [
+        "Any account, policy, destination, or measurement integrity incident",
+        "Any material mismatch between creative labels and observed delivery records",
+        "Owner review at USD 65.60 comparable matured spend with zero completed purchases"
+      ],
+      "efficacy_stopping_rule": "none; this pilot cannot adopt or reject a creative based on performance"
+    },
+    "pre_registered_outputs": [
+      "Count of records with the single approved feasibility creative label",
+      "Count and rate of duplicated or unmatched conversion event IDs if two measurement paths are later used",
+      "Observed purchase-rate estimate with its denominator and uncertainty, for future design only",
+      "Missing-day and reporting-lag incidents",
+      "Measurement fidelity and the observed availability or absence of a future comparative assignment method"
+    ],
+    "repeated_looks_and_multiplicity": "Operational integrity may be checked daily, but no efficacy decision is allowed. No comparative test occurs in the pilot. A later powered design must pre-register its look schedule and comparison count.",
+    "causal_limitations": "No treatment assignment exists yet. Any before-after, alternating-date, or nonrandom delivery comparison would remain observational and vulnerable to delivery, time, audience, and measurement differences.",
+    "decision": "needs_input",
+    "reasoning": "The missing baseline does not prevent a bounded instrumentation pilot, but it prevents sample-size arithmetic and any credible adoption rule. The design protects the later decision by refusing to treat a 14-day spend window as statistical power."
+  },
+  "advisory_result": {
+    "status": "needs_input",
+    "workflow": "experiment",
+    "as_of": "2026-09-10",
+    "findings": [
+      {
+        "id": "experiment-feasibility-only",
+        "observation": "A fixed 14-day, USD 840.00 maximum instrumentation pilot can test data fidelity, but it cannot decide creative efficacy.",
+        "evidence_refs": ["fixture:fixture-owner-economics-sheet-v1", "fixture:measurement_evidence"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "experiment-no-power-number",
+        "observation": "No sample requirement is calculated because baseline rate, variance, eligible traffic, and assignment capability are missing.",
+        "evidence_refs": ["fixture:measurement_evidence", "claim:measurement-benchmarks-evidence-quality"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "experiment-causal-boundary",
+        "observation": "Comparative interpretation remains blocked until a valid assignment method and implementation-fidelity evidence exist.",
+        "evidence_refs": ["fixture:account_evidence"],
+        "confidence": "high",
+        "support": "evidence_based"
+      }
+    ],
+    "missing_inputs": [
+      "Observed account-supported assignment or randomization method",
+      "Baseline completed-purchase rate and denominator",
+      "Variance or enough raw data to estimate it",
+      "Expected eligible traffic and measurement lag",
+      "Approved creatives and validated measurement"
+    ],
+    "actions": [
+      {
+        "action": "Verify assignment capability and measurement fidelity, then run only the fixed feasibility pilot unless defensible baseline inputs support a separately reviewed power calculation.",
+        "owner": "experiment owner and measurement owner",
+        "window": "after readiness, creative, and measurement gates resolve",
+        "success_measure": "Assignment and event fidelity are measured, and any later power calculation cites the observed baseline and declared assumptions.",
+        "evidence_refs": ["fixture:account_evidence", "fixture:measurement_evidence", "claim:measurement-benchmarks-evidence-quality"],
+        "confidence": "high"
+      }
+    ],
+    "live_execution": "not_performed"
+  }
+}

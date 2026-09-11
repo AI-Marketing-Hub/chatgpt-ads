@@ -1,0 +1,909 @@
+{
+  "version": 1,
+  "claims": [
+    {
+      "id": "platform-finding-001",
+      "lane": "platform",
+      "claim": "ChatGPT Ads is no longer announcement-only. OpenAI describes Ads Manager as beta and early-stage scaling, while its August 31 announcement describes availability in more than 40 countries. The current availability page lists 52 self-service countries. The exact per-country list is the controlling volatile source.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-availability",
+        "platform-manager-overview",
+        "platform-global-expansion"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Label the platform available in beta. Refresh the availability page before any market-specific plan.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-002",
+      "lane": "platform",
+      "claim": "Current official Help and developer pages consistently direct advertisers to https://ads.openai.com/. The requested https://ads.chatgpt.com/ returned DisabledError in this research environment and was not the URL named by current public operating docs.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-account-setup",
+        "platform-manager-overview",
+        "platform-new-buying-routes"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Use ads.openai.com as the documented portal route. Treat ads.chatgpt.com behavior as unverified until it can be checked in an ordinary browser without signing in.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-003",
+      "lane": "platform",
+      "claim": "OpenAI documents direct support through its Ads Solutions team, agency partners, technology partners, beta self-service Ads Manager, and an account-scoped Advertiser API. Partner tools can support budgeting, bidding, and creative, while OpenAI controls delivery decisions.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-new-buying-routes",
+        "platform-availability",
+        "platform-advertiser-api-overview"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Choose route by advertiser size and eligibility. Do not assume self-service or API access from market availability alone.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-004",
+      "lane": "platform",
+      "claim": "Account creation requires an OpenAI login, business and account details, advertiser verification, account name and logo, billing profile, payment method, and access roles. Campaigns do not deliver until required setup and review are complete. Country, currency, and time zone can be non-editable after creation.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-account-setup",
+        "platform-identity-access",
+        "platform-billing"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Add a preflight that confirms legal entity, country, currency, time zone, advertiser identity, brand review, payment, and accountable owner before campaign creation.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-005",
+      "lane": "platform",
+      "claim": "OpenAI documents a relevance-weighted, second-price auction. When several ads are eligible, relevance and advertiser bids are factors. Public sources do not disclose the scoring formula, reserve prices, quality thresholds, or tie-breaking rules.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-ads-basics",
+        "platform-consumer-faq"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Model auction mechanics only at the documented level. Do not import Google Ads quality-score formulas or first-price assumptions.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-006",
+      "lane": "platform",
+      "claim": "Current Help documents CPM, CPC, and oCPC. A newer conversion-optimized article also documents oCPM as beta with rapidly expanding access. CPC and oCPC bill valid clicks, CPM and oCPM bill impressions. oCPC and oCPM optimize toward one standard conversion event and do not bill per conversion. The public Advertiser API documents impressions, clicks, and conversions, with conversions meaning oCPC, but does not document oCPM.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-campaigns",
+        "platform-conversion-optimized",
+        "platform-api-campaigns"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Expose oCPM as account-dependent beta in UI guidance and block API creation until official API docs add a supported representation.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-007",
+      "lane": "platform",
+      "claim": "Manual maximum bids are set at ad-group level. OpenAI recommends a starting max CPC of USD 3 to 5 for CPC campaigns, but gives no universal conversion bid recommendation. Maximize results automatically adjusts bids for eligible ad groups and does not guarantee CPA, CPC, ROAS, or other efficiency targets. Custom-audience bid multipliers are documented from 0.1x to 10x for eligible audiences.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-ads-basics",
+        "platform-maximize-results",
+        "platform-api-ad-groups"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Treat bid guidance as a starting point, not a benchmark or forecast. Preserve explicit max-bid and automated-strategy distinctions.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-008",
+      "lane": "platform",
+      "claim": "Ads Manager supports daily average and campaign-total budgets. Daily spend can reach twice the selected daily budget, while billed media spend over the applicable seven-day period cannot exceed seven times that budget, subject to proration after changes. Campaign-total pacing uses the schedule, up to 365 days with an end date and a default 60-day period without one. Pacing does not guarantee full spend or equal daily spend.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-daily-budgets",
+        "platform-budget-pacing",
+        "platform-campaigns"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Show the two-times daily exposure and seven-day cap in budget reviews. Use campaign-total budgets where a hard campaign cap matters most.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-009",
+      "lane": "platform",
+      "claim": "Minimum daily campaign budget varies by billing currency. The current table includes USD 25, EUR 15, GBP 15, and other listed currency values. The API campaign reference separately shows a lifetime budget field minimum of 1,000,000 micros, which is a schema minimum and is not evidence of a generally usable one-unit campaign budget.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-campaigns",
+        "platform-api-campaigns"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Validate against the account currency and current Ads Manager minimum. Do not substitute the API field minimum for the operational minimum.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-010",
+      "lane": "platform",
+      "claim": "The public campaign targeting contract documents location, platform, custom-audience inclusion and exclusion, and ad-group audience bid adjustments. Ad-group context hints guide conversational relevance but are not exact-match keywords, audience rules, or guaranteed placements. No current public source establishes demographic, interest, device-model, schedule/daypart, negative-keyword, or placement-exclusion controls for advertisers.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-api-targeting",
+        "platform-ad-groups",
+        "platform-custom-audiences"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Represent only documented targeting controls. Keep all other conventional ad-platform controls explicitly unsupported.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-011",
+      "lane": "platform",
+      "claim": "Ads Manager supports countries and available states or regions, cities, DMAs, and postal codes. Availability varies by country. The API uses location IDs from geo lookup and defaults to all available locations when location targeting is omitted. Exception: new product-feed campaign location selections are country-level only, with exclusions; saved older subnational selections may remain, but new subnational selections cannot be added.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-campaigns",
+        "platform-api-targeting",
+        "refresh-campaigns-help-20260911"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Resolve location IDs or use the live picker/catalog immediately before launch. Never assume all subnational types exist in every market. Verify product-feed campaign restrictions before offering subnational targets.",
+      "as_of": "2026-09-11"
+    },
+    {
+      "id": "platform-finding-012",
+      "lane": "platform",
+      "claim": "Ads Manager Help documents iOS app, Android app, and Web, with Web covering desktop and mobile web. The Advertiser API changelog added desktop_web, ios_web, and android_web on 2026-09-10, alongside ios_app, android_app, and the broad web value. Omitting platform targeting leaves no platform restriction.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-campaigns",
+        "platform-api-platform-targeting",
+        "platform-advertiser-api-overview"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Prefer current API values for automation and preserve the broad web value for compatibility. Refresh this control weekly during beta.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-013",
+      "lane": "platform",
+      "claim": "Custom audiences accept email, phone, hashed email or phone, and GAID identifiers. Inclusion and bid adjustments require at least 25,000 matched users, with 100,000 recommended. Smaller and empty ready audiences can be used for exclusion. Developer docs say custom audiences are not supported for campaigns targeting the EEA or Switzerland, and broker-sourced data is prohibited by the documented audience guidance.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-custom-audiences",
+        "platform-api-campaigns"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Require rights, notice, consent, regional, and matched-size checks before activation. Preserve exclusion-only eligibility separately.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-014",
+      "lane": "platform",
+      "claim": "Ads can appear below a ChatGPT response, clearly sponsored and visually separate. A response may have one or more ad units, and a unit may include one or more items or multiple advertisers. Ads do not appear in ChatGPT Atlas during the test. OpenAI controls delivery and excludes sensitive and brand-unsafe contexts. Public advertiser docs do not expose a control to choose a precise response position or exact conversation.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-consumer-faq",
+        "platform-ad-policies",
+        "platform-new-buying-routes"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Describe placement as contextual inventory controlled by OpenAI, with platform and policy controls. Do not promise exact queries or adjacencies.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-015",
+      "lane": "platform",
+      "claim": "The Advertiser API names two creative types: chat_card and product_ad_template. A chat card uses title, body, image file, and target URL. Product-feed ads use product data such as image, title, price or sale price, rating, brand, and destination. Current self-service documentation does not establish a general video, audio, lead-form, or advertiser-authored conversational creative format.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-ads-basics",
+        "platform-product-feeds",
+        "platform-api-ads"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Support only chat cards and product-feed templates in current-format guidance. Track future formats as announced, not available.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-016",
+      "lane": "platform",
+      "claim": "Current Help recommends 16 to 24 title characters and 32 to 48 body characters, with maxima of 50 and 100. Bulk-upload guidance requires a square PNG or JPG image, no larger than 1200 by 1200, at a directly accessible public URL. API-created chat cards require an uploaded file ID. Landing pages must be reachable by OAI-AdsBot and pass review.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-launch",
+        "platform-create-ads"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Validate maximums as hard constraints and recommendations as soft checks. Verify both human reachability and OAI-AdsBot access.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-017",
+      "lane": "platform",
+      "claim": "Campaigns use campaign, ad group, and ad hierarchy. Ads Manager supports guided creation, bulk CSV creation and edit, inline edits, export-for-edit, pause, and reporting. The Advertiser API supports account-scoped management of campaigns, ad groups, ads, files, audiences, feeds, conversions, and insights. API keys are created in Ads Manager. API availability and some operations remain account-enabled.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-manager-overview",
+        "platform-launch",
+        "platform-edit",
+        "platform-advertiser-api-overview"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Treat UI, CSV, and API as separate adapters. Mark API controls documented but untested until exercised against an eligible account with explicit authorization.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-018",
+      "lane": "platform",
+      "claim": "The base endpoint is https://api.ads.openai.com/v1. Keys are scoped to one ad account. The documented rate limits are 600 requests per minute per endpoint and 1,200 requests per minute overall, enforced by ad account and IP; bulk job creation has a separate limit. This research made no API request and created no key, so account entitlement, schema responses, and live behavior remain unverified.",
+      "support": "evidence_based",
+      "confidence": "high_for_docs_low_for_account_entitlement",
+      "source_ids": [
+        "platform-advertiser-api-overview",
+        "platform-api-campaigns",
+        "platform-api-ad-groups",
+        "platform-api-ads",
+        "platform-api-insights"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Keep all API capabilities at documented status. Require a separate authorized sandbox or account validation before claiming live support.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-019",
+      "lane": "platform",
+      "claim": "Retailers can import a feed by CSV or TXT, hosted HTTPS URL, or SFTP, filter eligible products at ad-group level, and create one template per ad group. Feed items expire after two weeks, so hosted or automated updates are recommended. During beta, uploaded products are ads-eligible only and do not appear in organic ChatGPT conversations.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-product-feeds",
+        "platform-api-ads"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Require feed freshness monitoring, validation history checks, and a clear boundary between paid inventory and organic commerce visibility.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-020",
+      "lane": "platform",
+      "claim": "Ads Manager reports impressions, clicks, spend, CTR, average CPC, average CPM, and attributed conversions. Views include tables, charts, and daily or cumulative CSV. API insights cover account, campaign, ad group, and ad scopes with hourly, daily, monthly, or total buckets and product, country, device, or platform segments. Reporting can lag, especially conversions.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-results",
+        "platform-api-insights"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Treat missing or zero recent values as potentially delayed. Preserve reporting timezone and attribution definitions in every analysis.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-021",
+      "lane": "platform",
+      "claim": "ChatGPT Ads uses postpay billing. The card is charged at an assigned unpaid-spend threshold or at month end. A threshold is neither a campaign budget nor an account spend cap. Delivery updates can take time, and billable delivery may continue for up to 24 hours after a pause, while final reporting can change later without exceeding the applicable budget.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-billing"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Separate payment threshold, account spending limit, campaign budget, and reported spend in every control model. Allow for pause and reporting latency.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "platform-finding-022",
+      "lane": "platform",
+      "claim": "OpenAI's current advertiser FAQ states that the platform does not yet have cross-advertiser, industry, or campaign-type performance benchmarks. Public case-study anecdotes do not establish planning benchmarks.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "platform-manager-overview"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Do not publish universal CTR, CPC, CPM, conversion-rate, or ROAS benchmarks for ChatGPT Ads. Use account data only when supplied and qualified.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-reporting-metrics",
+      "lane": "measurement",
+      "claim": "Ads Manager reports impressions, clicks, spend, CTR, average CPC, average CPM, and attributed conversions at campaign, ad-group, and ad level. `order_created` events alone feed Order Created Sales and Order Created ROAS. CSV supports cumulative and daily exports; charts are limited to impressions, clicks, and spend. The aggregate Conversions column combines configured events. Add event-specific columns before exporting to avoid treating unlike actions as one business outcome. Ads Manager may take 24 to 48 hours to reflect attributed conversions.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-measure-results-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Set a primary business event, export daily and cumulative data at a fixed time zone, and preserve event-level columns and spend for reconciliation. Compute CPA as spend divided by click-through conversions, and ROAS as Order Created Sales divided by spend only when `order_created` value data is complete.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-pixel-capi",
+      "lane": "measurement",
+      "claim": "OpenAI supports a browser Measurement Pixel, a server-to-server Conversions API, or both. The API documentation calls CAPI more reliable than pixel-only tracking. Pixel plus CAPI require the same event ID for one conversion so OpenAI can deduplicate. The browser Pixel measures website events; CAPI receives server-originated events only. CAPI has a validation-only mode and accepts batches of up to 1,000 events, but one invalid event fails the full batch. The conversion-setup API documents a recent browser-event stream for enabled accounts. It is a receipt diagnostic, not attributed-conversion reporting.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-conversion-20260910",
+        "measurement-openai-pixel-20260910",
+        "measurement-openai-capi-20260910",
+        "measurement-openai-conversion-setup-api-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Use browser Pixel for user-side journey events and CAPI for authoritative server-side outcomes. Create a durable unique event ID at conversion creation, send that ID in both paths, use validation-only before production transmission, and monitor accepted events before interpreting performance.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-attribution-and-matching",
+      "lane": "measurement",
+      "claim": "A reported conversion requires a connected data-source event, a configured matching standard or custom event, occurrence inside the applicable click window, and connection to an eligible click using available signals. `oppref` is appended to landing-page URLs, retained by the Pixel in a first-party cookie, and may be passed unchanged in CAPI. OpenAI may include modeled measurement where available. Advanced matching can use eligible normalized SHA-256 hashed first-party identifiers. Automatic advanced matching is documented for web pixels. The current conversion-setup API documents `attribution_window_days` as required and says to use 30 when defining an event setting. Modeled attribution means an Ads Manager total need not equal a directly observed click-ID match.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-conversion-20260910",
+        "measurement-openai-pixel-20260910",
+        "measurement-openai-capi-20260910",
+        "measurement-openai-conversion-setup-api-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Preserve `oppref` through redirects and client navigation, pass it to server events when available, and document whether reporting includes modeled conversions. Reconcile against internal event logs by event ID and timestamp, rather than expecting equality with web-analytics sessions.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-vta-definition",
+      "lane": "measurement",
+      "claim": "View-through conversions are supplemental and separate from the main Conversions total. An eligible conversion within one day of an impression qualifies only when no qualifying click receives credit. Clicks take precedence. The fixed one-day view window cannot be configured. VTA (1d) can be added as a column and included in CSV exports. The report/API documentation says VTA must not be added to Conversions or used for core CPA, post-click CVR, bidding, billing, or optimization calculations.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-measure-results-20260910",
+        "measurement-openai-pixel-20260910",
+        "measurement-openai-insights-api-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Report click-through CPA/ROAS as the decision metric and show VTA (1d) in a separate diagnostic column. Never combine the two into a blended CPA without an explicitly stated alternative model.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-events-and-values",
+      "lane": "measurement",
+      "claim": "Supported standard events include page/content views, cart and checkout activity, lead, registration, appointment, order, subscription, and trial events. App installs and app opens are CAPI-only with `mobile_app` action source. CAPI documents action sources including web, offline, physical store, phone call, email, and other. Use a standard event when it accurately describes the action. A custom event requires an exact custom name match in campaign configuration. For CAPI, event timestamp must be no older than seven days and no more than ten minutes ahead at submission.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-events-20260910",
+        "measurement-openai-capi-20260910",
+        "measurement-openai-measure-results-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Make `order_created` the purchase event if sales/ROAS columns are required. Map lead stages and offline outcomes distinctly, retain transaction IDs in internal systems, and configure only exact event names used by the implementation.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-exports-api",
+      "lane": "measurement",
+      "claim": "Ads Manager exports daily or cumulative CSVs. The Ads API provides aggregate delivery-insights endpoints at account, campaign, ad-group, and ad scope, plus `POST /conversions/insights` for attributed conversion totals. Documented insights segments include product, country, device, and platform, subject to enabled account capability. API `conversions` equals `click_through_conversions`; VTA is separately returned when available. No claim is made here that all accounts have API access or every segment enabled.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-measure-results-20260910",
+        "measurement-openai-insights-api-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Start with versioned CSV exports if API access is absent. If API access is enabled, retrieve delivery and conversion insights separately, record requested window, time granularity, segment, and query timestamp, then retain immutable raw responses.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-partner-coverage",
+      "lane": "measurement",
+      "claim": "OpenAI documents integrations with Fospha, Hightouch, LiveRamp, Triple Whale and WorkMagic, with capabilities varying by partner. AppsFlyer and Adjust have separate mobile setup documentation. Do not infer that every listed partner supports web, app and offline activity. Partner functionality varies and must be confirmed in the partner documentation. No partner is evidence by itself of causal incrementality.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-partners-20260910",
+        "measurement-openai-mobile-partners-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Choose a partner only where its existing identity, event, or offline-conversion data closes a defined measurement gap. Keep a parallel first-party event ledger and test a new eligible click after mapping, then allow the documented 24 to 48 hours before judging reporting.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-optimization-objectives",
+      "lane": "measurement",
+      "claim": "Conversion optimization requires tracking and one supported standard event. Each campaign selects one event. oCPC bills valid clicks and is described as optimizing click-following conversions. oCPM bills impressions and is described as optimizing toward conversions using a broader eligible signal set, including actions after clicks and views. Custom events are not currently supported for these campaigns. Objective, billing model, and selected conversion event cannot be changed after creation, so a changed measurement definition requires a new campaign. OpenAI gives no recommended bid amount for conversion-optimized campaigns.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-ocpm-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Pre-register the optimization event, economic target, primary click-through KPI, and decision window before launch. Treat oCPM view-based optimization behavior as an account-specific feature to validate with support or an observed test because it is not fully reconciled with the general VTA reporting language.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "measurement-benchmarks-evidence-quality",
+      "lane": "measurement",
+      "claim": "No independent controlled causal study of ChatGPT Ads performance was found in this research pass. OpenAI reports an unnamed ecommerce advertiser at 3x ROAS over 28 days and a technology-partner report that more than 80% of ad-driven traffic was new customers, without sample, baseline, attribution rule, spend, or experimental method. Flowboost, a vendor, reports relative results across three client accounts after two months and explicitly says its apparent incremental conversions are not statistically proven without a controlled test. These are publisher or vendor claims, not transferable benchmarks. OpenAI's reported 3x ROAS is an attributed outcome claim, not proof of incremental revenue.",
+      "support": "practitioner",
+      "confidence": "high",
+      "source_ids": [
+        "measurement-openai-platform-claim-20260910",
+        "measurement-flowboost-case-20260910"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Do not use published ROAS, CPC, CPA, conversion-rate, or new-customer figures for planning assumptions. Run a pre-specified holdout, matched-market, or randomized audience experiment and use first-party orders, qualified pipeline, or retained revenue as the causal outcome.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-eligibility",
+      "lane": "policy",
+      "claim": "Early access focuses on household and consumer goods, local services, travel and entertainment, and digital products and education. Other categories are disallowed at launch unless specifically allowed. Financial, health, and legal services may be approved case-by-case in the US only, subject to category rules and possible credential proof.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-ads-policy"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Classify the full business and every destination offer before build. For a regulated offer, obtain US-market eligibility and required credentials before spending or creative production.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-sensitive-categories",
+      "lane": "policy",
+      "claim": "Disallowed or tightly restricted areas include adult or dating content, alcohol, tobacco and nicotine, gambling, political advocacy, recreational drugs, individual jobs or housing listings, counterfeit goods, scams, unsupported health or wellness claims, graphic sexual or violent content, and exploitation of sensitive issues or events. Ads must comply with OpenAI Usage Policies as well.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-ads-policy"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Screen both visible assets and downstream flows. Do not assume an otherwise permitted product can link into an excluded product, category, or claim.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-creative-landing-page",
+      "lane": "policy",
+      "claim": "Titles, copy, media, and destinations are reviewed together. Claims about capabilities, price, outcomes, affiliations, endorsements, and comparisons must be substantiated and non-deceptive. Creative cannot be offensive, discriminatory, or imitate ChatGPT/OpenAI in a way that suggests product affiliation. The landing page must match the advertiser and offer, be a valid direct destination, and remain reachable for review.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-ads-policy",
+        "policy-src-create-ads"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Run a claim-to-proof review, confirm offer and price parity, document authorization for all brand assets, and keep the page specific to the ad rather than a generic homepage.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-landing-crawlability",
+      "lane": "policy",
+      "claim": "OAI-AdsBot is required for landing-page validation. robots.txt, WAF/CDN, CAPTCHA, JavaScript challenges, logins, geo restrictions, unsupported redirects, and rate limiting can block evaluation. Pages that cannot be reviewed are ineligible to run.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-crawlers",
+        "policy-src-ads-policy"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Before submission, validate a successful public response and robots permission for OAI-AdsBot; remove review-path blocks, then resubmit if status does not recover.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-review-enforcement",
+      "lane": "policy",
+      "claim": "OpenAI evaluates advertiser legitimacy/risk, creative and landing page compliance, then placement. Automated systems with human oversight are used; some risk decisions escalate to people. Post-approval monitoring can limit delivery, require remediation, remove an ad, restrict access, or suspend/terminate for severe, repeated, or deceptive violations.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-ads-policy",
+        "policy-src-ads-faq"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Treat approval as provisional. Preserve final creative and landing-page snapshots, review delivery status and policy changes weekly, and remediate rejected or changed destinations before resubmission.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-minors",
+      "lane": "policy",
+      "claim": "OpenAI says it does not show ads to accounts identified as under 18, using account-level age information and age prediction where available. Logged-out ads are appropriate for all audiences; mature ads are limited to eligible logged-in users.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-user-faq"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Do not rely on platform age controls to make an unsuitable offer appropriate. Keep advertiser creative and the landing page suitable for the targeted market and obtain legal advice where a campaign is child-directed or age-regulated.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-user-controls-privacy",
+      "lane": "policy",
+      "claim": "Advertisers receive aggregated, non-identifying reporting, including eligible conversion reporting, and do not receive private chats, history or memories. Users can turn off ad personalization and clear data used for ads. The current source review did not establish a specific ad-data deletion completion time or a separate past-chat toggle.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-user-faq",
+        "policy-src-privacy"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Do not promise advertiser-level conversation targeting or access. Describe audience relevance as OpenAI-run matching, use only the reporting actually available in the account, and review OpenAI's current privacy notice before making public privacy assertions.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-placement",
+      "lane": "policy",
+      "claim": "OpenAI excludes ads from unsafe or sensitive contexts, including child safety, fraud, self-harm, privacy, political content, regulated goods, emotionally reliant interactions, mental health, and personal health. Ads are below responses and labeled sponsored, separate from model responses. Temporary Chats do not show ads.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-ads-policy",
+        "policy-src-user-faq"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Do not create a plan that depends on appearing beside sensitive personal journeys. Treat the placement filter as a safety safeguard, not a targeting guarantee.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-billing-safety",
+      "lane": "policy",
+      "claim": "Billing is postpay. A daily budget is an average over seven days, not a same-day cap, and a day can bill up to twice the daily budget while seven-day media spend stays within seven times that budget. Campaign-total budget is the campaign maximum. Payment threshold determines charge timing, is not an account spend cap, and cannot be manually changed. Pausing can still yield billable delivery for up to 24 hours.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-billing"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Use campaign-total budgets for hard campaign ceilings, do not equate payment threshold with spend control, retain a pause buffer, and confirm the billing entity, country, currency, payment method, and tax data before activation.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "policy-beta-availability",
+      "lane": "policy",
+      "claim": "ChatGPT Ads and Ads Manager are beta services. Country availability, inventory, formats, delivery, buying, measurement, optimization, and performance benchmarks remain changeable. The public FAQ says no cross-advertiser benchmark exists yet.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "policy-src-ads-faq",
+        "policy-src-user-faq"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Verify Ads Manager availability for the actual advertiser country and validate account-visible controls before promising targeting, billing, reporting, or performance outcomes.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "terms-advertising-terms",
+      "lane": "terms",
+      "claim": "Advertising intermediaries need documented authority and advertiser vetting. Advertisers remain responsible for campaign settings and generated outputs. Terms mention approved APIs but do not establish public API access. Cancellation may take one business day; incurred fees remain payable.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "terms-src-advertising-terms"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Confirm contracting entity, intermediary authority, applicable terms and cancellation buffer before launch.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "terms-ad-tools-terms",
+      "lane": "terms",
+      "claim": "Terms govern conversion tools, first-party audience tools, generated creatives and sponsored agents where made available. Audience data must not originate from brokers. Generated creatives remain advertiser responsibility; terms do not guarantee feature availability.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "terms-src-ad-tools-terms"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Verify enabled tools and advertiser consent before drafting tool-specific workflows; do not interpret contractual definitions as a rollout announcement.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "terms-ad-tools-dpa",
+      "lane": "terms",
+      "claim": "The DPA generally defines independent controllers, with processor treatment for specified Restricted Processing. It prohibits sensitive data in event or audience names and requires honoring relevant opt-outs. International transfer provisions differ by jurisdiction.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "terms-src-ad-tools-dpa"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Map data purpose, jurisdiction, notices, authority and opt-out behavior before technical event design; use qualified review for the applicable obligations.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "terms-conversion-terms",
+      "lane": "terms",
+      "claim": "Conversion data needs the required notices, permissions and legal basis. Reporting use and sharing are restricted; identifying people or commercially redistributing reporting is restricted. Reporting is defined as confidential.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "terms-src-conversion-terms"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Keep private performance reports outside the distributable brain and verify permitted sharing before a case study or client export.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "terms-ad-credit-terms",
+      "lane": "terms",
+      "claim": "Promotional credits are offer-specific, apply only to eligible fees, and do not satisfy spend requirements. Uncovered fees remain payable. Credits may be revoked under the terms.",
+      "support": "evidence_based",
+      "confidence": "high",
+      "source_ids": [
+        "terms-src-ad-credit-terms"
+      ],
+      "availability": "documented_not_account_verified",
+      "recommendation": "Do not model promotional credit as cash or a budget cap; inspect the actual offer before using it in a plan.",
+      "as_of": "2026-09-10"
+    },
+    {
+      "id": "refresh-vta-scope-20260910",
+      "lane": "measurement",
+      "claim": "Displayed VTA (1d) is supplemental reporting, separate from main click-through Conversions, and must not be used to change native CPA, post-click CVR, bidding, billing or conversion optimization. oCPM documentation separately describes broader eligible click and view signals; this does not establish the displayed VTA metric as an optimization input.",
+      "recommendation": "Keep VTA reporting separate; do not calculate a blended native CPA.",
+      "as_of": "2026-09-10",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "measurement-openai-ocpm-20260910",
+        "measurement-openai-measure-results-20260910",
+        "measurement-openai-insights-api-20260910"
+      ],
+      "evidence_locators": {
+        "measurement-openai-ocpm-20260910": "Title; Before you start; Choose impression billing or click billing; FAQ",
+        "measurement-openai-measure-results-20260910": "Metrics; View-through conversion reporting; CSV download; Measurement and reporting FAQ",
+        "measurement-openai-insights-api-20260910": "Conversion insights, lines 829-867 in retrieved document"
+      }
+    },
+    {
+      "id": "refresh-catalog-api-boundary-20260910",
+      "lane": "platform",
+      "claim": "The public product-feed API documentation does not provide feed-connection creation, feed-connection listing or catalog-file upload. Ads Manager documents CSV/TXT, hosted HTTPS URL and SFTP intake.",
+      "recommendation": "Use account-observed Ads Manager onboarding for feeds; do not invent API catalog upload.",
+      "as_of": "2026-09-10",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "refresh-product-feeds-20260910",
+        "platform-product-feeds"
+      ],
+      "evidence_locators": {
+        "refresh-product-feeds-20260910": "Product Feeds, workflow and setup, lines 815-862 in retrieved document",
+        "platform-product-feeds": "Create product feed and Import Products, lines 30-59 in retrieved document"
+      }
+    },
+    {
+      "id": "refresh-audience-region-data-20260910",
+      "lane": "policy",
+      "claim": "The custom-audience API documentation excludes EEA and Switzerland campaigns and requires first-party data with necessary rights and legal bases. Broker-sourced data is prohibited.",
+      "recommendation": "Verify geography and lawful first-party data before any audience proposal.",
+      "as_of": "2026-09-10",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "refresh-custom-audiences-20260910",
+        "terms-src-ad-tools-terms"
+      ],
+      "evidence_locators": {
+        "refresh-custom-audiences-20260910": "Eligibility and data use, lines 820-824 in retrieved document",
+        "terms-src-ad-tools-terms": "Published August 24, 2026; Audience Data, sections 2.1-2.5; Definitions"
+      }
+    },
+    {
+      "id": "refresh-audience-retention-scope-20260910",
+      "lane": "policy",
+      "claim": "The audience Help page describes deletion of processed uploaded audience files, usually within 24 hours. This is not a retention promise for all conversion data, user ad data or advertising records.",
+      "recommendation": "Apply retention statements only to their named data class.",
+      "as_of": "2026-09-10",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "platform-custom-audiences"
+      ],
+      "evidence_locators": {
+        "platform-custom-audiences": "Audience eligibility, file preparation, campaign use, and file retention, lines 21-108 in retrieved document"
+      }
+    },
+    {
+      "id": "refresh-native-export-gap-20260910",
+      "lane": "measurement",
+      "claim": "Official documentation establishes daily and cumulative Ads Manager CSV exports and separately reports VTA where available. No native CSV sample was inspected in this refresh.",
+      "recommendation": "Keep native mapping disabled until a real sanitized fixture and exact source-field interpretation are reviewed.",
+      "as_of": "2026-09-10",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "measurement-openai-measure-results-20260910",
+        "measurement-openai-insights-api-20260910"
+      ],
+      "evidence_locators": {
+        "measurement-openai-measure-results-20260910": "Metrics; View-through conversion reporting; CSV download; Measurement and reporting FAQ",
+        "measurement-openai-insights-api-20260910": "Conversion insights, lines 829-867 in retrieved document"
+      }
+    },
+    {
+      "id": "refresh-url-parameters-precedence-20260911",
+      "lane": "measurement",
+      "claim": "Current Ads Manager Help lists four configurable URL macros: campaign_id, ad_group_id, ad_id, and ad_account_id. It documents precedence from the most specific setting to the broadest: an existing parameter in the Ad URL wins, followed by Ad, Ad Group, and Campaign settings. Separately, OpenAI describes oppref as a click reference appended to landing-page URLs and preserved for Pixel or CAPI attribution. The public documentation reviewed does not list oppref as a user-configurable URL macro.",
+      "recommendation": "Preserve existing landing-page parameters, apply the documented precedence order, and preserve oppref through redirects and navigation without assuming that a visible oppref token is a configurable macro in every account.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "refresh-measure-results-20260911",
+        "refresh-conversion-measurement-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-measure-results-20260911": "Measurement and reporting FAQ, Can I add dynamic URL parameters, lines 125-130 in the retrieved page",
+        "refresh-conversion-measurement-20260911": "How conversions are measured and OpenAI click reference sections"
+      }
+    },
+    {
+      "id": "refresh-products-reporting-semantics-20260911",
+      "lane": "measurement",
+      "claim": "For product-feed campaigns, the Products tab is an insights-backed reporting view rather than a complete uploaded-feed inventory. A product appears after an active campaign has delivered and reporting data is available. The product count shown during ad-group setup is the documented check for products that pass the selected filters and are ready to serve. Product reporting can take up to seven hours after delivery to appear.",
+      "recommendation": "Do not diagnose feed ingestion from an empty Products tab alone. Check upload history and the ad-group product count first, then allow for reporting lag after delivery.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "refresh-product-feeds-help-20260911",
+        "refresh-measure-results-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-product-feeds-help-20260911": "Understanding the Products tab",
+        "refresh-measure-results-20260911": "Table view, Product reporting, lines 68-77 in the retrieved page"
+      }
+    },
+    {
+      "id": "refresh-manual-bid-label-boundary-20260911",
+      "lane": "platform",
+      "claim": "Help names Manual: Max bid as an alternative to Maximize results. Conversion-optimized Campaigns explicitly documents Bid Cap as a maximum conversion-oriented bid. For oCPC, the API max_bid_micros is a CPA bid while billing remains per valid click. Bid Cap is not a conversion charge or guaranteed achieved CPA. Exact available controls still require account verification.",
+      "recommendation": "Preserve the strategy name, economic unit, and billing event separately. Confirm the account-visible label before writing UI-specific instructions.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_account_verified",
+      "source_ids": [
+        "refresh-maximize-results-help-20260911",
+        "refresh-ad-groups-api-20260911",
+        "refresh-conversion-controls-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-maximize-results-help-20260911": "How To Set Up Maximize Results, step 4",
+        "refresh-ad-groups-api-20260911": "Create an ad group and field notes, lines 881-913 in the retrieved page",
+        "refresh-conversion-controls-20260911": "Section 5 Create ad groups and set bid controls; FAQ How does my Bid Cap affect what I pay?"
+      }
+    },
+    {
+      "id": "refresh-chatgpt-account-setup-scope-20260911",
+      "lane": "platform",
+      "claim": "Eligible business advertisers can begin self-serve Ads Manager account setup through ChatGPT Ads Manager and work with supported campaigns, ad groups, ads, and performance insights. Available actions and workspace access may vary. Eligibility and access depend on the advertiser business or ad-account country selected during setup; the country of the ChatGPT login or account registration does not override it. Remaining billing, tax, payment, and identity-verification steps may still require Ads Manager.",
+      "recommendation": "Verify the advertiser entity, account country, organization permission, currency, timezone, and remaining setup gates before treating ChatGPT account setup as delivery readiness.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_account_dependent",
+      "source_ids": [
+        "refresh-account-setup-help-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-account-setup-help-20260911": "Use ChatGPT Ads Manager in ChatGPT; Before you create an advertiser account; Set up an account from ChatGPT"
+      }
+    },
+    {
+      "id": "refresh-pixel-gtm-boundary-20260911",
+      "lane": "measurement",
+      "claim": "OpenAI documents deployment of the browser Pixel through Google Tag Manager when the tag manager loads the Pixel on the correct pages and does not block or reorder initialization and event calls. The same guidance recommends direct installation or appropriate server-side measurement if the tag manager prevents reliable loading.",
+      "recommendation": "Treat GTM support as conditional on observed load order and event delivery. Validate the Pixel ID and debug behavior before relying on conversions.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_not_implementation_verified",
+      "source_ids": [
+        "refresh-measure-results-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-measure-results-20260911": "Measurement and reporting FAQ, Can I deploy the Pixel through Google Tag Manager, lines 113-121 in the retrieved page"
+      }
+    },
+    {
+      "id": "refresh-location-catalog-surface-boundary-20260911",
+      "lane": "platform",
+      "claim": "Ads Manager Help documents campaign-level country targeting and, in the United States, supported state, DMA, and ZIP-code targeting. Its FAQ also describes states or regions, cities, DMAs, and postal codes where available, with availability varying by country. New product-feed campaigns are an explicit exception: they support country-level geographic targeting and exclusions only; existing product-feed campaigns may retain saved subnational settings but cannot add new subnational locations. The public API location guide documents country, region, and Market IDs through geo_lookup search and links a current downloadable location catalog CSV; it does not document a postal-code API type in the reviewed page.",
+      "recommendation": "Resolve target locations against campaign type, the current account picker or geo lookup, and the current catalog. Do not apply general subnational targeting to new product-feed campaigns or assume a Help-only location type exists in the API.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_account_and_country_dependent",
+      "source_ids": [
+        "refresh-campaigns-help-20260911",
+        "refresh-location-targeting-api-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-campaigns-help-20260911": "Choosing countries to target, including the product-feed exception at lines 61-66; Campaign setup FAQ, Can I target a state, city, DMA, or postal code, lines 92-94",
+        "refresh-location-targeting-api-20260911": "Available locations and Campaign creation, lines 843-878 in the retrieved page"
+      }
+    },
+    {
+      "id": "refresh-account-spend-controls-20260911",
+      "lane": "policy",
+      "claim": "For ad accounts on postpaid invoice billing, the Advertiser API documents account-wide date-range and daily spending limits shared across campaigns. These limits use the account currency and timezone, do not allocate or pace campaign spend, and apply to billable ad spend rather than taxes or the total invoice. Delivery can take time to stop. The list response distinguishes date-range limits from the daily limit and uses null for unavailable spend counters; null or omission is not zero. All reads and writes in this API section require permission to manage billing.",
+      "recommendation": "Read and reconcile the current limit configuration before proposing a change. Preserve campaign budgets as separate controls, model stopping delay, and never treat a missing spend counter as zero.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_postpaid_invoice_and_permission_dependent",
+      "source_ids": [
+        "refresh-ad-account-api-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-ad-account-api-20260911": "Account spending limits and List account spending limits, lines 896-933 in the retrieved page"
+      }
+    },
+    {
+      "id": "refresh-ai-creative-controls-20260911",
+      "lane": "policy",
+      "claim": "OpenAI's Ad Tools Terms permit optional AI Creative Tools to generate, modify, optimize, localize, translate, select, assemble, or otherwise adapt advertising creative, including contextual tailoring. Depending on campaign settings, generated creative may be offered for review or applied automatically. Advertisers can manage or disable the tools in applicable Ads Manager controls and remain responsible for campaign settings, accuracy, substantiation, rights, and required disclosures. The public terms do not establish that text personalization is enabled by default in any particular account.",
+      "recommendation": "Record the actual account setting and approved automation scope during plan review. Bind allowed transformations to approved claims and do not infer a default state from the existence of the feature.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based",
+      "confidence": "high",
+      "availability": "documented_optional_account_dependent",
+      "source_ids": [
+        "refresh-ad-tools-terms-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-ad-tools-terms-20260911": "Published August 24, 2026; section 3.1 Generated Creatives, lines 34-36; section 3.2 Advertiser Materials and Responsibilities"
+      }
+    },
+    {
+      "id": "refresh-report-window-semantics-20260911",
+      "lane": "measurement",
+      "claim": "Official documentation distinguishes three separate concepts: the reporting date range that selects the period being aggregated, the API time_ranges and time_granularity that bound and bucket insights, and the configured click attribution window used to determine conversion credit. The conversion-setup API currently requires attribution_window_days and instructs callers to use 30. The reviewed public documentation does not define account-visible 7-day, 14-day, or 30-day report-column labels as mutations of the conversion event setting, and it does not document a conversion-time column basis.",
+      "recommendation": "Preserve report date range, row grain, timezone, configured attribution window, and conversion-time basis as separate fields. Treat unfamiliar UI column labels as account observations until a native export or current official definition establishes their semantics.",
+      "as_of": "2026-09-11",
+      "support": "evidence_based_with_explicit_gap",
+      "confidence": "high",
+      "availability": "documented_boundary_native_semantics_unverified",
+      "source_ids": [
+        "refresh-measure-results-20260911",
+        "refresh-insights-api-20260911",
+        "refresh-conversion-setup-api-20260911",
+        "refresh-conversion-measurement-20260911"
+      ],
+      "evidence_locators": {
+        "refresh-measure-results-20260911": "How conversions appear in reporting; CSV download; Insights charts, lines 35-52 and 78-96 in the retrieved page",
+        "refresh-insights-api-20260911": "Conversion insights and request parameters, lines 855-859 and 885-920 in the retrieved page",
+        "refresh-conversion-setup-api-20260911": "Create an event setting, attribution_window_days, lines 923-953 in the retrieved page",
+        "refresh-conversion-measurement-20260911": "How conversions are measured; Why OpenAI and third-party analytics may differ"
+      }
+    }
+  ]
+}

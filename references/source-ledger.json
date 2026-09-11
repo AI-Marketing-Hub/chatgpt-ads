@@ -1,0 +1,1646 @@
+{
+  "version": 1,
+  "status": "researched",
+  "as_of": "2026-09-10",
+  "sources": [
+    {
+      "id": "platform-availability",
+      "url": "https://help.openai.com/en/articles/20001245-ads-manager-availability",
+      "title": "Ads Manager Availability",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-001",
+        "platform-finding-003"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-001",
+        "platform-finding-003"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-account-setup",
+      "url": "https://help.openai.com/en/articles/20001213-ads-manager-beta-account-setup",
+      "title": "Ads Manager Beta Account Setup",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-002",
+        "platform-finding-004"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-002",
+        "platform-finding-004"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-manager-overview",
+      "url": "https://help.openai.com/en/articles/20001206-ads-manager-beta-overview",
+      "title": "Ads Manager Beta Overview",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-001",
+        "platform-finding-002",
+        "platform-finding-017",
+        "platform-finding-022"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-001",
+        "platform-finding-002",
+        "platform-finding-017",
+        "platform-finding-022"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-ads-basics",
+      "url": "https://help.openai.com/en/articles/20001207-ads-in-chatgpt-the-basics",
+      "title": "Ads in ChatGPT: The Basics",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-005",
+        "platform-finding-007",
+        "platform-finding-015"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-005",
+        "platform-finding-007",
+        "platform-finding-015"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-consumer-faq",
+      "url": "https://help.openai.com/en/articles/20001047-ads-in-chatgpt",
+      "title": "Ads in ChatGPT",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-005",
+        "platform-finding-014"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-005",
+        "platform-finding-014"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-campaigns",
+      "url": "https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads",
+      "title": "Create Campaigns for ChatGPT Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-006",
+        "platform-finding-008",
+        "platform-finding-009",
+        "platform-finding-011",
+        "platform-finding-012"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-006",
+        "platform-finding-008",
+        "platform-finding-009",
+        "platform-finding-011",
+        "platform-finding-012"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-ad-groups",
+      "url": "https://help.openai.com/en/articles/20001211-create-ad-groups-for-chatgpt-ads",
+      "title": "Create Ad Groups for ChatGPT Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-010"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-010"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-create-ads",
+      "url": "https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt-ads",
+      "title": "Create Ads for ChatGPT Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-016"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-016"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-conversion-optimized",
+      "url": "https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns",
+      "title": "Conversion-optimized Campaigns",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-006"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-006"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-daily-budgets",
+      "url": "https://help.openai.com/en/articles/20001413-daily-budgets",
+      "title": "Daily Budgets",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-008"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-008"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-budget-pacing",
+      "url": "https://help.openai.com/en/articles/20001515-budget-pacing",
+      "title": "Budget Pacing",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-008"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-008"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-maximize-results",
+      "url": "https://help.openai.com/en/articles/20001425-maximize-results-bid-strategy",
+      "title": "Maximize Results Bid Strategy",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-007"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-007"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-product-feeds",
+      "url": "https://help.openai.com/en/articles/20001268-create-campaigns-from-product-feeds",
+      "title": "Create Campaigns from Product Feeds",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-015",
+        "platform-finding-019",
+        "refresh-catalog-api-boundary-20260910"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-015",
+        "platform-finding-019",
+        "refresh-catalog-api-boundary-20260910"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-custom-audiences",
+      "url": "https://help.openai.com/en/articles/20001346-set-up-custom-audiences-for-your-campaign",
+      "title": "Set up Custom Audiences for your Campaign",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-010",
+        "platform-finding-013",
+        "refresh-audience-retention-scope-20260910"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-010",
+        "platform-finding-013",
+        "refresh-audience-retention-scope-20260910"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-launch",
+      "url": "https://help.openai.com/en/articles/20001209-launch-campaigns",
+      "title": "Launch Campaigns",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-016",
+        "platform-finding-017"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-016",
+        "platform-finding-017"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-edit",
+      "url": "https://help.openai.com/en/articles/20001215-edit-campaigns",
+      "title": "Edit Campaigns",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-017"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-017"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-results",
+      "url": "https://help.openai.com/en/articles/20001214-measure-results",
+      "title": "Measure Results",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-020"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-020"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-billing",
+      "url": "https://help.openai.com/en/articles/20001216-billing-payment",
+      "title": "Billing & Payment",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-004",
+        "platform-finding-021"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-004",
+        "platform-finding-021"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-identity-access",
+      "url": "https://help.openai.com/en/articles/20001273-managing-identity-and-access-for-ads-manager",
+      "title": "Managing identity and access for Ads Manager",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-004"
+      ],
+      "original_source_type": "official-help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-004"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-new-buying-routes",
+      "url": "https://openai.com/index/new-ways-to-buy-chatgpt-ads/",
+      "title": "New ways to buy ChatGPT ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-002",
+        "platform-finding-003",
+        "platform-finding-014"
+      ],
+      "original_source_type": "official-announcement",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-002",
+        "platform-finding-003",
+        "platform-finding-014"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-global-expansion",
+      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/",
+      "title": "A milestone in expanding access to AI",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-24",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-001"
+      ],
+      "original_source_type": "official-announcement",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-001"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-ad-policies",
+      "url": "https://openai.com/policies/ad-policies/",
+      "title": "Ad policies",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-014"
+      ],
+      "original_source_type": "official-policy",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-014"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-advertiser-api-overview",
+      "url": "https://developers.openai.com/ads/api-overview",
+      "title": "Overview - Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-003",
+        "platform-finding-012",
+        "platform-finding-017",
+        "platform-finding-018"
+      ],
+      "original_source_type": "official-developer-doc",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-003",
+        "platform-finding-012",
+        "platform-finding-017",
+        "platform-finding-018"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-api-campaigns",
+      "url": "https://developers.openai.com/ads/api-reference/campaigns",
+      "title": "Campaigns - Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-006",
+        "platform-finding-009",
+        "platform-finding-013",
+        "platform-finding-018"
+      ],
+      "original_source_type": "official-api-reference",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-006",
+        "platform-finding-009",
+        "platform-finding-013",
+        "platform-finding-018"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-api-ad-groups",
+      "url": "https://developers.openai.com/ads/api-reference/ad-groups",
+      "title": "Ad Groups - Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-007",
+        "platform-finding-018"
+      ],
+      "original_source_type": "official-api-reference",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-007",
+        "platform-finding-018"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-api-ads",
+      "url": "https://developers.openai.com/ads/api-reference/ads",
+      "title": "Ads - OpenAI Developers",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-015",
+        "platform-finding-018",
+        "platform-finding-019"
+      ],
+      "original_source_type": "official-api-reference",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-015",
+        "platform-finding-018",
+        "platform-finding-019"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-api-targeting",
+      "url": "https://developers.openai.com/ads/campaign-targeting",
+      "title": "Campaign Targeting - Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-010",
+        "platform-finding-011"
+      ],
+      "original_source_type": "official-developer-doc",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-010",
+        "platform-finding-011"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-api-platform-targeting",
+      "url": "https://developers.openai.com/ads/platform-targeting",
+      "title": "Platform Targeting - Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-012"
+      ],
+      "original_source_type": "official-developer-doc",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-012"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "platform-api-insights",
+      "url": "https://developers.openai.com/ads/api-reference/insights",
+      "title": "Insights - Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-10-10",
+      "source_type": "official",
+      "supports_claims": [
+        "platform-finding-018",
+        "platform-finding-020"
+      ],
+      "original_source_type": "official-api-reference",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "platform-finding-018",
+        "platform-finding-020"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/platform.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-measure-results-20260910",
+      "url": "https://help.openai.com/en/articles/20001214-measure-results",
+      "title": "Measure Results",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-reporting-metrics",
+        "measurement-vta-definition",
+        "measurement-events-and-values",
+        "measurement-exports-api",
+        "refresh-vta-scope-20260910",
+        "refresh-native-export-gap-20260910"
+      ],
+      "original_source_type": "official_openai_help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-reporting-metrics",
+        "measurement-vta-definition",
+        "measurement-events-and-values",
+        "measurement-exports-api",
+        "refresh-vta-scope-20260910",
+        "refresh-native-export-gap-20260910"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-conversion-20260910",
+      "url": "https://help.openai.com/en/articles/20001409-conversion-measurement",
+      "title": "Conversion Measurement",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching"
+      ],
+      "original_source_type": "official_openai_help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-pixel-20260910",
+      "url": "https://developers.openai.com/ads/measurement-pixel",
+      "title": "Measurement Pixel",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching",
+        "measurement-vta-definition"
+      ],
+      "original_source_type": "official_openai_developer_documentation",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching",
+        "measurement-vta-definition"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-capi-20260910",
+      "url": "https://developers.openai.com/ads/conversions-api",
+      "title": "Conversions API",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching",
+        "measurement-events-and-values"
+      ],
+      "original_source_type": "official_openai_developer_documentation",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching",
+        "measurement-events-and-values"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-events-20260910",
+      "url": "https://developers.openai.com/ads/supported-events",
+      "title": "Supported Events",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-events-and-values"
+      ],
+      "original_source_type": "official_openai_developer_documentation",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-events-and-values"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-insights-api-20260910",
+      "url": "https://developers.openai.com/ads/api-reference/insights",
+      "title": "Insights API",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-vta-definition",
+        "measurement-exports-api",
+        "refresh-vta-scope-20260910",
+        "refresh-native-export-gap-20260910"
+      ],
+      "original_source_type": "official_openai_developer_documentation",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-vta-definition",
+        "measurement-exports-api",
+        "refresh-vta-scope-20260910",
+        "refresh-native-export-gap-20260910"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-conversion-setup-api-20260910",
+      "url": "https://developers.openai.com/ads/api-reference/conversion-setup",
+      "title": "Conversion Setup",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching"
+      ],
+      "original_source_type": "official_openai_developer_documentation",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-partners-20260910",
+      "url": "https://help.openai.com/en/articles/20001416-set-up-measurement-partner-integrations",
+      "title": "Set up Measurement Partner Integrations",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-partner-coverage"
+      ],
+      "original_source_type": "official_openai_help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-partner-coverage"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-mobile-partners-20260910",
+      "url": "https://help.openai.com/en/articles/20001372-set-up-mobile-measurement-partner-integrations",
+      "title": "Set up Mobile Measurement Partner Integrations",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-partner-coverage"
+      ],
+      "original_source_type": "official_openai_help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-partner-coverage"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-ocpm-20260910",
+      "url": "https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns",
+      "title": "Conversion-optimized Campaigns",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-optimization-objectives",
+        "refresh-vta-scope-20260910"
+      ],
+      "original_source_type": "official_openai_help",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-optimization-objectives",
+        "refresh-vta-scope-20260910"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-openai-platform-claim-20260910",
+      "url": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/",
+      "title": "A milestone in expanding access to AI",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "measurement-benchmarks-evidence-quality"
+      ],
+      "original_source_type": "official_openai_marketing_claim",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "measurement-benchmarks-evidence-quality"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "measurement-flowboost-case-20260910",
+      "url": "https://flowboost.com/client-stories/chatgpt-ads",
+      "title": "Claiming the first-movers advantage in ChatGPT ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "vendor",
+      "supports_claims": [
+        "measurement-benchmarks-evidence-quality"
+      ],
+      "original_source_type": "vendor_case_study_uncontrolled",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "medium",
+      "claims": [
+        "measurement-benchmarks-evidence-quality"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/measurement.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-ads-policy",
+      "url": "https://openai.com/policies/ad-policies/",
+      "title": "OpenAI Ad policies",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-eligibility",
+        "policy-sensitive-categories",
+        "policy-creative-landing-page",
+        "policy-landing-crawlability",
+        "policy-review-enforcement",
+        "policy-placement"
+      ],
+      "original_source_type": "official_policy",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-eligibility",
+        "policy-sensitive-categories",
+        "policy-creative-landing-page",
+        "policy-landing-crawlability",
+        "policy-review-enforcement",
+        "policy-placement"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-user-faq",
+      "url": "https://help.openai.com/en/articles/20001047",
+      "title": "Ads in ChatGPT",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-minors",
+        "policy-user-controls-privacy",
+        "policy-placement",
+        "policy-beta-availability"
+      ],
+      "original_source_type": "official_help_center",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-minors",
+        "policy-user-controls-privacy",
+        "policy-placement",
+        "policy-beta-availability"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-create-ads",
+      "url": "https://help.openai.com/en/articles/20001212-create-ads-for-chatgpt",
+      "title": "Create Ads for ChatGPT Ads",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-creative-landing-page"
+      ],
+      "original_source_type": "official_help_center",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-creative-landing-page"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-crawlers",
+      "url": "https://help.openai.com/en/articles/20001243-advertiser-guidance-for-allowing-openai-web-crawlers",
+      "title": "Advertiser Guidance for Allowing OpenAI Web Crawlers",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-landing-crawlability"
+      ],
+      "original_source_type": "official_help_center",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-landing-crawlability"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-billing",
+      "url": "https://help.openai.com/en/articles/20001216-billing-payment",
+      "title": "Billing & Payment",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-billing-safety"
+      ],
+      "original_source_type": "official_help_center",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-billing-safety"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-ads-faq",
+      "url": "https://help.openai.com/en/articles/20001220-frequently-asked-questions",
+      "title": "ChatGPT Ads FAQ",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-review-enforcement",
+        "policy-beta-availability"
+      ],
+      "original_source_type": "official_help_center",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-review-enforcement",
+        "policy-beta-availability"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "policy-src-privacy",
+      "url": "https://openai.com/policies/privacy-policy/",
+      "title": "OpenAI Privacy Policy",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "policy-user-controls-privacy"
+      ],
+      "original_source_type": "official_policy",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "date_kind": "retrieval",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "policy-user-controls-privacy"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/policy.json",
+      "account_verified": false
+    },
+    {
+      "id": "terms-src-advertising-terms",
+      "url": "https://openai.com/policies/advertising-terms/",
+      "title": "Advertising Terms",
+      "date_kind": "retrieval",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "terms-advertising-terms"
+      ],
+      "original_source_type": "official",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "terms-advertising-terms"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/terms.json",
+      "account_verified": false
+    },
+    {
+      "id": "terms-src-ad-tools-terms",
+      "url": "https://openai.com/policies/ad-tools-terms/",
+      "title": "Ad Tools Terms",
+      "date_kind": "retrieval",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "terms-ad-tools-terms",
+        "refresh-audience-region-data-20260910"
+      ],
+      "original_source_type": "official",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "terms-ad-tools-terms",
+        "refresh-audience-region-data-20260910"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/terms.json",
+      "account_verified": false
+    },
+    {
+      "id": "terms-src-ad-tools-dpa",
+      "url": "https://openai.com/policies/ad-tools-dpa/",
+      "title": "Ad Tools Data Processing Addendum",
+      "date_kind": "retrieval",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "terms-ad-tools-dpa"
+      ],
+      "original_source_type": "official",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "terms-ad-tools-dpa"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/terms.json",
+      "account_verified": false
+    },
+    {
+      "id": "terms-src-conversion-terms",
+      "url": "https://openai.com/policies/conversion-terms/",
+      "title": "Conversion Terms",
+      "date_kind": "retrieval",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "terms-conversion-terms"
+      ],
+      "original_source_type": "official",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "terms-conversion-terms"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/terms.json",
+      "account_verified": false
+    },
+    {
+      "id": "terms-src-ad-credit-terms",
+      "url": "https://openai.com/policies/ad-credit-terms/",
+      "title": "Ad Credit Terms",
+      "date_kind": "retrieval",
+      "last_verified": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "source_type": "official",
+      "supports_claims": [
+        "terms-ad-credit-terms"
+      ],
+      "original_source_type": "official",
+      "publication_date": null,
+      "date": "2026-09-10",
+      "retrieved": "2026-09-10",
+      "confidence": "high",
+      "claims": [
+        "terms-ad-credit-terms"
+      ],
+      "capture_kind": "research_summary",
+      "capture_path": ".raw/research-captures/2026-09-10/terms.json",
+      "account_verified": false
+    },
+    {
+      "id": "refresh-product-feeds-20260910",
+      "url": "https://developers.openai.com/ads/product-feeds",
+      "title": "Product Feeds",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-10.json",
+      "account_verified": false,
+      "supports_claims": [
+        "refresh-catalog-api-boundary-20260910"
+      ],
+      "claims": [
+        "refresh-catalog-api-boundary-20260910"
+      ]
+    },
+    {
+      "id": "refresh-custom-audiences-20260910",
+      "url": "https://developers.openai.com/ads/custom-audiences",
+      "title": "Custom Audiences",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-10",
+      "refresh_due": "2026-09-17",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-10.json",
+      "account_verified": false,
+      "supports_claims": [
+        "refresh-audience-region-data-20260910"
+      ],
+      "claims": [
+        "refresh-audience-region-data-20260910"
+      ]
+    },
+    {
+      "id": "refresh-measure-results-20260911",
+      "url": "https://help.openai.com/en/articles/20001214-launch-your-campaign-and-monitor-performance",
+      "title": "Measure Results",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no Ads Manager account was observed.",
+      "supports_claims": [
+        "refresh-url-parameters-precedence-20260911",
+        "refresh-products-reporting-semantics-20260911",
+        "refresh-pixel-gtm-boundary-20260911",
+        "refresh-report-window-semantics-20260911"
+      ],
+      "claims": [
+        "refresh-url-parameters-precedence-20260911",
+        "refresh-products-reporting-semantics-20260911",
+        "refresh-pixel-gtm-boundary-20260911",
+        "refresh-report-window-semantics-20260911"
+      ]
+    },
+    {
+      "id": "refresh-conversion-measurement-20260911",
+      "url": "https://help.openai.com/en/articles/20001409-conversion-measurement",
+      "title": "Conversion Measurement",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no Pixel, CAPI event, conversion event setting, or account report was inspected.",
+      "supports_claims": [
+        "refresh-url-parameters-precedence-20260911",
+        "refresh-report-window-semantics-20260911"
+      ],
+      "claims": [
+        "refresh-url-parameters-precedence-20260911",
+        "refresh-report-window-semantics-20260911"
+      ]
+    },
+    {
+      "id": "refresh-conversion-setup-api-20260911",
+      "url": "https://developers.openai.com/ads/api-reference/conversion-setup",
+      "title": "Conversion Setup - Ads",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Advertiser API documentation only; no API key or endpoint was used.",
+      "supports_claims": [
+        "refresh-report-window-semantics-20260911"
+      ],
+      "claims": [
+        "refresh-report-window-semantics-20260911"
+      ]
+    },
+    {
+      "id": "refresh-product-feeds-help-20260911",
+      "url": "https://help.openai.com/en/articles/20001268-create-campaigns-from-product-feeds",
+      "title": "Create Campaigns from Product Feeds",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no feed, product, campaign, or Products tab was inspected.",
+      "supports_claims": [
+        "refresh-products-reporting-semantics-20260911"
+      ],
+      "claims": [
+        "refresh-products-reporting-semantics-20260911"
+      ]
+    },
+    {
+      "id": "refresh-maximize-results-help-20260911",
+      "url": "https://help.openai.com/en/articles/20001425-maximize-results-bid-strategy",
+      "title": "Maximize Results Bid Strategy",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no ad group or bid strategy was inspected.",
+      "supports_claims": [
+        "refresh-manual-bid-label-boundary-20260911"
+      ],
+      "claims": [
+        "refresh-manual-bid-label-boundary-20260911"
+      ]
+    },
+    {
+      "id": "refresh-ad-groups-api-20260911",
+      "url": "https://developers.openai.com/ads/api-reference/ad-groups",
+      "title": "Ad Groups - Ads",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Advertiser API documentation only; no ad-group read or mutation was performed.",
+      "supports_claims": [
+        "refresh-manual-bid-label-boundary-20260911"
+      ],
+      "claims": [
+        "refresh-manual-bid-label-boundary-20260911"
+      ]
+    },
+    {
+      "id": "refresh-account-setup-help-20260911",
+      "url": "https://help.openai.com/en/articles/20001213",
+      "title": "Ads Manager Beta Account Setup",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no account eligibility, organization permission, onboarding, verification, or billing state was observed.",
+      "supports_claims": [
+        "refresh-chatgpt-account-setup-scope-20260911"
+      ],
+      "claims": [
+        "refresh-chatgpt-account-setup-scope-20260911"
+      ]
+    },
+    {
+      "id": "refresh-location-targeting-api-20260911",
+      "url": "https://developers.openai.com/ads/location-targeting",
+      "title": "Location Targeting - Ads",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Advertiser API documentation and public catalog link only; no location search or campaign call was made.",
+      "supports_claims": [
+        "refresh-location-catalog-surface-boundary-20260911"
+      ],
+      "claims": [
+        "refresh-location-catalog-surface-boundary-20260911"
+      ]
+    },
+    {
+      "id": "refresh-campaigns-help-20260911",
+      "url": "https://help.openai.com/en/articles/20001210-create-campaigns-for-chatgpt-ads",
+      "title": "Create Campaigns for ChatGPT Ads",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no account location picker or campaign was inspected.",
+      "supports_claims": [
+        "platform-finding-011",
+        "refresh-location-catalog-surface-boundary-20260911"
+      ],
+      "claims": [
+        "platform-finding-011",
+        "refresh-location-catalog-surface-boundary-20260911"
+      ]
+    },
+    {
+      "id": "refresh-ad-account-api-20260911",
+      "url": "https://developers.openai.com/ads/api-reference/ad-account",
+      "title": "Ad Account - Ads",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Advertiser API documentation only; no account spending-limit configuration or billing permission was inspected.",
+      "supports_claims": [
+        "refresh-account-spend-controls-20260911"
+      ],
+      "claims": [
+        "refresh-account-spend-controls-20260911"
+      ]
+    },
+    {
+      "id": "refresh-ad-tools-terms-20260911",
+      "url": "https://openai.com/policies/ad-tools-terms/",
+      "title": "Ad Tools Terms",
+      "source_type": "official",
+      "publication_date": "2026-08-24",
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-10-11",
+      "date_kind": "publication",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public contract terms only; no Creative Tool setting or generated creative was inspected.",
+      "supports_claims": [
+        "refresh-ai-creative-controls-20260911"
+      ],
+      "claims": [
+        "refresh-ai-creative-controls-20260911"
+      ]
+    },
+    {
+      "id": "refresh-insights-api-20260911",
+      "url": "https://developers.openai.com/ads/api-reference/insights",
+      "title": "Insights - Ads",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Advertiser API documentation only; no insights response or report export was obtained.",
+      "supports_claims": [
+        "refresh-report-window-semantics-20260911"
+      ],
+      "claims": [
+        "refresh-report-window-semantics-20260911"
+      ]
+    },
+    {
+      "id": "refresh-conversion-controls-20260911",
+      "url": "https://help.openai.com/en/articles/20001412-conversion-optimized-campaigns",
+      "title": "Conversion-optimized Campaigns",
+      "source_type": "official",
+      "publication_date": null,
+      "retrieved": "2026-09-11",
+      "refresh_due": "2026-09-18",
+      "date_kind": "retrieval",
+      "capture_kind": "research_summary",
+      "capture_path": "research-refresh/2026-09-11/evidence-note.md",
+      "account_verified": false,
+      "actual_account_scope": "None. Public Help Center documentation only; no Ads Manager account was observed.",
+      "supports_claims": [
+        "refresh-manual-bid-label-boundary-20260911"
+      ],
+      "claims": [
+        "refresh-manual-bid-label-boundary-20260911"
+      ]
+    }
+  ]
+}

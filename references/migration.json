@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "from_version": "0.1.0",
+  "to_version": "0.2.0",
+  "preserved": "external pre-v0.2 tar.gz plus legacy-v0.1",
+  "moves": [
+    {
+      "from": "assets",
+      "to": "legacy-v0.1/assets",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "site",
+      "to": "legacy-v0.1/site",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "examples/sample-vault",
+      "to": "legacy-v0.1/examples/sample-vault",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "tests/test_pipeline.py",
+      "to": "legacy-v0.1/tests/test_pipeline.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "tests/fixtures/sample-vault.sha256",
+      "to": "legacy-v0.1/tests/fixtures/sample-vault.sha256",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "GEMINI.md",
+      "to": "legacy-v0.1/GEMINI.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "install.sh",
+      "to": "legacy-v0.1/install.sh",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "uninstall.sh",
+      "to": "legacy-v0.1/uninstall.sh",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": ".github",
+      "to": "legacy-v0.1/.github",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": ".claude-plugin",
+      "to": "legacy-v0.1/.claude-plugin",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/audit_brain.py",
+      "to": "legacy-v0.1/scripts/audit_brain.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/build_demo_vault.py",
+      "to": "legacy-v0.1/scripts/build_demo_vault.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/generate_vault_visuals.py",
+      "to": "legacy-v0.1/scripts/generate_vault_visuals.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/guide_next_action.py",
+      "to": "legacy-v0.1/scripts/guide_next_action.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/ingest_source.py",
+      "to": "legacy-v0.1/scripts/ingest_source.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/lint_vault.py",
+      "to": "legacy-v0.1/scripts/lint_vault.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/render_brain_report.py",
+      "to": "legacy-v0.1/scripts/render_brain_report.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/scaffold_vault.py",
+      "to": "legacy-v0.1/scripts/scaffold_vault.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "scripts/synthesize_brain.py",
+      "to": "legacy-v0.1/scripts/synthesize_brain.py",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/product-spec.md",
+      "to": "legacy-v0.1/references/product-spec.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/source-map.md",
+      "to": "legacy-v0.1/references/source-map.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/current-requirements.md",
+      "to": "legacy-v0.1/references/current-requirements.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/market-research.md",
+      "to": "legacy-v0.1/references/market-research.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/safety-gates.md",
+      "to": "legacy-v0.1/references/safety-gates.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/CONFIDENCE_TAGS.md",
+      "to": "legacy-v0.1/references/CONFIDENCE_TAGS.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/claim-ledger.md",
+      "to": "legacy-v0.1/references/claim-ledger.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/source-manifest-template.md",
+      "to": "legacy-v0.1/references/source-manifest-template.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/research-plan.md",
+      "to": "legacy-v0.1/references/research-plan.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/adapter-plan.md",
+      "to": "legacy-v0.1/references/adapter-plan.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "references/build-plan.md",
+      "to": "legacy-v0.1/references/build-plan.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/chatgpt-ads-brain-template-v0.1.0.zip",
+      "to": "legacy-v0.1/dist/chatgpt-ads-brain-template-v0.1.0.zip",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/chatgpt-ads-brain-sample-vault-v0.1.0.zip",
+      "to": "legacy-v0.1/dist/chatgpt-ads-brain-sample-vault-v0.1.0.zip",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/chatgpt-ads-brain-source-v0.1.0.zip",
+      "to": "legacy-v0.1/dist/chatgpt-ads-brain-source-v0.1.0.zip",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/RELEASE_MANIFEST.json",
+      "to": "legacy-v0.1/dist/RELEASE_MANIFEST.json",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/SHA256SUMS",
+      "to": "legacy-v0.1/dist/SHA256SUMS",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/TEST_ARTIFACTS_ONLY.md",
+      "to": "legacy-v0.1/dist/TEST_ARTIFACTS_ONLY.md",
+      "disposition": "historical_not_active"
+    },
+    {
+      "from": "dist/integration-preview-0.2.0.zip",
+      "to": "legacy-v0.1/dist/integration-preview-0.2.0.zip",
+      "disposition": "historical_not_active"
+    }
+  ]
+}

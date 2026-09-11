@@ -1,0 +1,126 @@
+{
+  "case_id": "wf-readiness-mossline-001",
+  "workflow": "readiness",
+  "evidence_class": "synthetic_advisory",
+  "brief_inputs": {
+    "fixture_ref": "fixture.json",
+    "business_model": "direct_to_consumer_household_goods",
+    "approved_offer_and_claims": ["fixture-claim-price", "fixture-claim-size", "fixture-claim-material", "fixture-claim-shipping", "fixture-claim-returns"],
+    "target_geography": "United States",
+    "primary_outcome": "completed_purchase",
+    "account_evidence_supplied": false
+  },
+  "produced_output": {
+    "profile": {
+      "profile_id": "synthetic-mossline-profile-v1",
+      "client_identity": "Mossline Desk Goods, fictional fixture",
+      "observed_account_identity": null,
+      "reporting_currency": null,
+      "reporting_timezone": null,
+      "access_route": null,
+      "private_workspace_created": false
+    },
+    "readiness_findings": [
+      {
+        "area": "business_brief",
+        "state": "ready_for_advisory_planning",
+        "reason": "The fixture supplies an offer, approved claim set, geography, primary outcome, and unit economics."
+      },
+      {
+        "area": "category_and_market",
+        "state": "documented_but_not_account_verified",
+        "reason": "The guarded query returns policy-eligibility and policy-beta-availability, but documentation does not prove this fictional business or an actual account is eligible in the United States.",
+        "evidence_refs": ["claim:policy-eligibility", "claim:policy-beta-availability"]
+      },
+      {
+        "area": "buying_route",
+        "state": "no_data",
+        "reason": "Documented routes exist, but no actual account, partner route, or API entitlement was supplied.",
+        "evidence_refs": ["claim:platform-finding-003"]
+      },
+      {
+        "area": "billing_and_spend_control",
+        "state": "no_data",
+        "reason": "Documented billing behavior informs later risk controls, but billing entity, payment method, tax state, account currency, and budget controls have not been observed.",
+        "evidence_refs": ["claim:policy-billing-safety"]
+      },
+      {
+        "area": "destination_and_measurement",
+        "state": "no_data",
+        "reason": "The reserved fixture URL was deliberately not fetched and no tracking is deployed."
+      }
+    ],
+    "required_business_decisions": [],
+    "missing_platform_or_account_evidence": [
+      "Current United States availability for the exact advertiser and buying route",
+      "Observed account identity and account owner",
+      "Observed role and permission scope",
+      "Billing entity, payment state, tax state, currency, and timezone",
+      "Account-visible objectives, bid modes, targeting, and creative formats",
+      "Destination rendering, policy continuity, crawlability, and redirect behavior",
+      "Measurement route, conversion definition, attribution window, lag, and validation"
+    ],
+    "decision": "blocked",
+    "reasoning": "A complete business brief cannot substitute for an eligible, identified, and configured advertising account. Planning can proceed as a conditional scenario, but launch readiness cannot."
+  },
+  "advisory_result": {
+    "status": "blocked",
+    "workflow": "readiness",
+    "as_of": "2026-09-10",
+    "findings": [
+      {
+        "id": "readiness-business-inputs",
+        "observation": "The fictional fixture provides a scoped offer, approved claims, geography, business outcome, and economics for advisory work.",
+        "evidence_refs": ["fixture:fixture-mossline-001", "fixture:fixture-owner-economics-sheet-v1"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "readiness-documentation-not-account",
+        "observation": "Official-source claims describe beta availability, eligibility, buying routes, and billing behavior, but all are documented_not_account_verified.",
+        "evidence_refs": ["claim:platform-finding-003", "claim:policy-beta-availability", "claim:policy-eligibility", "claim:policy-billing-safety"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "readiness-account-absent",
+        "observation": "No account identity, eligible country observation, role, billing state, currency, timezone, destination observation, or measurement deployment was supplied.",
+        "evidence_refs": ["fixture:account_evidence", "fixture:destination_evidence", "fixture:measurement_evidence"],
+        "confidence": "high",
+        "support": "evidence_based"
+      }
+    ],
+    "missing_inputs": [
+      "Observed eligible advertiser country and buying route",
+      "Exact account identity and owner",
+      "Role and permission observation",
+      "Billing, currency, and timezone observation",
+      "Destination and measurement evidence"
+    ],
+    "actions": [
+      {
+        "action": "Observe the exact advertiser account, country eligibility, role, billing, currency, timezone, and available controls in the authorized native account.",
+        "owner": "account owner and authorized operator",
+        "window": "before launch planning is finalized",
+        "success_measure": "Dated observations resolve every account readiness field without relying on documentation alone.",
+        "evidence_refs": ["claim:platform-finding-003", "claim:policy-beta-availability"],
+        "confidence": "high"
+      },
+      {
+        "action": "Observe the real destination and validate offer continuity, rendering, crawlability, redirects, and the measurement design.",
+        "owner": "business owner and authorized operator",
+        "window": "before creative approval",
+        "success_measure": "The exact destination revision and measurement proposal have dated review evidence.",
+        "evidence_refs": ["fixture:destination_evidence", "fixture:measurement_evidence"],
+        "confidence": "high"
+      }
+    ],
+    "live_execution": "not_performed",
+    "blockers": [
+      {"code": "eligible_account_unobserved", "detail": "No exact eligible advertiser account or buying route was observed."},
+      {"code": "identity_role_billing_unobserved", "detail": "Account identity, role, billing, currency, and timezone are absent."},
+      {"code": "destination_unobserved", "detail": "The reserved fixture destination was not fetched or reviewed."},
+      {"code": "measurement_not_deployed", "detail": "No conversion definition, attribution setting, tracking deployment, or validation evidence exists."}
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "ledger_version": 1,
+  "suite_id": "synthetic-workflows-mossline-v1",
+  "frozen_as_of": "2026-09-10",
+  "fixture": "fixture.json",
+  "source_query_ledger": "source-query-ledger.json",
+  "rubric": "rubric.json",
+  "evidence_scope": "synthetic_advisory_only",
+  "live_account_access": false,
+  "live_execution": "not_performed",
+  "cases": [
+    {
+      "case_id": "wf-readiness-mossline-001",
+      "workflow": "readiness",
+      "path": "cases/readiness.json",
+      "expected_advisory_status": "blocked",
+      "acceptance_outcome": "pass",
+      "acceptance_meaning": "Pass only if all material account, country, billing, destination, and measurement gaps remain blockers."
+    },
+    {
+      "case_id": "wf-plan-mossline-001",
+      "workflow": "plan",
+      "path": "cases/plan.json",
+      "expected_advisory_status": "provisional",
+      "acceptance_outcome": "pass",
+      "acceptance_meaning": "Pass only if economics and sensitivity recompute and account-dependent platform values remain null."
+    },
+    {
+      "case_id": "wf-creative-mossline-001",
+      "workflow": "creative",
+      "path": "cases/creative.json",
+      "expected_advisory_status": "blocked",
+      "acceptance_outcome": "pass",
+      "acceptance_meaning": "Pass only if every copy claim has fixture proof and missing format, destination, and rights evidence block export."
+    },
+    {
+      "case_id": "wf-experiment-mossline-001",
+      "workflow": "experiment",
+      "path": "cases/experiment.json",
+      "expected_advisory_status": "needs_input",
+      "acceptance_outcome": "pass",
+      "acceptance_meaning": "Pass only if the design remains a feasibility pilot with no sample or causal efficacy claim."
+    },
+    {
+      "case_id": "wf-monitor-mossline-001",
+      "workflow": "monitor",
+      "path": "cases/monitor.json",
+      "expected_advisory_status": "blocked",
+      "acceptance_outcome": "pass",
+      "acceptance_meaning": "Pass only if the missing day and the stale incomplete day prevent a whole-window pacing decision while comparable complete-day arithmetic remains reproducible."
+    }
+  ],
+  "suite_outcome": "pass",
+  "last_executed_at": "2026-09-10T19:25:30Z",
+  "manual_reviews": [
+    {
+      "review": "factual_copy_against_fixture_proof",
+      "outcome": "pass",
+      "scope": "A human-readable inspection confirmed that the factual phrases in both drafts are covered by their declared fixture claim IDs. The automated check verifies only the claim-ID allowlist."
+    },
+    {
+      "review": "creative_comparison_boundary",
+      "outcome": "pass",
+      "scope": "The drafts are labeled multi-element concept directions. The experiment case uses one creative for feasibility and requires a future single-factor pair."
+    }
+  ],
+  "executed_outcomes": "executed-outcomes.json"
+}

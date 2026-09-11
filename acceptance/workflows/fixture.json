@@ -1,0 +1,116 @@
+{
+  "fixture_id": "fixture-mossline-001",
+  "fixture_status": "deliberately_invented",
+  "as_of": "2026-09-10",
+  "business": {
+    "name": "Mossline Desk Goods",
+    "legal_status": "fictional_fixture_only",
+    "business_model": "direct_to_consumer_household_goods",
+    "target_geography": "United States",
+    "primary_business_outcome": "completed_purchase",
+    "offer": {
+      "product_name": "Mossline Desk Mat",
+      "destination": "https://mossline.example.invalid/products/desk-mat",
+      "price_usd": "80.00",
+      "inventory_units": 250
+    }
+  },
+  "approved_claims": [
+    {
+      "id": "fixture-claim-price",
+      "claim": "The Mossline Desk Mat costs USD 80.00.",
+      "evidence": "fixture-owner-offer-sheet-v1",
+      "volatility": "price_can_change"
+    },
+    {
+      "id": "fixture-claim-size",
+      "claim": "The mat measures 31.5 by 15.7 inches.",
+      "evidence": "fixture-owner-product-spec-v1",
+      "volatility": "stable_fixture_spec"
+    },
+    {
+      "id": "fixture-claim-material",
+      "claim": "The mat has a cork surface and natural-rubber backing.",
+      "evidence": "fixture-owner-product-spec-v1",
+      "volatility": "stable_fixture_spec"
+    },
+    {
+      "id": "fixture-claim-shipping",
+      "claim": "Standard shipping is free in the United States.",
+      "evidence": "fixture-owner-offer-sheet-v1",
+      "volatility": "offer_can_change"
+    },
+    {
+      "id": "fixture-claim-returns",
+      "claim": "Orders have a 30-day return window under the fixture return policy.",
+      "evidence": "fixture-owner-return-policy-v1",
+      "volatility": "policy_can_change"
+    }
+  ],
+  "economics": {
+    "currency": "USD",
+    "unit_revenue": "80.00",
+    "cost_of_goods": "32.00",
+    "fulfillment_per_order": "8.00",
+    "payment_fee_rate": "0.04",
+    "returns_allowance_rate": "0.05",
+    "planning_spend_ceiling": "840.00",
+    "planning_window_days": 14,
+    "owner_selected_target_cpa": "25.00",
+    "owner_selected_zero_purchase_review_spend": "65.60",
+    "minimum_effect_worth_acting_on_absolute_purchase_rate_points": "0.50",
+    "evidence": "fixture-owner-economics-sheet-v1"
+  },
+  "account_evidence": {
+    "account_id": null,
+    "observed_account_identity": null,
+    "observed_eligible_country": null,
+    "observed_role": null,
+    "observed_billing_state": null,
+    "observed_currency": null,
+    "observed_timezone": null,
+    "observed_objectives": null,
+    "observed_bid_modes": null,
+    "observed_targeting": null,
+    "observed_creative_formats": null,
+    "observed_experiment_assignment": null
+  },
+  "destination_evidence": {
+    "observed": false,
+    "rendering_checked": false,
+    "crawlability_checked": false,
+    "redirects_checked": false,
+    "reason": "Reserved .invalid fixture URL; no network request was attempted."
+  },
+  "measurement_evidence": {
+    "baseline_purchase_rate": null,
+    "variance": null,
+    "attribution_window": null,
+    "reporting_lag": null,
+    "tracking_deployed": false
+  },
+  "owner_monitor_rules": {
+    "closed_day_missing_is_incident": true,
+    "pacing_lower_ratio": "0.85",
+    "pacing_upper_ratio": "1.15",
+    "report_lag_hours_before_pacing_decision": 24,
+    "automatic_account_changes_allowed": false
+  },
+  "synthetic_monitor_input": {
+    "window_start": "2026-09-01",
+    "window_end": "2026-09-07",
+    "reporting_currency": "USD",
+    "reporting_timezone": "America/New_York",
+    "planned_daily_spend": "60.00",
+    "rows": [
+      {"date": "2026-09-01", "state": "closed", "spend": "58.00"},
+      {"date": "2026-09-02", "state": "closed", "spend": "61.00"},
+      {"date": "2026-09-03", "state": "closed", "spend": "55.00"},
+      {"date": "2026-09-04", "state": "closed", "spend": "63.00"},
+      {"date": "2026-09-05", "state": "closed", "spend": "60.00"},
+      {"date": "2026-09-06", "state": "missing", "spend": null},
+      {"date": "2026-09-07", "state": "stale_incomplete_12h", "spend": "24.00"}
+    ],
+    "provenance": "synthetic-manual-report-fixture-v1"
+  }
+}

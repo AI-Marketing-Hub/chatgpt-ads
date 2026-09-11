@@ -1,0 +1,24 @@
+{
+  "version": "0.3.0",
+  "status": "limited_local_release_candidate_ready",
+  "date": "2026-09-11",
+  "owner_decisions": {
+    "license": "MIT",
+    "github_owner": "agricidaniel",
+    "proposed_repository": "chatgpt-ads",
+    "intended_visibility": "public"
+  },
+  "publication": "authorized_by_owner; final result tracked in GitHub release",
+  "native_windows": "guarded_workflows_unavailable_native_tests_not_run",
+  "native_ads_account": "external_report_only_no_independent_raw_verification",
+  "native_csv": "disabled_pending_genuine_sample",
+  "native_api": "not_verified",
+  "measurement_transmission": "not_verified",
+  "live_actions": "not_performed",
+  "github_remote_check": "Owner repository created and public; release verification follows publication",
+  "independent_review": "pass_limited_local_scope_no_open_blockers",
+  "linux": "Python 3.11 and 3.14: 63 core and 12 analyzer tests passed",
+  "advisory_agents": "partial; see probe-assessment.json",
+  "remote_ci": "configured_not_run",
+  "final_archive_evidence": "External checksum and extraction report accompany the frozen release archive"
+}

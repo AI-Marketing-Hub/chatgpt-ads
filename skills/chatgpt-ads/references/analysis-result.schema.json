@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local normalized aggregate analysis result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "workflow",
+    "source_type",
+    "metadata",
+    "ad_count",
+    "totals",
+    "metrics",
+    "limits",
+    "metric_units"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "ok",
+        "provisional"
+      ]
+    },
+    "workflow": {
+      "const": "normalized_csv_aggregate_analysis"
+    },
+    "source_type": {
+      "const": "local_normalized_schema_not_native_export"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "timezone",
+        "date_start",
+        "date_end",
+        "attribution_window",
+        "conversion_definition",
+        "revenue_basis",
+        "granularity"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "date_start": {
+          "type": "string"
+        },
+        "date_end": {
+          "type": "string"
+        },
+        "attribution_window": {
+          "type": "string"
+        },
+        "conversion_definition": {
+          "type": "string"
+        },
+        "revenue_basis": {
+          "type": "string"
+        },
+        "granularity": {
+          "type": "string"
+        }
+      }
+    },
+    "ad_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "impressions",
+        "clicks",
+        "spend",
+        "conversions",
+        "revenue"
+      ],
+      "properties": {
+        "impressions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "clicks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "spend": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "conversions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "revenue": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "click_through_rate",
+        "conversion_rate",
+        "cost_per_click",
+        "average_cpm",
+        "cost_per_conversion",
+        "revenue_roas"
+      ],
+      "properties": {
+        "click_through_rate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "conversion_rate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "cost_per_click": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "average_cpm": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "cost_per_conversion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "revenue_roas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "reason",
+            "basis"
+          ],
+          "properties": {
+            "value": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reason": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "basis": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metric_units": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "click_through_rate",
+        "conversion_rate",
+        "cost_per_click",
+        "average_cpm",
+        "cost_per_conversion",
+        "revenue_roas"
+      ],
+      "properties": {
+        "click_through_rate": {
+          "type": "string"
+        },
+        "conversion_rate": {
+          "type": "string"
+        },
+        "cost_per_click": {
+          "type": "string"
+        },
+        "average_cpm": {
+          "type": "string"
+        },
+        "cost_per_conversion": {
+          "type": "string"
+        },
+        "revenue_roas": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

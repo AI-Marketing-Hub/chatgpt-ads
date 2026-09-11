@@ -1,0 +1,126 @@
+{
+  "case_id": "wf-creative-mossline-001",
+  "workflow": "creative",
+  "evidence_class": "synthetic_advisory",
+  "brief_inputs": {
+    "fixture_ref": "fixture.json",
+    "plan_case_ref": "cases/plan.json",
+    "audience_context": "Adults in the United States considering a desk mat for a work or study surface",
+    "destination": "https://mossline.example.invalid/products/desk-mat",
+    "asset_rights_supplied": false,
+    "account_format_observation_supplied": false
+  },
+  "produced_output": {
+    "copy_variants": [
+      {
+        "variant_id": "creative-functional-v1",
+        "hypothesis": "Exact dimensions and price reduce uncertainty for shoppers comparing desk-mat fit.",
+        "headline": "Meet the Mossline Desk Mat",
+        "body": "A 31.5 by 15.7 inch cork desk mat for USD 80.00. Standard US shipping is free.",
+        "call_to_action": "See product details",
+        "claim_ids": ["fixture-claim-size", "fixture-claim-material", "fixture-claim-price", "fixture-claim-shipping"],
+        "destination": "https://mossline.example.invalid/products/desk-mat",
+        "asset": {
+          "state": "brief_only",
+          "shot": "Top-down view showing the full mat under a keyboard and notebook, with enough scale context to assess its size.",
+          "alt_text_draft": "Cork desk mat beneath a keyboard and notebook on a desk.",
+          "rights": null
+        }
+      },
+      {
+        "variant_id": "creative-material-v1",
+        "hypothesis": "Material specificity and the return window reduce uncertainty for shoppers focused on construction and purchase terms.",
+        "headline": "Cork on top. Natural rubber underneath.",
+        "body": "The Mossline Desk Mat is USD 80.00 and has a 30-day return window under the store policy.",
+        "call_to_action": "Review materials and returns",
+        "claim_ids": ["fixture-claim-material", "fixture-claim-price", "fixture-claim-returns"],
+        "destination": "https://mossline.example.invalid/products/desk-mat",
+        "asset": {
+          "state": "brief_only",
+          "shot": "Close view of the cork surface and lifted corner revealing the backing, without adding performance claims.",
+          "alt_text_draft": "Close view of a cork desk mat with one corner lifted to show its backing.",
+          "rights": null
+        }
+      }
+    ],
+    "claim_to_proof_review": [
+      {"claim_id": "fixture-claim-price", "proof": "fixture-owner-offer-sheet-v1", "state": "supported_in_fixture", "recheck": "before approval because price is volatile"},
+      {"claim_id": "fixture-claim-size", "proof": "fixture-owner-product-spec-v1", "state": "supported_in_fixture", "recheck": "against final product revision"},
+      {"claim_id": "fixture-claim-material", "proof": "fixture-owner-product-spec-v1", "state": "supported_in_fixture", "recheck": "against final product revision"},
+      {"claim_id": "fixture-claim-shipping", "proof": "fixture-owner-offer-sheet-v1", "state": "supported_in_fixture", "recheck": "before approval because offer terms are volatile"},
+      {"claim_id": "fixture-claim-returns", "proof": "fixture-owner-return-policy-v1", "state": "supported_in_fixture", "recheck": "against exact destination wording"}
+    ],
+    "platform_and_destination_review": {
+      "documented_findings": "Guarded claims establish that format and destination requirements exist and must be checked, but do not establish what this absent account supports.",
+      "evidence_refs": ["claim:policy-creative-landing-page", "claim:platform-finding-015", "claim:platform-finding-016", "claim:policy-landing-crawlability"],
+      "account_supported_format": null,
+      "enforced_text_or_asset_maxima": null,
+      "mobile_rendering": "not_run",
+      "legibility": "not_run",
+      "destination_observation": "not_run",
+      "crawlability": "not_run",
+      "redirect_behavior": "not_run",
+      "reason": "The account is absent and the reserved .invalid destination was deliberately not requested."
+    },
+    "review_disposition": "blocked_from_export_or_publication",
+    "reasoning": "The drafts are distinct multi-element concept directions, and every factual phrase maps to fixture evidence. They do not isolate one causal factor and must not be read as a ready A/B pair. No exact format, image, destination revision, or rights record exists, so approval-ready assets cannot be named."
+  },
+  "advisory_result": {
+    "status": "blocked",
+    "workflow": "creative",
+    "as_of": "2026-09-10",
+    "findings": [
+      {
+        "id": "creative-two-hypotheses",
+        "observation": "Two multi-element copy directions express distinct fit-detail and material-policy hypotheses without claiming an isolated causal comparison or using an external performance benchmark.",
+        "evidence_refs": ["fixture:fixture-mossline-001"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "creative-claims-substantiated",
+        "observation": "Every factual copy claim maps to an approved fixture claim and a named fixture proof record.",
+        "evidence_refs": ["fixture:fixture-owner-product-spec-v1", "fixture:fixture-owner-offer-sheet-v1", "fixture:fixture-owner-return-policy-v1"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "creative-export-blocked",
+        "observation": "Account-supported format, enforced maxima, final assets, rights, rendering, destination behavior, and crawlability are unverified.",
+        "evidence_refs": ["fixture:account_evidence", "fixture:destination_evidence", "claim:platform-finding-015", "claim:policy-creative-landing-page", "claim:policy-landing-crawlability"],
+        "confidence": "high",
+        "support": "evidence_based"
+      }
+    ],
+    "missing_inputs": [
+      "Observed account-supported creative format and limits",
+      "Final asset files and rights evidence",
+      "Observed destination revision, rendering, redirects, and crawlability",
+      "Human approval of exact copy and asset revision"
+    ],
+    "actions": [
+      {
+        "action": "Observe current account creative controls and validate both drafts against the exact supported format without changing the account.",
+        "owner": "authorized operator",
+        "window": "before export",
+        "success_measure": "The exact drafts fit observed controls and retain all claim-to-proof links.",
+        "evidence_refs": ["claim:platform-finding-015", "claim:platform-finding-016"],
+        "confidence": "high"
+      },
+      {
+        "action": "Produce or supply rights-cleared assets and review the real destination for offer continuity, rendering, crawlability, and redirects.",
+        "owner": "business owner and creative reviewer",
+        "window": "before approval",
+        "success_measure": "An exact asset revision, rights record, and dated destination observation resolve the current gaps.",
+        "evidence_refs": ["claim:policy-creative-landing-page", "claim:policy-landing-crawlability"],
+        "confidence": "high"
+      }
+    ],
+    "live_execution": "not_performed",
+    "blockers": [
+      {"code": "account_format_unobserved", "detail": "No account-supported format or enforced limit was observed."},
+      {"code": "asset_rights_absent", "detail": "No final asset or rights evidence was supplied."},
+      {"code": "destination_unobserved", "detail": "Rendering, continuity, redirects, and crawlability were not checked on a real destination."}
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0.2",
+  "record_type": "action_plan",
+  "id": "action-demo",
+  "created_at": "2026-09-10T00:00:00Z",
+  "campaign_plan_id": "plan-demo",
+  "action": {
+    "kind": "create_campaign",
+    "campaign_id": "campaign-demo",
+    "account_id": "acct-demo",
+    "target": {"resource_type": "campaign", "resource_id": "campaign-demo"},
+    "before": {},
+    "after": {"campaign_id": "campaign-demo"},
+    "cost": {"currency": "USD", "maximum_effect": {"kind": "maximum_total_spend_micros", "amount_micros": 250000000}},
+    "rollback": "Disable the campaign only after a separately reviewed owner decision.",
+    "verification": {"method": "simulated campaign lookup", "expected": "matching campaign ID and action hash"},
+    "expected_ui_revision": "ui-7",
+    "budget": {"currency": "USD", "daily_budget_micros": 25000000, "maximum_effect": {"kind": "maximum_total_spend_micros", "amount_micros": 250000000}},
+    "campaign_plan_sha256": "8c654e8577de179639d2d6a23fee7db81150d9636b280c48d33e744c548c3e1d"
+  },
+  "approval": {
+    "decision_id": "decision-demo",
+    "approved_by": "Example human reviewer",
+    "approved_at": "2026-09-10T00:00:00Z",
+    "expires_at": "2099-01-01T00:00:00Z",
+    "approved_action_sha256": "173b49d26f827b2aa033788a3c96d90a27d01343e9b55c3c4867d54b30611cad",
+    "provenance_notice": "Human decision provenance only. This hash binding is not authentication, authorization, identity verification, or a security guarantee.",
+    "decision_sha256": "5a502080a399981016f10e61f532aedce0dad3021b8084815669d6f3a081b7b4"
+  }
+}

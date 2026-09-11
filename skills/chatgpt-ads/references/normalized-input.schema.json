@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalized aggregate rows",
+  "description": "JSON form of the local CSV contract after numeric/null normalization. Cross-row metadata equality and unique ad IDs are checked by the Python importer. This is not a native export schema.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "currency",
+      "timezone",
+      "date_start",
+      "date_end",
+      "attribution_window",
+      "conversion_definition",
+      "revenue_basis",
+      "granularity",
+      "ad_id",
+      "impressions",
+      "clicks",
+      "spend",
+      "conversions",
+      "revenue"
+    ],
+    "properties": {
+      "currency": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      },
+      "timezone": {
+        "type": "string",
+        "minLength": 1
+      },
+      "date_start": {
+        "type": "string",
+        "format": "date"
+      },
+      "date_end": {
+        "type": "string",
+        "format": "date"
+      },
+      "attribution_window": {
+        "type": "string",
+        "minLength": 1
+      },
+      "conversion_definition": {
+        "type": "string",
+        "minLength": 1
+      },
+      "revenue_basis": {
+        "type": "string",
+        "minLength": 1
+      },
+      "granularity": {
+        "const": "ad"
+      },
+      "ad_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "impressions": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "clicks": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "spend": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "conversions": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "revenue": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0
+      }
+    }
+  }
+}

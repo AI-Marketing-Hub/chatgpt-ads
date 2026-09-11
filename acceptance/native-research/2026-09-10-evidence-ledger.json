@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-09-10",
+  "scope": "native acceptance research only",
+  "native_requests_made": false,
+  "sources": [
+    {
+      "id": "openai-ads-authentication-live-20260910",
+      "url": "https://developers.openai.com/ads/api-reference/authentication",
+      "publisher": "OpenAI Developers",
+      "source_type": "official",
+      "locators": ["Authentication", "Base URL", "Authorization", "Example request"],
+      "facts": [
+        "Base URL is https://api.ads.openai.com/v1.",
+        "Requests use Authorization: Bearer $OPENAI_ADS_API_KEY.",
+        "Each Ads API key is scoped to one ad account.",
+        "The documented bearer-token check is GET /ad_account."
+      ],
+      "account_prerequisite": "Existing Ads API key for the intended account",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-ads-ad-account-live-20260910",
+      "url": "https://developers.openai.com/ads/api-reference/ad-account",
+      "publisher": "OpenAI Developers",
+      "source_type": "official",
+      "locators": ["Get ad account metadata", "GET /ad_account"],
+      "facts": [
+        "GET /ad_account has no request body or query parameters.",
+        "Its documented response includes account identity metadata, status where available, timezone, currency code, and review status."
+      ],
+      "account_prerequisite": "Configured account-scoped key reference, resolved target account, and private response handling within the authorized acceptance read scope",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-ads-insights-live-20260910",
+      "url": "https://developers.openai.com/ads/api-reference/insights",
+      "publisher": "OpenAI Developers",
+      "source_type": "official",
+      "locators": ["Endpoints", "Conversion insights", "Terminology"],
+      "facts": [
+        "Delivery reads are GET /ad_account/insights, GET /campaigns/{campaign_id}/insights, GET /ad_groups/{ad_group_id}/insights, and GET /ads/{ad_id}/insights.",
+        "Attributed conversion totals use POST /conversions/insights.",
+        "Conversions equals click_through_conversions; view_through_conversions is separate supplemental reporting."
+      ],
+      "account_prerequisite": "Configured account-scoped key reference, resolved target account, exact object references and time window, and private response handling within the authorized acceptance read scope",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-ads-measurement-pixel-live-20260910",
+      "url": "https://developers.openai.com/ads/measurement-pixel",
+      "publisher": "OpenAI Developers",
+      "source_type": "official",
+      "locators": ["Install the Measurement Pixel", "Control measurement consent"],
+      "facts": [
+        "Pixel ID is required and is created in the conversions tab of Ads Manager.",
+        "Debug logs SDK activity to the browser console.",
+        "Consent false prevents event pings and blocked events are not replayed."
+      ],
+      "account_prerequisite": "Existing Pixel ID, consent-compliant site deployment, and deployment approval",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-ads-capi-live-20260910",
+      "url": "https://developers.openai.com/ads/conversions-api",
+      "publisher": "OpenAI Developers",
+      "source_type": "official",
+      "locators": ["Send events", "Web-event attribution reporting", "Event structure"],
+      "facts": [
+        "CAPI is server-to-server and accepts validate_only=true to validate without saving events.",
+        "Batches are limited to 1,000 events and one invalid event fails the full batch.",
+        "CAPI keys and Pixel IDs are provisioned in Ads Manager, or by approved API partners through conversion setup."
+      ],
+      "account_prerequisite": "Existing Pixel ID and server-held CAPI key, plus separately approved test-event transmission",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-ads-conversion-setup-live-20260910",
+      "url": "https://developers.openai.com/ads/api-reference/conversion-setup",
+      "publisher": "OpenAI Developers",
+      "source_type": "official",
+      "locators": ["Create a pixel", "Check recent Pixel events", "Create a Conversions API key", "Create an event setting"],
+      "facts": [
+        "GET /conversions/events returns up to 50 Pixel SDK events from the previous 15 minutes and is a receipt diagnostic, not attribution reporting.",
+        "The stream is enabled-account-only; documented 404 remediation is partner contact.",
+        "If Pixel and CAPI send the same event, they need a shared event ID for deduplication.",
+        "Pixel management and CAPI-key creation are account-enabled capabilities."
+      ],
+      "account_prerequisite": "Configured account-scoped key reference, resolved target account, existing Pixel ID for the event stream, and separately approved mutation scope for resource-creation endpoints",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-help-measure-results-live-20260910",
+      "url": "https://help.openai.com/en/articles/20001214-measure-results",
+      "publisher": "OpenAI Help Center",
+      "source_type": "official",
+      "locators": ["CSV download", "Measurement and reporting FAQ", "How do I validate that the JavaScript Pixel is installed correctly?"],
+      "facts": [
+        "Ads Manager documents separate cumulative and daily CSV exports, optional VTA when available, and event-specific columns selected before export.",
+        "The page does not publish a complete native CSV schema.",
+        "The page directs Pixel validation through correct initialization and debug mode and says reporting can take 24-48 hours for attributed conversions."
+      ],
+      "account_prerequisite": "Accessible Ads Manager reporting controls and an exportable report",
+      "evidence_class": "official_documentation_not_account_verified"
+    },
+    {
+      "id": "openai-help-ads-availability-live-20260910",
+      "url": "https://help.openai.com/en/articles/20001245-ads-manager-availability",
+      "publisher": "OpenAI Help Center",
+      "source_type": "official",
+      "locators": ["Ads Manager Availability", "Access type", "Ads Manager Availability country table"],
+      "facts": [
+        "Self-service account creation and self-service availability are separate.",
+        "The legal entity that advertises and is billed must be based in a listed country for self-service.",
+        "The page was labeled Updated: 4 days ago when retrieved."
+      ],
+      "account_prerequisite": "Verified legal-entity billing country",
+      "evidence_class": "official_documentation_not_account_verified"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "references/adapter-manifest.json",
+      "locator": "adapters.chatgpt-ads-native-csv",
+      "fact": "Native CSV adapter is disabled pending a real sanitized native CSV and tested source-field contract."
+    },
+    {
+      "path": "skills/chatgpt-ads/references/normalized-analysis.md",
+      "locator": "Normalized CSV contract",
+      "fact": "The local analyzer does not detect or ingest native ChatGPT Ads exports."
+    }
+  ],
+  "observed_account_state": {
+    "browser_logged_in": true,
+    "campaign_or_reporting_controls_visible": false,
+    "country_availability_gate_visible": true,
+    "account_id_recorded_here": false,
+    "interpretation": "The current session cannot establish native access or current country availability. Read-only inspection is authorized, but target identity and configured key reference remain unavailable to this lane."
+  },
+  "source_update_proposal": null,
+  "proposal_reason": "Live evidence confirms extant canonical claims; the evidence ledger adds locators and acceptance procedure only."
+}

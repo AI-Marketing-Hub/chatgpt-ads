@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatgpt-ads-brain"
+version = "0.3.0"
+description = "Sourced ChatGPT Ads knowledge and guarded operating skill pack."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Daniel Agrici"}]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/agricidaniel/chatgpt-ads"
+Issues = "https://github.com/agricidaniel/chatgpt-ads/issues"
+
+[tool.setuptools]
+packages = ["chatgpt_ads_brain"]
+
+[project.optional-dependencies]
+validation = ["jsonschema>=4,<5"]

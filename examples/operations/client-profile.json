@@ -1,0 +1,14 @@
+{
+  "schema_version": "v0.2",
+  "record_type": "client_profile",
+  "id": "client-profile-demo",
+  "created_at": "2026-09-10T00:00:00Z",
+  "client_id": "client-demo",
+  "account_id": "acct-demo",
+  "owner": "Example owner",
+  "owner_decision_policy": {
+    "owner_required": true,
+    "allow_policy_change": false,
+    "change_process": "The owner records and approves a separately reviewed policy update."
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "workflow",
+    "as_of",
+    "findings",
+    "missing_inputs",
+    "actions",
+    "live_execution"
+  ],
+  "properties": {
+    "status": {
+      "enum": [
+        "ok",
+        "provisional",
+        "needs_input",
+        "blocked",
+        "failed",
+        "no_data",
+        "capability_unavailable",
+        "needs_approval",
+        "needs_reconciliation"
+      ]
+    },
+    "workflow": {
+      "type": "string"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "observation",
+          "evidence_refs",
+          "confidence",
+          "support"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "none"
+            ]
+          },
+          "support": {
+            "enum": [
+              "evidence_based",
+              "practitioner",
+              "contested",
+              "folklore"
+            ]
+          }
+        }
+      }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "owner",
+          "window",
+          "success_measure",
+          "evidence_refs",
+          "confidence"
+        ],
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "window": {
+            "type": "string"
+          },
+          "success_measure": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "live_execution": {
+      "const": "not_performed"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "detail"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "description": "Advisory workflow result only. Actual executed effects use action-receipt.schema.json.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "blocked"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "blockers"
+        ],
+        "properties": {
+          "blockers": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

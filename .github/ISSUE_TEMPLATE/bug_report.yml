@@ -1,0 +1,28 @@
+name: Bug report
+description: Report a reproducible local-pack issue without private data.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include keys, cookies, client data, account IDs, raw exports, browser captures, or local paths."
+  - type: input
+    id: version
+    attributes:
+      label: Pack version
+      placeholder: "0.3.0"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and command
+      placeholder: "OS, Python version, command, sanitized output"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

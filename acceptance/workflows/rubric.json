@@ -1,0 +1,49 @@
+{
+  "rubric_version": 1,
+  "case_acceptance_meaning": "The synthetic advisory output follows the workflow contract and preserves unresolved gates. It does not mean the advertiser or platform is ready.",
+  "global_criteria": [
+    "fixture_is_explicitly_invented",
+    "advisory_result_schema_valid",
+    "live_execution_not_performed",
+    "platform_claims_resolve_through_guarded_query",
+    "source_freshness_checked_for_frozen_as_of_date",
+    "unknown_account_values_remain_null",
+    "no_universal_performance_benchmark_used",
+    "external_effects_absent"
+  ],
+  "workflow_criteria": {
+    "readiness": [
+      "business_inputs_extracted",
+      "documented_platform_evidence_separated_from_account_observation",
+      "all_material_account_and_destination_blockers_listed",
+      "next_actions_have_owners"
+    ],
+    "plan": [
+      "contribution_and_break_even_math_recomputed",
+      "sensitivity_shown",
+      "spend_scenario_bounded_by_fixture_ceiling",
+      "platform_configuration_left_unset_when_unobserved",
+      "stop_rules_are_fixture_owner_rules_not_benchmarks"
+    ],
+    "creative": [
+      "each_copy_claim_maps_to_approved_fixture_claim",
+      "variants_have_distinct_hypotheses",
+      "destination_and_rights_gaps_block_export",
+      "no_format_maximum_invented"
+    ],
+    "experiment": [
+      "primary_decision_and_minimum_effect_declared_as_fixture_choice",
+      "assignment_capability_left_unknown",
+      "no_power_result_without_baseline",
+      "fixed_feasibility_window_and_no_efficacy_decision",
+      "causal_limits_explicit"
+    ],
+    "monitor": [
+      "missing_closed_day_is_no_data_not_zero",
+      "comparable_closed_day_pacing_recomputed",
+      "stale_incomplete_period_excluded_after_lag",
+      "whole_window_conclusion_blocked",
+      "no_automatic_action_or_schedule"
+    ]
+  }
+}

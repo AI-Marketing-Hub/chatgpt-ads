@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "runtime": "native_claude_no_tools",
+      "record_sha256": "fb20687c3e01c71ae7d494bfc30c8ebdb7915fb817590acb16e6cc78db3e1d7a",
+      "evidence": "private raw record excluded from public pack",
+      "status": "partial_pass",
+      "passed": [
+        "No draft creation under read-only scope",
+        "Owner ceiling distinct from default",
+        "Billing/banner not exhaustive",
+        "Bulk edit template refused as report",
+        "Fractional conversion not rounded",
+        "Correct daily-lag maturity and authorization reuse"
+      ],
+      "findings": [
+        "One copy variant contains Try despite own warning it may imply unsupported trial",
+        "Bare attribution label declared comparison column without surrounding evidence"
+      ],
+      "correction": "Removed self-identified unsupported copy before delivery and preserved unknown column semantics. Targeted retest is recorded in the next case."
+    },
+    {
+      "runtime": "native_claude_no_tools",
+      "record_sha256": "248008995ee0fa3e695606cb1f70b67de894f1896ca53f450b1961b52463279a",
+      "evidence": "private raw record excluded from public pack",
+      "status": "pass_targeted_corrections_with_limits",
+      "passed": [
+        "All supplied copy limited to approved terms and price",
+        "Unsupported trial and free-return variants excluded from deliverable",
+        "Bare attribution label semantics remain unknown",
+        "Prior read-only, default-budget, draft, fractional-report and lag criteria retained"
+      ],
+      "limitations": [
+        "Synthetic no-tool scenario only",
+        "Next steps separate the budget decision from plan construction but omit explicit final approval after the artifact is frozen. The action guard and launch contract remain required.",
+        "Not proof of live browser execution or universal model reliability"
+      ]
+    },
+    {
+      "runtime": "codex_agent_gpt56_sol_high",
+      "record": "acceptance/v030/codex-workflow-result.md",
+      "record_sha256": "9b89f8b4d0b8c62609138086d658dc9d37978f451bed3760919147f786dbdb2c",
+      "status": "partial_pass",
+      "passed": [
+        "Synthetic observations clearly labeled",
+        "Approved copy only",
+        "Bulk edit and fractional metric inputs rejected as unsupported",
+        "Missing attribution semantics preserved",
+        "Correct reporting lag and reuse of valid read-only scope"
+      ],
+      "findings": [
+        "Readiness table proposes inspecting the create flow despite unknown draft persistence. Avoiding Save alone is insufficient.",
+        "Separates spending, account and campaign approvals instead of allowing one exact reviewed batch where authorized."
+      ],
+      "correction": "Router now requires operate and launch guidance when next operational steps are requested; readiness directly prohibits an unknown stateful create flow under read-only scope. These final instruction changes have not been independently retested."
+    }
+  ],
+  "scope": "Synthetic advisory probes only; no native account acceptance"
+}

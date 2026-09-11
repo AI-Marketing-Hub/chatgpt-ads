@@ -1,0 +1,7 @@
+Brainstein
+Copyright 2026 Daniel Agrici and contributors
+
+This product includes software developed by Daniel Agrici
+and the open-source community.
+
+Original repository: https://github.com/AgriciDaniel/Brainstein

@@ -1,0 +1,9 @@
+{
+  "account_id": "acct-demo",
+  "ui_revision": "ui-7",
+  "daily_budget_micros": 25000000,
+  "maximum_effect": {"kind": "maximum_total_spend_micros", "amount_micros": 250000000},
+  "session_active": true,
+  "save_mode": "success",
+  "campaigns": {}
+}

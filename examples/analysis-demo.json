@@ -1,0 +1,80 @@
+{
+  "ad_count": 2,
+  "limits": [
+    "Blank measurements propagate as not measurable; they are not treated as zero.",
+    "Rates are aggregate weighted calculations, not averages of ad-level rates.",
+    "No view-through outcomes, incompatible attribution windows, or incompatible revenue bases are summed.",
+    "Revenue ROAS is labeled with the supplied revenue_basis and is not assumed to be order-created revenue.",
+    "The analyzer cannot detect overlapping native aggregate totals disguised as ad rows; map only non-overlapping ad rows before input."
+  ],
+  "metadata": {
+    "attribution_window": "7-day click",
+    "conversion_definition": "Purchase",
+    "currency": "USD",
+    "date_end": "2026-09-07",
+    "date_start": "2026-09-01",
+    "granularity": "ad",
+    "revenue_basis": "Order created",
+    "timezone": "America/New_York"
+  },
+  "metric_units": {
+    "average_cpm": "USD per 1,000 impressions",
+    "click_through_rate": "ratio; multiply by 100 to display percent",
+    "conversion_rate": "ratio; multiply by 100 to display percent",
+    "cost_per_click": "USD per click",
+    "cost_per_conversion": "USD per conversion",
+    "revenue_roas": "revenue / spend, basis: Order created"
+  },
+  "metrics": {
+    "average_cpm": {
+      "reason": null,
+      "value": 110.0
+    },
+    "click_through_rate": {
+      "reason": null,
+      "value": 0.04666666666666667
+    },
+    "conversion_rate": {
+      "reason": null,
+      "value": 0.1
+    },
+    "cost_per_click": {
+      "reason": null,
+      "value": 2.357142857142857
+    },
+    "cost_per_conversion": {
+      "reason": null,
+      "value": 23.571428571428573
+    },
+    "revenue_roas": {
+      "basis": "Order created",
+      "reason": null,
+      "value": 4.121212121212121
+    }
+  },
+  "source_type": "local_normalized_schema_not_native_export",
+  "status": "ok",
+  "totals": {
+    "clicks": {
+      "reason": null,
+      "value": 70
+    },
+    "conversions": {
+      "reason": null,
+      "value": 7
+    },
+    "impressions": {
+      "reason": null,
+      "value": 1500
+    },
+    "revenue": {
+      "reason": null,
+      "value": 680
+    },
+    "spend": {
+      "reason": null,
+      "value": 165
+    }
+  },
+  "workflow": "normalized_csv_aggregate_analysis"
+}

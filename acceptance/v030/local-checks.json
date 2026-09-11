@@ -1,0 +1,214 @@
+{
+  "as_of": "2026-09-11T11:38:43.370235+00:00",
+  "scope": "Native Linux execution on Python 3.11 and 3.14; Windows and remote CI not run",
+  "checks": [
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4c08bc68eb1d05984c4180562d3a40eea388bbde5b6cc4c15cf3cb2d7c32c07b",
+      "tests_run": 63
+    },
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/chatgpt-ads/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "99d6e904543bd061326b68ba132b19c54f866fcb2ad29afd34816f22090f5fa4",
+      "tests_run": 12
+    },
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "scripts/validate_pack.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "e1135e36c1922bb59d5ddb772e35f3dc750b12a0c0a286e188c397cc22407e5e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "acceptance/workflows/verify.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "7cc8d5704425aac9676344f07a1f4962186f2f752d5f64bfc7782a4554437fa5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "acceptance/measurement/run_offline_cases.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "cbe6dd51210b94c865608b5f5f4994d50a7fb22d2e337ece61b0bdb0d7fc1a28",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "scripts/doctor.py",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "6c7737aae20977e049e47e1ddc2e841156780016b317836326aa7d8d1df199cd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.14.4",
+      "command": [
+        "python",
+        "-m",
+        "chatgpt_ads_brain",
+        "query",
+        "conversion attribution"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "59df0ab8809564ef7e23d74c08580f4602cd79bbda6e10957f5afaade49415d5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fa1f713b40cf03db6d7c8a547ac0f696341e2cc28c760fcecb7e2441a7445938",
+      "tests_run": 63
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/chatgpt-ads/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "74d184c47d5b767fd584063bc280551639ea5d17b39f783324a755540fc4b05f",
+      "tests_run": 12
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "scripts/validate_pack.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "e1135e36c1922bb59d5ddb772e35f3dc750b12a0c0a286e188c397cc22407e5e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "acceptance/workflows/verify.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "7cc8d5704425aac9676344f07a1f4962186f2f752d5f64bfc7782a4554437fa5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "acceptance/measurement/run_offline_cases.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "cbe6dd51210b94c865608b5f5f4994d50a7fb22d2e337ece61b0bdb0d7fc1a28",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "scripts/doctor.py",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "3bce891bc7481af3769e51fc9d9176945dbb5235c25c17edddeba2d662397787",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "runtime": "Python 3.11.15",
+      "command": [
+        "python",
+        "-m",
+        "chatgpt_ads_brain",
+        "query",
+        "conversion attribution"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "59df0ab8809564ef7e23d74c08580f4602cd79bbda6e10957f5afaade49415d5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "input_hashes": {
+    "scripts/assemble_research.py": "eb0677657536c2ec59c1fd9cbc0bacff6fef9cabf89da8824e9f94f8d1646ecc",
+    "scripts/validate_pack.py": "38e3632d53be1329249e76e84c36255bfaec92705b3b1aec3b1279541d08e875",
+    "scripts/operating_core.py": "8d45f2fca0a16f276b67523798e02e14305c03db902b319c0e5fddea11838057",
+    "scripts/import_report.py": "b561e9d70136ac64a02cb8b1d2a962dabc3b4c106215d54159ab0fabea9e3a43",
+    "scripts/knowledge_core.py": "8d2af7b3585607563f1f0257b70d2c2cd88e2cacf5bddf4ca4cd28e55cce3c26",
+    "scripts/render_views.py": "77f0d089376e1fdbb8f032fb2a6860ed84901d08a69f987e7f22d9cae1b3422b",
+    "scripts/query_brain.py": "397aa68f2015979200a2cc60e91cb113e173808c4c81099bc40390e8e7162c10",
+    "scripts/serve_fixture.py": "1b294263fc28f01aeac28646c389dcdbda39f85e5a467cd8ee2f7f2c742b9cca",
+    "scripts/check_browser_action.py": "138b67b5a263756a048a52e8b40df30d041b0bdbe9624bcbafa89567ac31546c",
+    "scripts/safe_io.py": "85a9c46b373c3e3774fd3e65e2767d68b2a48b99acde4c140baa7617c61352e8",
+    "scripts/prepare_public.py": "b2cd8739770b15f565dd3d620e4fc5feb4123b27c40ea8865f1220e3afab321a",
+    "scripts/package_release.py": "2d5518058f32b454add26e3587f0d911366f4adc75dadd5ae3ea4e374e534628",
+    "scripts/doctor.py": "1054b41a51b7ae8b8923a553cc12f3804607e74dd99e258cc85d2de1652eb9c1",
+    "tests/test_operating_core.py": "f2eeb6c937c1457a9da9f2c4820b2fee88bac3d22d28d56ac5f20af37f01ebf4",
+    "tests/test_import_report.py": "e47066797f34c3d4003cf7e41dbb8d03a5d46a8dbe9af3cd7f167901361b88a6",
+    "tests/test_coverage.py": "87ac7fbc85b0040a2e116bf77ce432053d6a9cd267ef10a5b671f06efc016b4e",
+    "tests/test_result_contract.py": "d734b223fb644cc76a7b45d7c0d20937560fcb887d0de8dfb57766ec7bd3d7cf",
+    "tests/test_knowledge_core.py": "8333d693c5ed2b0620862e11af139200f4da393a8a4931c305701191735200c8",
+    "tests/test_browser_guard.py": "596b0e093a8ac6dd0e2a12cfafbbec19b3ab6eef90d6718427a7522476e1c419",
+    "tests/test_boundary_regressions.py": "fbdd9e50de633cc25a437b2b7962c730f2ba6799a48a8050eb7ffec1cd4e77be",
+    "tests/test_launch_defaults.py": "71ff87753f81feb2891f1baacf582488a91350e9e24c764d68dfcd01b16db493",
+    "tests/test_packaging.py": "2988d002609bc5c917e34822711c6c0c5bc8a8325cda4e1e8b9cdf6c3dabe306",
+    "tests/test_safe_io.py": "3f89eea570dee6705f32fb88725c6024985001ea6d7620b3c228c26b59a5ae86",
+    "tests/fixtures/sample-source.md": "609fe9280c43ded205b03a21a169f665f1cd6071e194f38f9f0711ab504ade41",
+    "interfaces/client-profile.schema.json": "5623adbbba77f3830fffaa1478c8bf2cfefcdf1995ac6b46a65016dc64e93fa7",
+    "interfaces/campaign-plan.schema.json": "58f5936eb8c607f60c609d607caffc84837dccbf516d41fdbb7a643afb42125e",
+    "interfaces/learning-candidate.schema.json": "68ad89e986aa7f892849c532126ef662b1525cd6dc727fff3f6175ac6b5edeec",
+    "interfaces/browser-observation.schema.json": "638b2643e5177cde29ec1a8adb2a54f335e6bed884c0d911353cbe07726350a3",
+    "interfaces/action-receipt.schema.json": "fd6a3b72cc88b134e81483ec15dc17063d318679df653cdc760576f03e829cab",
+    "interfaces/action-plan.schema.json": "ed37a480e13e57857e970484ffcc7f627bddaa292f4578bca635846863e283da"
+  }
+}

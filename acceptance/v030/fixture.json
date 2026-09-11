@@ -1,0 +1,58 @@
+{
+  "id": "v030-synthetic-preflight",
+  "evidence_class": "synthetic",
+  "as_of": "2026-09-11",
+  "business": {
+    "product": "Cork desk mat",
+    "price_eur": 80,
+    "approved_claims": [
+      "Cork surface",
+      "30-day return window under the published policy"
+    ]
+  },
+  "authorization": {
+    "read_only_account_inspection": true,
+    "account_changes": false,
+    "proposed_campaign_budget_eur": 200,
+    "budget_approved_for_execution": false
+  },
+  "observed": {
+    "account_reference": "synthetic-account-A",
+    "account_country": "Spain",
+    "currency": "EUR",
+    "timezone_label": "Madrid UTC+02:00",
+    "timezone_identity": null,
+    "banner": [
+      "Billing profile incomplete",
+      "Logo missing"
+    ],
+    "text_personalization": true,
+    "account_default_limit_eur": 1000000000,
+    "campaigns": [],
+    "create_flow": {
+      "not_opened": true,
+      "persistence_behavior": "unknown"
+    }
+  },
+  "report_artifact": {
+    "label": "Export for editing",
+    "kind": "bulk_edit_template",
+    "rows": []
+  },
+  "separate_unmapped_metric_sample": {
+    "conversion_value_text": "2,5",
+    "locale": "es-ES",
+    "attribution_column_label": "Click attribution 7 days",
+    "event_setting_window_days": null
+  },
+  "owner_monitor_rule": {
+    "zero_purchase_review_spend_eur": 65.6,
+    "already_approved": true
+  },
+  "lag_case": {
+    "report_date": "2026-09-07",
+    "hours_covered": 12,
+    "lag_hours": 24,
+    "as_of": "2026-09-10"
+  }
+}

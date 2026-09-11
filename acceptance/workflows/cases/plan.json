@@ -1,0 +1,125 @@
+{
+  "case_id": "wf-plan-mossline-001",
+  "workflow": "plan",
+  "evidence_class": "synthetic_advisory",
+  "brief_inputs": {
+    "fixture_ref": "fixture.json",
+    "readiness_case_ref": "cases/readiness.json",
+    "primary_business_outcome": "completed_purchase",
+    "planning_currency": "USD",
+    "business_reporting_timezone": "America/New_York",
+    "planning_window_days": 14,
+    "planning_spend_ceiling": "840.00"
+  },
+  "produced_output": {
+    "plan_id": "mossline-provisional-plan-v1",
+    "plan_status": "provisional",
+    "business_hypothesis": "If shoppers who are already considering desk organization see exact product details and offer terms, some will purchase the Mossline Desk Mat at a customer acquisition cost below its supplied contribution before advertising.",
+    "primary_metric": "cost_per_completed_purchase",
+    "economics": {
+      "unit_revenue": "80.00",
+      "cost_of_goods": "32.00",
+      "fulfillment_per_order": "8.00",
+      "payment_fee_amount": "3.20",
+      "returns_allowance_amount": "4.00",
+      "contribution_before_advertising": "32.80",
+      "break_even_cpa": "32.80",
+      "break_even_revenue_roas": "2.439024390243902439024390244",
+      "owner_selected_target_cpa": "25.00",
+      "target_cpa_revenue_roas": "3.20",
+      "formula": "contribution = revenue - cost of goods - fulfillment - revenue*payment fee rate - revenue*returns allowance rate; break-even ROAS = revenue/contribution"
+    },
+    "returns_rate_sensitivity": [
+      {"returns_allowance_rate": "0.02", "contribution_before_advertising": "35.20", "break_even_revenue_roas": "2.272727272727272727272727273"},
+      {"returns_allowance_rate": "0.05", "contribution_before_advertising": "32.80", "break_even_revenue_roas": "2.439024390243902439024390244"},
+      {"returns_allowance_rate": "0.08", "contribution_before_advertising": "30.40", "break_even_revenue_roas": "2.631578947368421052631578947"}
+    ],
+    "budget_scenario": {
+      "kind": "campaign_total_proposal",
+      "maximum_spend": "840.00",
+      "planning_window_days": 14,
+      "planning_daily_equivalent": "60.00",
+      "budget_effect": "At most USD 840.00 in fixture media spend if a new campaign with an observed campaign-total control is later approved and created.",
+      "evidence_refs": ["fixture:fixture-owner-economics-sheet-v1", "claim:policy-billing-safety"],
+      "constraint": "No budget field will be selected or changed until the exact account control is observed. The guarded query withholds contradictory campaign budget guidance, so this is a planning ceiling, not an executable field choice."
+    },
+    "proposed_structure": {
+      "campaigns": 1,
+      "ad_groups": 1,
+      "creative_variants": ["creative-functional-v1", "creative-material-v1"],
+      "platform_objective": null,
+      "bid_mode": null,
+      "targeting": null,
+      "locations": null,
+      "platforms": null,
+      "reason": "Business structure is planned, but every platform-selectable value depends on current account observation."
+    },
+    "measurement_design": {
+      "business_conversion": "completed_purchase",
+      "platform_event": null,
+      "attribution_window": null,
+      "reporting_lag": null,
+      "required_before_launch": ["validated event receipt", "deduplication design if two collection paths are used", "test traffic separation", "account reporting semantics"]
+    },
+    "success_and_stop_rules": {
+      "profitability_boundary": "Matured cost per completed purchase at or below USD 32.80 is the supplied break-even boundary, subject to the fixture economics remaining current.",
+      "target": "USD 25.00 cost per completed purchase is an owner-selected planning target, not a platform benchmark.",
+      "zero_purchase_review": "Propose a review after comparable matured spend reaches USD 65.60 with zero completed purchases. Do not pause automatically.",
+      "hard_ceiling": "Never exceed the USD 840.00 planning ceiling without a new owner decision.",
+      "incomparable_data": "Do not apply performance stops while a closed day is missing, reporting lag is unresolved, or the conversion definition changed."
+    },
+    "reasoning": "The contribution calculation supports a business break-even boundary, not a forecast. A campaign-total proposal contains risk better than interpreting a payment threshold as a spend cap. The plan intentionally leaves all account-dependent configuration null and cannot advance to launch while readiness is blocked."
+  },
+  "advisory_result": {
+    "status": "provisional",
+    "workflow": "plan",
+    "as_of": "2026-09-10",
+    "findings": [
+      {
+        "id": "plan-economics",
+        "observation": "Supplied fixture economics yield USD 32.80 contribution before advertising, USD 32.80 break-even CPA, and 2.439024390243902439024390244 break-even revenue ROAS.",
+        "evidence_refs": ["fixture:fixture-owner-economics-sheet-v1"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "plan-budget-boundary",
+        "observation": "The USD 840.00 campaign-total scenario is bounded by the owner-supplied planning ceiling; documentation says campaign total is the campaign maximum and payment threshold is not a spend ceiling.",
+        "evidence_refs": ["fixture:fixture-owner-economics-sheet-v1", "claim:policy-billing-safety"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "plan-no-benchmarks",
+        "observation": "No published performance figure is used as a forecast because the guarded evidence does not support transferable benchmarks.",
+        "evidence_refs": ["claim:measurement-benchmarks-evidence-quality"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "plan-platform-fields-unset",
+        "observation": "Platform objective, bid mode, targeting, location, platform selection, event, attribution window, and reporting lag remain null because no account was observed.",
+        "evidence_refs": ["fixture:account_evidence", "fixture:measurement_evidence"],
+        "confidence": "high",
+        "support": "evidence_based"
+      }
+    ],
+    "missing_inputs": [
+      "Observed account objective and bid-mode options",
+      "Observed targeting and placement controls",
+      "Validated conversion event and attribution settings",
+      "Approval for any actual spending"
+    ],
+    "actions": [
+      {
+        "action": "Verify the exact account controls and measurement settings, then bind a launch candidate to the observed values and the USD 840.00 ceiling.",
+        "owner": "authorized operator and business owner",
+        "window": "after readiness blockers resolve",
+        "success_measure": "A versioned campaign plan names only observed controls and has a separately approved maximum spend effect.",
+        "evidence_refs": ["fixture:account_evidence", "fixture:measurement_evidence", "claim:policy-billing-safety"],
+        "confidence": "high"
+      }
+    ],
+    "live_execution": "not_performed"
+  }
+}

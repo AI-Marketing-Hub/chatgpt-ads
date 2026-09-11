@@ -1,0 +1,490 @@
+{
+  "version": 1,
+  "areas": [
+    {
+      "id": "platform-access",
+      "area": "Platform and access",
+      "note": "brain/notes/platform-access.md",
+      "skill": "skills/chatgpt-ads-readiness/SKILL.md",
+      "claim_ids": [
+        "platform-finding-001",
+        "platform-finding-002",
+        "platform-finding-003",
+        "platform-finding-004",
+        "platform-finding-014",
+        "platform-finding-021",
+        "refresh-chatgpt-account-setup-scope-20260911"
+      ],
+      "source_ids": [
+        "platform-account-setup",
+        "platform-ad-policies",
+        "platform-advertiser-api-overview",
+        "platform-availability",
+        "platform-billing",
+        "platform-consumer-faq",
+        "platform-global-expansion",
+        "platform-identity-access",
+        "platform-manager-overview",
+        "platform-new-buying-routes",
+        "refresh-account-setup-help-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": false,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ]
+    },
+    {
+      "id": "business-readiness",
+      "area": "Business readiness",
+      "note": "brain/notes/business-readiness.md",
+      "skill": "skills/chatgpt-ads-readiness/SKILL.md",
+      "claim_ids": [
+        "policy-eligibility",
+        "policy-creative-landing-page"
+      ],
+      "source_ids": [
+        "policy-src-ads-policy",
+        "policy-src-create-ads"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Wrong-account and missing capability decisions exercised in compound runtime probes, not full client onboarding."
+    },
+    {
+      "id": "strategy-economics",
+      "area": "Strategy and economics",
+      "note": "brain/notes/strategy-economics.md",
+      "skill": "skills/chatgpt-ads-plan/SKILL.md",
+      "claim_ids": [
+        "platform-finding-005",
+        "platform-finding-006",
+        "platform-finding-007",
+        "platform-finding-008",
+        "platform-finding-009",
+        "platform-finding-022",
+        "refresh-account-spend-controls-20260911",
+        "refresh-manual-bid-label-boundary-20260911"
+      ],
+      "source_ids": [
+        "platform-ads-basics",
+        "platform-api-ad-groups",
+        "platform-api-campaigns",
+        "platform-budget-pacing",
+        "platform-campaigns",
+        "platform-consumer-faq",
+        "platform-conversion-optimized",
+        "platform-daily-budgets",
+        "platform-manager-overview",
+        "platform-maximize-results",
+        "refresh-ad-account-api-20260911",
+        "refresh-ad-groups-api-20260911",
+        "refresh-maximize-results-help-20260911",
+        "refresh-conversion-controls-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py",
+        "tests/test_launch_defaults.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Schema and exact budget/plan binding fixtures only, not a strategic quality benchmark."
+    },
+    {
+      "id": "targeting-delivery",
+      "area": "Targeting and delivery",
+      "note": "brain/notes/targeting-delivery.md",
+      "skill": "skills/chatgpt-ads-plan/SKILL.md",
+      "claim_ids": [
+        "platform-finding-010",
+        "platform-finding-011",
+        "platform-finding-012",
+        "platform-finding-013",
+        "refresh-location-catalog-surface-boundary-20260911"
+      ],
+      "source_ids": [
+        "platform-ad-groups",
+        "platform-advertiser-api-overview",
+        "platform-api-campaigns",
+        "platform-api-platform-targeting",
+        "platform-api-targeting",
+        "platform-campaigns",
+        "platform-custom-audiences",
+        "refresh-campaigns-help-20260911",
+        "refresh-location-targeting-api-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": false,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ]
+    },
+    {
+      "id": "creative-destinations",
+      "area": "Creative and destinations",
+      "note": "brain/notes/creative-destinations.md",
+      "skill": "skills/chatgpt-ads-creative/SKILL.md",
+      "claim_ids": [
+        "platform-finding-015",
+        "platform-finding-016",
+        "policy-creative-landing-page",
+        "policy-landing-crawlability",
+        "refresh-url-parameters-precedence-20260911",
+        "refresh-ai-creative-controls-20260911"
+      ],
+      "source_ids": [
+        "platform-ads-basics",
+        "platform-api-ads",
+        "platform-create-ads",
+        "platform-launch",
+        "platform-product-feeds",
+        "policy-src-ads-policy",
+        "policy-src-crawlers",
+        "policy-src-create-ads",
+        "refresh-ad-tools-terms-20260911",
+        "refresh-conversion-measurement-20260911",
+        "refresh-measure-results-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py",
+        "tests/test_launch_defaults.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Synthetic multi-element concepts, manual factual copy review and narrow claim-ID allowlist; no real assets/destination acceptance."
+    },
+    {
+      "id": "commerce",
+      "area": "Commerce and feeds",
+      "note": "brain/notes/commerce.md",
+      "skill": "skills/chatgpt-ads-operate/SKILL.md",
+      "claim_ids": [
+        "platform-finding-019",
+        "platform-finding-015",
+        "refresh-catalog-api-boundary-20260910",
+        "refresh-products-reporting-semantics-20260911"
+      ],
+      "source_ids": [
+        "platform-ads-basics",
+        "platform-api-ads",
+        "platform-product-feeds",
+        "refresh-measure-results-20260911",
+        "refresh-product-feeds-20260910",
+        "refresh-product-feeds-help-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": false,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ]
+    },
+    {
+      "id": "campaign-operations",
+      "area": "Campaign operations",
+      "note": "brain/notes/campaign-operations.md",
+      "skill": "skills/chatgpt-ads-operate/SKILL.md",
+      "claim_ids": [
+        "platform-finding-017",
+        "platform-finding-018",
+        "platform-finding-008",
+        "refresh-ai-creative-controls-20260911",
+        "refresh-account-spend-controls-20260911"
+      ],
+      "source_ids": [
+        "platform-advertiser-api-overview",
+        "platform-api-ad-groups",
+        "platform-api-ads",
+        "platform-api-campaigns",
+        "platform-api-insights",
+        "platform-budget-pacing",
+        "platform-campaigns",
+        "platform-daily-budgets",
+        "platform-edit",
+        "platform-launch",
+        "platform-manager-overview",
+        "refresh-ad-account-api-20260911",
+        "refresh-ad-tools-terms-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py",
+        "tests/test_launch_defaults.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Eight browser fixture cases; generic read-only guard tests; no Ads Manager actions."
+    },
+    {
+      "id": "measurement",
+      "area": "Measurement and attribution",
+      "note": "brain/notes/measurement.md",
+      "skill": "skills/chatgpt-ads-measurement/SKILL.md",
+      "claim_ids": [
+        "measurement-pixel-capi",
+        "measurement-attribution-and-matching",
+        "measurement-vta-definition",
+        "measurement-events-and-values",
+        "measurement-partner-coverage",
+        "measurement-optimization-objectives",
+        "refresh-vta-scope-20260910",
+        "refresh-pixel-gtm-boundary-20260911",
+        "refresh-report-window-semantics-20260911"
+      ],
+      "source_ids": [
+        "measurement-openai-capi-20260910",
+        "measurement-openai-conversion-20260910",
+        "measurement-openai-conversion-setup-api-20260910",
+        "measurement-openai-events-20260910",
+        "measurement-openai-insights-api-20260910",
+        "measurement-openai-measure-results-20260910",
+        "measurement-openai-mobile-partners-20260910",
+        "measurement-openai-ocpm-20260910",
+        "measurement-openai-partners-20260910",
+        "measurement-openai-pixel-20260910",
+        "refresh-conversion-measurement-20260911",
+        "refresh-conversion-setup-api-20260911",
+        "refresh-insights-api-20260911",
+        "refresh-measure-results-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Ten offline business-event preparation cases and fresh Claude advisory probes; no native payload, receipt or attribution test."
+    },
+    {
+      "id": "analytics-reporting",
+      "area": "Analytics and reporting",
+      "note": "brain/notes/analytics-reporting.md",
+      "skill": "skills/chatgpt-ads-analyze/SKILL.md",
+      "claim_ids": [
+        "platform-finding-020",
+        "measurement-reporting-metrics",
+        "measurement-exports-api",
+        "refresh-native-export-gap-20260910",
+        "refresh-report-window-semantics-20260911",
+        "refresh-products-reporting-semantics-20260911"
+      ],
+      "source_ids": [
+        "measurement-openai-insights-api-20260910",
+        "measurement-openai-measure-results-20260910",
+        "platform-api-insights",
+        "platform-results",
+        "refresh-conversion-measurement-20260911",
+        "refresh-conversion-setup-api-20260911",
+        "refresh-insights-api-20260911",
+        "refresh-measure-results-20260911",
+        "refresh-product-feeds-help-20260911"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Twelve analyzer tests plus six provenance wrapper tests and boundary regressions. Synthetic normalized data only."
+    },
+    {
+      "id": "optimization",
+      "area": "Optimization and diagnosis",
+      "note": "brain/notes/optimization.md",
+      "skill": "skills/chatgpt-ads-analyze/SKILL.md",
+      "claim_ids": [
+        "measurement-optimization-objectives",
+        "platform-finding-006",
+        "platform-finding-022"
+      ],
+      "source_ids": [
+        "measurement-openai-ocpm-20260910",
+        "platform-api-campaigns",
+        "platform-campaigns",
+        "platform-conversion-optimized",
+        "platform-manager-overview"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": false,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ]
+    },
+    {
+      "id": "experimentation",
+      "area": "Experimentation and incrementality",
+      "note": "brain/notes/experimentation.md",
+      "skill": "skills/chatgpt-ads-experiment/SKILL.md",
+      "claim_ids": [
+        "measurement-benchmarks-evidence-quality",
+        "platform-finding-022"
+      ],
+      "source_ids": [
+        "measurement-flowboost-case-20260910",
+        "measurement-openai-platform-claim-20260910",
+        "platform-manager-overview"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Synthetic feasibility design refuses power/sample claims without baseline; no real randomized experiment."
+    },
+    {
+      "id": "policy-privacy",
+      "area": "Policy and privacy",
+      "note": "brain/notes/policy-privacy.md",
+      "skill": "skills/chatgpt-ads-policy/SKILL.md",
+      "claim_ids": [
+        "policy-sensitive-categories",
+        "policy-review-enforcement",
+        "policy-minors",
+        "policy-user-controls-privacy",
+        "policy-placement",
+        "terms-advertising-terms",
+        "terms-ad-tools-terms",
+        "terms-ad-tools-dpa",
+        "terms-conversion-terms",
+        "terms-ad-credit-terms",
+        "refresh-audience-region-data-20260910",
+        "refresh-audience-retention-scope-20260910"
+      ],
+      "source_ids": [
+        "platform-custom-audiences",
+        "policy-src-ads-faq",
+        "policy-src-ads-policy",
+        "policy-src-privacy",
+        "policy-src-user-faq",
+        "refresh-custom-audiences-20260910",
+        "terms-src-ad-credit-terms",
+        "terms-src-ad-tools-dpa",
+        "terms-src-ad-tools-terms",
+        "terms-src-advertising-terms",
+        "terms-src-conversion-terms"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Worked platform-policy case and fresh Claude advisory rechecks; no actual client category or jurisdiction clearance."
+    },
+    {
+      "id": "reliability-learning",
+      "area": "Reliability and maintenance",
+      "note": "brain/notes/reliability-learning.md",
+      "skill": "skills/chatgpt-ads-monitor/SKILL.md",
+      "claim_ids": [
+        "policy-beta-availability",
+        "platform-finding-018"
+      ],
+      "source_ids": [
+        "platform-advertiser-api-overview",
+        "platform-api-ad-groups",
+        "platform-api-ads",
+        "platform-api-campaigns",
+        "platform-api-insights",
+        "policy-src-ads-faq",
+        "policy-src-user-faq"
+      ],
+      "disposition": "documented_with_account_gates",
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "tests": [
+        "tests/test_coverage.py"
+      ],
+      "limitations": [
+        "Current account access and native behavior unverified.",
+        "Source freshness does not establish remote content unchanged."
+      ],
+      "simulation_scope": "Learning promotion and evidence/privacy fixtures, not a scheduled account monitor."
+    }
+  ],
+  "coverage_meaning": "Every requested area accounted for, not every platform feature supported or live tested."
+}

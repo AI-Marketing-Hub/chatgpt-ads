@@ -1,0 +1,51 @@
+{
+  "suite_id": "synthetic-workflows-mossline-v1",
+  "command": "python3 acceptance/workflows/verify.py",
+  "executed_at": "2026-09-10T19:25:30Z",
+  "exit_code": 0,
+  "status": "pass",
+  "evidence_scope": "synthetic_advisory_only",
+  "case_outcomes": {
+    "readiness": {"acceptance": "pass", "advisory_status": "blocked"},
+    "plan": {"acceptance": "pass", "advisory_status": "provisional"},
+    "creative": {"acceptance": "pass", "advisory_status": "blocked"},
+    "experiment": {"acceptance": "pass", "advisory_status": "needs_input"},
+    "monitor": {"acceptance": "pass", "advisory_status": "blocked"}
+  },
+  "automated_checks": {
+    "schema_and_case_contracts": "pass",
+    "guarded_retrieval_and_withholding": "pass",
+    "frozen_date_source_freshness": "pass",
+    "readiness_failure_behavior": "pass",
+    "planning_economics_and_null_controls": "pass",
+    "creative_claim_id_allowlist": "pass",
+    "experiment_feasibility_boundary": "pass",
+    "monitor_temporal_completeness_and_arithmetic": "pass",
+    "scope_and_external_effect_safety": "pass"
+  },
+  "manual_reviews": {
+    "factual_copy_against_fixture_proof": "pass",
+    "creative_multi_element_boundary": "pass"
+  },
+  "input_sha256": {
+    "README.md": "bed55c5e46940bc4d90ac48a6ed9b8a9d98e30dcd6d155061404f2d302453776",
+    "cases/creative.json": "035a54df3fd52beecaa8de3397eebd1b29f2ccf51b4e30de9a947d3937326787",
+    "cases/experiment.json": "208a1bc0f344166ce3e8fb5d5e3f24bff1e4b2523ae3f957e544e0cc56da3b55",
+    "cases/monitor.json": "191e3c422a3bbc76d6b41ed7861c841a41f16a10161925e13c9a825a270a74fa",
+    "cases/plan.json": "41c9d276e6eccf1664b5682eb99302f6cec70138cf1af915657a2094702b2947",
+    "cases/readiness.json": "275994e5df0aed67d08bc6c5aaca5a98a06cb3679a67b40a2d6f5380939c9a7a",
+    "fixture.json": "668a5bd3192bc9add25da791b4c93a24560b1cc0630cda6aa05bffed8164339f",
+    "rubric.json": "43f839986635d94696dd13f77bc75272431da32bb240123321ff769976907f2f",
+    "source-query-ledger.json": "59107685118cfb54acac58aa10cb982289d97ac459930d901ce087aa906aed64",
+    "verify.py": "9b7cecb8c1a77f5251be9d26cf7d8f1173cbdd6e3ffd14eac247216138ad675f"
+  },
+  "live_account_access": false,
+  "live_execution": "not_performed",
+  "network_writes": "not_performed",
+  "paid_generation": "not_performed",
+  "limitations": [
+    "Historical source freshness is checked only for the frozen 2026-09-10 case date.",
+    "No native account, destination, tracking, delivery, experiment, or scheduled monitor was tested.",
+    "A passing suite validates synthetic workflow behavior, not advertiser or platform readiness."
+  ]
+}

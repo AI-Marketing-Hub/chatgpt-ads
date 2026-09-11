@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chatgpt-ads-brain.local/interfaces/campaign-plan.schema.json",
+  "title": "v0.2 campaign plan", "type": "object",
+  "required": ["schema_version", "record_type", "id", "created_at", "client_id", "account_id", "campaign_id", "objective", "budget", "expected_ui_revision", "evidence_reference"],
+  "properties": {
+    "schema_version": {"const": "v0.2"}, "record_type": {"const": "campaign_plan"}, "id": {"$ref": "#/$defs/id"}, "created_at": {"$ref": "#/$defs/utc"},
+    "client_id": {"$ref": "#/$defs/id"}, "account_id": {"$ref": "#/$defs/id"}, "campaign_id": {"$ref": "#/$defs/id"}, "objective": {"type": "string", "minLength": 1}, "budget": {"$ref": "#/$defs/budget"}, "expected_ui_revision": {"type": "string", "minLength": 1}, "evidence_reference": {"type": "string", "minLength": 1}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"}, "utc": {"type": "string", "pattern": "Z$"}, "budget": {"type": "object", "required": ["currency", "daily_budget_micros", "maximum_effect"], "properties": {"currency": {"type": "string", "pattern": "^[A-Z]{3}$"}, "daily_budget_micros": {"type": "integer", "minimum": 1}, "maximum_effect": {"type": "object", "required": ["kind", "amount_micros"], "properties": {"kind": {"const": "maximum_total_spend_micros"}, "amount_micros": {"type": "integer", "minimum": 1}}, "additionalProperties": false}}, "additionalProperties": false}}
+}

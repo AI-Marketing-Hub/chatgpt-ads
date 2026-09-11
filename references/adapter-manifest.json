@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "adapters": [
+    {
+      "id": "manual-normalized-v1",
+      "status": "implemented_local",
+      "entrypoint": "scripts/import_report.py",
+      "native": false,
+      "limits": [
+        "ad-grain only",
+        "integer count contract; modeled fractional counts are unsupported",
+        "one compatible reporting window",
+        "explicit manual mapping provenance required"
+      ]
+    },
+    {
+      "id": "chatgpt-ads-native-csv",
+      "status": "disabled",
+      "reason": "No real sanitized native CSV and source-field contract tested.",
+      "unsupported_normalized_fields": [
+        "all until native mapping is reviewed"
+      ]
+    },
+    {
+      "id": "advertiser-api",
+      "status": "unavailable",
+      "reason": "No authenticated account connector implemented or tested."
+    },
+    {
+      "id": "codex-browser",
+      "status": "procedural",
+      "entrypoint": "runtime/codex.md",
+      "account_verified": false
+    },
+    {
+      "id": "claude-browser",
+      "status": "procedural",
+      "entrypoint": "runtime/claude.md",
+      "account_verified": false
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "case_id": "wf-monitor-mossline-001",
+  "workflow": "monitor",
+  "evidence_class": "synthetic_advisory",
+  "brief_inputs": {
+    "fixture_ref": "fixture.json",
+    "plan_case_ref": "cases/plan.json",
+    "window": "2026-09-01 through 2026-09-07",
+    "authorized_read_scope": "synthetic fixture rows only",
+    "baseline": "USD 60.00 planned daily equivalent",
+    "alert_rules_ref": "fixture.json#owner_monitor_rules"
+  },
+  "produced_output": {
+    "checkpoint_id": "mossline-monitor-checkpoint-v1",
+    "data_freshness_and_completeness": {
+      "expected_mature_days": 7,
+      "observed_complete_days": 5,
+      "missing_closed_days": ["2026-09-06"],
+      "stale_incomplete_days": ["2026-09-07"],
+      "complete_day_ratio": "0.7142857142857142857142857143",
+      "stale_incomplete_assessment": {
+        "date": "2026-09-07",
+        "observed_hours": 12,
+        "report_lag_hours": 24,
+        "lag_maturity_date": "2026-09-09",
+        "case_as_of": "2026-09-10",
+        "classification": "stale_incomplete_closed_period",
+        "excluded_from_pacing": true
+      },
+      "decision": "data_incident",
+      "reason": "September 6 is no_data, and the 12-hour September 7 row is still incomplete after its 24-hour lag maturity date. Both are completeness incidents."
+    },
+    "pacing": {
+      "comparable_closed_days": ["2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05"],
+      "planned_spend_comparable_days": "300.00",
+      "observed_spend_comparable_days": "297.00",
+      "comparable_pacing_ratio": "0.99",
+      "fixture_owner_band": {"lower": "0.85", "upper": "1.15"},
+      "comparable_days_signal": "within_fixture_owner_band",
+      "stale_incomplete_day_observed_spend": "24.00",
+      "stale_incomplete_day_decision": "excluded_from_pacing_due_to_incomplete_coverage_after_lag",
+      "whole_window_signal": null,
+      "reason": "The missing September 6 row and stale incomplete September 7 row prevent a complete whole-window denominator."
+    },
+    "incidents": [
+      {
+        "priority": 1,
+        "type": "report_completeness",
+        "observation": "September 6 is absent from a report that should contain a closed day.",
+        "proposed_response": "Reconcile export coverage, date grain, timezone, and report status before any pacing or performance action."
+      },
+      {
+        "priority": 2,
+        "type": "stale_incomplete_report",
+        "observation": "September 7 contains only 12 hours and USD 24.00 spend even though the 24-hour lag matured on September 9, before the September 10 case date.",
+        "proposed_response": "Treat the row as a second completeness incident and obtain a complete September 7 row before evaluating pacing."
+      }
+    ],
+    "current_delivery_and_pending_effects": "unknown because this is a synthetic report with no account access",
+    "proposed_external_response": "none; reconcile data first",
+    "scheduling": "disabled",
+    "learning_candidate": {
+      "candidate": "Treat a missing closed-day report row as a data incident rather than zero spend.",
+      "scope": "synthetic fixture only",
+      "promotion_disposition": "do_not_promote",
+      "reason": "This exercise validates workflow behavior and contains no real account observation or generalizable performance evidence."
+    },
+    "reasoning": "The five comparable complete days are near the fixture plan, but that local calculation does not repair September 6 or September 7. By the September 10 case date, the 24-hour lag for September 7 had already matured, so its 12-hour row is stale incomplete evidence rather than an open day. Both incident days are excluded. The correct decision is data reconciliation, not a spend change."
+  },
+  "advisory_result": {
+    "status": "blocked",
+    "workflow": "monitor",
+    "as_of": "2026-09-10",
+    "findings": [
+      {
+        "id": "monitor-data-incident",
+        "observation": "Of seven mature report days, five are complete, September 6 is missing, and September 7 is stale incomplete. Complete-day coverage is 0.7142857142857142857142857143, so the whole-window pacing decision is blocked.",
+        "evidence_refs": ["fixture:synthetic-manual-report-fixture-v1"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "monitor-comparable-pacing",
+        "observation": "Five comparable closed days contain USD 297.00 observed spend against USD 300.00 planned, a 0.99 ratio within the fixture owner's 0.85 to 1.15 band.",
+        "evidence_refs": ["fixture:synthetic-manual-report-fixture-v1", "fixture:owner_monitor_rules"],
+        "confidence": "high",
+        "support": "evidence_based"
+      },
+      {
+        "id": "monitor-stale-incomplete-excluded",
+        "observation": "The September 7 row contains only 12 hours and USD 24.00, but the 24-hour lag matured before the September 10 case date. It is excluded as stale incomplete evidence, with no pacing ratio calculated.",
+        "evidence_refs": ["fixture:synthetic-manual-report-fixture-v1", "claim:platform-finding-020", "claim:measurement-reporting-metrics"],
+        "confidence": "high",
+        "support": "evidence_based"
+      }
+    ],
+    "missing_inputs": [
+      "September 6 closed-day report row or confirmed report failure",
+      "Complete September 7 row or a confirmed failed-report record",
+      "Actual account identity and report provenance",
+      "Actual reporting timezone, currency, conversion definition, and attribution semantics"
+    ],
+    "actions": [
+      {
+        "action": "Reconcile the missing September 6 row and stale incomplete September 7 row, then confirm report grain, timezone, currency, and extraction status before diagnosing pacing.",
+        "owner": "report owner",
+        "window": "before any account action",
+        "success_measure": "Every expected closed day is present or carries an explicit failed-report record, and pacing is recomputed on comparable rows.",
+        "evidence_refs": ["fixture:synthetic-manual-report-fixture-v1", "claim:platform-finding-020"],
+        "confidence": "high"
+      }
+    ],
+    "live_execution": "not_performed",
+    "blockers": [
+      {"code": "closed_day_report_missing", "detail": "September 6 is no_data, so the whole-window pacing denominator is incomplete."},
+      {"code": "stale_incomplete_closed_period", "detail": "September 7 still contains only 12 hours after its 24-hour lag maturity date."},
+      {"code": "account_context_absent", "detail": "This synthetic report is not tied to an observed account or native export."}
+    ]
+  }
+}

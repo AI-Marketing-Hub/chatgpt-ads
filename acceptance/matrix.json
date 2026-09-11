@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "date": "2026-09-11",
+  "status": "v030_limited_local_release_candidate_pass",
+  "scope": "Historical results retain their original scope. Current deterministic results and partial advisory probes are recorded under acceptance/v030.",
+  "gaps": [
+    {
+      "id": "workflow_outputs",
+      "state": "synthetic_cases_pass",
+      "evidence": "acceptance/workflows/",
+      "remaining": "No real client/account, creative destination, experiment or scheduling acceptance."
+    },
+    {
+      "id": "measurement_preparation",
+      "state": "offline_cases_pass",
+      "evidence": "acceptance/measurement/results.json",
+      "remaining": "native payload and receipt verification, consent implementation, configured attribution"
+    },
+    {
+      "id": "policy_worked_case",
+      "state": "advisory_case_pass",
+      "evidence": "acceptance/policy/review.md",
+      "remaining": "actual client category, claims, destination and jurisdiction review"
+    },
+    {
+      "id": "codex_account_access",
+      "state": "blocked_on_account_access",
+      "evidence": "Private session observation retained outside package",
+      "remaining": "eligible account with identity verified against approved business profile"
+    },
+    {
+      "id": "native_csv",
+      "state": "blocked_on_real_export",
+      "evidence": "acceptance/native-research/2026-09-10-native-gap-report.md",
+      "remaining": "actual native file, exact mapping and reconciliation"
+    },
+    {
+      "id": "native_api",
+      "state": "blocked_on_account_and_key_reference",
+      "evidence": "acceptance/native-research/2026-09-10-evidence-ledger.json",
+      "remaining": "existing configured key, account identity, observed read responses and adapter acceptance"
+    },
+    {
+      "id": "claude_browser",
+      "state": "historical_keyboard_pass_new_code_not_browser_retested",
+      "evidence": "Historical v0.2.1 browser evidence retained in prior release",
+      "remaining": "Actual Ads account behavior; pointer reliability; original test-tab cleanup after logging timeout. Advisory model probes remain partial."
+    },
+    {
+      "id": "live_campaign",
+      "state": "blocked_on_account_and_reviewed_action",
+      "evidence": "docs/LIVE_ACCEPTANCE.md",
+      "remaining": "real approved brief, exact effects/budget, owner approval and saved-state receipt"
+    },
+    {
+      "id": "performance",
+      "state": "not_measured",
+      "evidence": "docs/LIVE_ACCEPTANCE.md",
+      "remaining": "eligible live delivery, valid attribution, sufficient observation period and business economics"
+    }
+  ]
+}

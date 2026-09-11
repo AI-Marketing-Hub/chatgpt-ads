@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "status": "v030_limited_local_release_candidate_pass",
+  "workflow_states": {
+    "research": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Synthetic missing, stale, conflicting and malicious source retrieval; incremental edit preservation and crash recovery. Real official source refresh recorded separately."
+    },
+    "readiness": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Complete synthetic readiness case with missing account/destination evidence correctly blocked; actual signed-in session reached availability gate, no account identity verified."
+    },
+    "plan": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Synthetic budget and break-even economics recomputed with Decimal; account controls remain null, proposal provisional."
+    },
+    "creative": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Synthetic multi-element concepts, manual factual copy review and narrow claim-ID allowlist; no real assets/destination acceptance."
+    },
+    "measurement": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Ten offline business-event preparation cases and fresh Claude advisory probes; no native payload, receipt or attribution test."
+    },
+    "analyze": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Twelve analyzer tests plus six provenance wrapper tests and boundary regressions. Synthetic normalized data only."
+    },
+    "experiment": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Synthetic feasibility design refuses power/sample claims without baseline; no real randomized experiment."
+    },
+    "policy": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Worked platform-policy case and fresh Claude advisory rechecks; no actual client category or jurisdiction clearance."
+    },
+    "launch": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Synthetic preflight and exact approval checks, no real campaign launch."
+    },
+    "operate": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "v0.3.0 deterministic action-guard tests pass. Historical v0.2.1 Codex and Claude keyboard localhost scenarios remain evidence only for those inputs; changed v0.3.0 browser behavior and real Ads Manager actions are unverified."
+    },
+    "monitor": {
+      "documented": true,
+      "simulated": true,
+      "native_read_only_verified": false,
+      "approved_live_action_verified": false,
+      "scope": "Synthetic missing/partial report rows and pacing arithmetic; incident proposal blocked appropriately, scheduling disabled."
+    }
+  },
+  "native_api": false,
+  "native_csv": false,
+  "background_scheduling": false,
+  "runtime_evidence": {
+    "codex": "Fresh v0.3.0 synthetic advisory probe partially passed; final instruction corrections not independently retested. v0.2.1 browser evidence is historical.",
+    "claude": "Historical v0.2.1 localhost keyboard evidence; fresh v0.3.0 no-tool advisory probes only. No native Ads account verification."
+  },
+  "limitation": "Simulated flags mean only the stated subprocedures were exercised, not whole-workflow acceptance.",
+  "independent_review": {
+    "baseline_v0_2": "pass_local_scope",
+    "expanded_v0_2_1": "pass_local_scope_no_unresolved_blocking_findings",
+    "live_acceptance": false,
+    "v030": "pass_limited_local_scope_no_open_blockers"
+  },
+  "acceptance_revision": "0.3.0",
+  "os_support": {
+    "linux": "63 core tests and 12 analyzer tests pass on native Python 3.11 and 3.14",
+    "windows": "restricted; guarded workflows unavailable; native tests not run",
+    "macos": "unverified"
+  }
+}
