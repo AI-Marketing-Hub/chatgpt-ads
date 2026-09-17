@@ -1,6 +1,6 @@
 # v0.3.1 implementation and release status
 
-Local implementation and independent review are complete for a limited public-source release candidate. GitHub publication is authorized; the release page records the published artifact and live CI results. MIT was selected for original material; the intended public repository is agricidaniel/chatgpt-ads.
+Local implementation and independent review are complete for a limited public-source release candidate. GitHub publication is authorized; the release page records the published artifact and live CI results. MIT was selected for original material; the intended public repository is AI-Marketing-Hub/chatgpt-ads.
 
 ## Knowledge and skills
 

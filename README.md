@@ -6,7 +6,7 @@ An independent, MIT-licensed knowledge and operating-skill pack for research, pl
 
 Version 0.3.1 is the audit-hardening update to the published v0.3.0 release. It includes documented source knowledge, synthetic fixtures and deterministic helpers. It does not include private workspaces, browser captures, credentials, raw research, customer data or an account capable of running ads.
 
-[![CI](https://github.com/agricidaniel/chatgpt-ads/actions/workflows/ci.yml/badge.svg)](https://github.com/agricidaniel/chatgpt-ads/actions/workflows/ci.yml)
+[![CI](https://github.com/AI-Marketing-Hub/chatgpt-ads/actions/workflows/ci.yml/badge.svg)](https://github.com/AI-Marketing-Hub/chatgpt-ads/actions/workflows/ci.yml)
 
 ![Illustration of campaign planning, creative review and performance analysis](assets/chatgpt-ads-workflow.webp)
 
@@ -49,4 +49,4 @@ The tools never authenticate an advertiser, perform browser actions on their own
 
 `scripts/prepare_public.py` makes a separate source tree from an explicit allowlist. `scripts/package_release.py` accepts only that prepared tree and creates a deterministic archive. Neither command publishes, installs globally, contacts a third party or certifies a live account. Existing v0.2.1 archives are historical artifacts and are never overwritten.
 
-Repository: [agricidaniel/chatgpt-ads](https://github.com/agricidaniel/chatgpt-ads). Download versioned ZIPs and checksums from [Releases](https://github.com/agricidaniel/chatgpt-ads/releases). See [CHANGELOG.md](CHANGELOG.md) for upgrade notes and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for license provenance.
+Repository: [AI-Marketing-Hub/chatgpt-ads](https://github.com/AI-Marketing-Hub/chatgpt-ads). Download versioned ZIPs and checksums from [Releases](https://github.com/AI-Marketing-Hub/chatgpt-ads/releases). See [CHANGELOG.md](CHANGELOG.md) for upgrade notes and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for license provenance.

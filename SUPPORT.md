@@ -10,4 +10,4 @@ client data, account IDs, raw exports or browser captures. For environment
 diagnostics, run `python3 scripts/doctor.py` and redact anything private before
 sharing it.
 
-Ask a [usage question](https://github.com/agricidaniel/chatgpt-ads/issues/new?template=help.yml) or submit a [bug report](https://github.com/agricidaniel/chatgpt-ads/issues/new?template=bug_report.yml). Security reports use the private route in SECURITY.md.
+Ask a [usage question](https://github.com/AI-Marketing-Hub/chatgpt-ads/issues/new?template=help.yml) or submit a [bug report](https://github.com/AI-Marketing-Hub/chatgpt-ads/issues/new?template=bug_report.yml). Security reports use the private route in SECURITY.md.

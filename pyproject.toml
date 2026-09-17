@@ -13,8 +13,8 @@ authors = [{name = "Daniel Agrici"}]
 dependencies = ["tzdata==2026.3"]
 
 [project.urls]
-Homepage = "https://github.com/agricidaniel/chatgpt-ads"
-Issues = "https://github.com/agricidaniel/chatgpt-ads/issues"
+Homepage = "https://github.com/AI-Marketing-Hub/chatgpt-ads"
+Issues = "https://github.com/AI-Marketing-Hub/chatgpt-ads/issues"
 
 [tool.setuptools]
 packages = ["chatgpt_ads_brain"]
